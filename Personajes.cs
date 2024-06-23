@@ -1,10 +1,11 @@
 using System.Text.Json.Serialization;
- public class Appearance
+
+namespace EspacioPersonaje
+{
+    public class Appearance
     {
-        public string gender { get; set; }
-        public string race { get; set; }
-        public List<string> height { get; set; }
-        public List<string> weight { get; set; }
+        public string Gender { get; set; }
+        public string Race { get; set; }
 
         [JsonPropertyName("eye-color")]
         public string eyecolor { get; set; }
@@ -16,53 +17,34 @@ using System.Text.Json.Serialization;
     public class Biography
     {
         [JsonPropertyName("full-name")]
-        public string fullname { get; set; }
-
-        [JsonPropertyName("alter-egos")]
-        public string alteregos { get; set; }
-        public List<string> aliases { get; set; }
+        public string Fullname { get; set; }
 
         [JsonPropertyName("place-of-birth")]
         public string placeofbirth { get; set; }
 
         [JsonPropertyName("first-appearance")]
-        public string firstappearance { get; set; }
-        public string publisher { get; set; }
-        public string alignment { get; set; }
+        public string FechaNacimiento { get; set; }
+        public string Publisher { get; set; }
+        public string Alignment { get; set; }
+        public int Edad { get; set; } // 0 a 300
     }
 
-    public class Connections
+    public class Caracteristicas
     {
-        [JsonPropertyName("group-affiliation")]
-        public string groupaffiliation { get; set; }
-        public string relatives { get; set; }
-    }
-
-    public class Image
-    {
-        public string url { get; set; }
-    }
-
-    public class Powerstats
-    {
-        public string intelligence { get; set; }
-        public string strength { get; set; }
-        public string speed { get; set; }
-        public string durability { get; set; }
-        public string power { get; set; }
-        public string combat { get; set; }
+        public int Velocidad { get; set; } // 1 a 10
+        public int Destreza { get; set; }  // 1 a 5
+        public int Fuerza { get; set; }    // 1 a 10
+        public int Nivel { get; set; }     // 1 a 10
+        public int Armadura { get; set; }  // 1 a 10
+        public int Salud { get; set; }     // 100
     }
 
     public class Result
     {
         public string id { get; set; }
         public string name { get; set; }
-        public Powerstats powerstats { get; set; }
         public Biography biography { get; set; }
         public Appearance appearance { get; set; }
-        public Work work { get; set; }
-        public Connections connections { get; set; }
-        public Image image { get; set; }
     }
 
     public class Root
@@ -74,9 +56,4 @@ using System.Text.Json.Serialization;
         public List<Result> results { get; set; }
     }
 
-    public class Work
-    {
-        public string occupation { get; set; }
-        public string @base { get; set; }
-    }
-
+}

@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using System.Net.WebSockets;
 using System.IO;
+using EspacioPersonaje;
 
 Root salida = await GetPrice();
 
