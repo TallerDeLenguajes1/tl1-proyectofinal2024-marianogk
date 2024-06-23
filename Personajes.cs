@@ -29,15 +29,7 @@ namespace EspacioPersonaje
         public int Edad { get; set; } // 0 a 300
     }
 
-    public class Caracteristicas
-    {
-        public int Velocidad { get; set; } // 1 a 10
-        public int Destreza { get; set; }  // 1 a 5
-        public int Fuerza { get; set; }    // 1 a 10
-        public int Nivel { get; set; }     // 1 a 10
-        public int Armadura { get; set; }  // 1 a 10
-        public int Salud { get; set; }     // 100
-    }
+
 
     public class Result
     {
@@ -56,4 +48,27 @@ namespace EspacioPersonaje
         public List<Result> results { get; set; }
     }
 
+    public class Datos
+    {
+        public string Tipo { get; set; }
+        public string Nombre { get; set; }
+        public string Apodo { get; set; }
+        public string FechaDeNacimiento { get; set; }
+        public int Edad { get; set; }
+    }
+    public class Caracteristicas
+    {
+        public int Velocidad { get; set; } // 1 a 10
+        public int Destreza { get; set; }  // 1 a 5
+        public int Fuerza { get; set; }    // 1 a 10
+        public int Nivel { get; set; }     // 1 a 10
+        public int Armadura { get; set; }  // 1 a 10
+        public int Salud { get; set; }     // 100
+    }
+    public class Personaje
+    {
+        public Datos Datos { get; set; }
+        public Caracteristicas Caracteristicas { get; set; }
+        public Result Result { get; set; }
+    }
 }
