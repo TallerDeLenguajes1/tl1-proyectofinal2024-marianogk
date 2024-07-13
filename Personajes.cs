@@ -29,23 +29,13 @@ namespace EspacioPersonaje
         public int Edad { get; set; } // 0 a 300
     }
 
-
-
-    public class Result
+    public class Root
     {
+        public string response { get; set; }
         public string id { get; set; }
         public string name { get; set; }
         public Biography biography { get; set; }
         public Appearance appearance { get; set; }
-    }
-
-    public class Root
-    {
-        public string response { get; set; }
-
-        [JsonPropertyName("results-for")]
-        public string resultsfor { get; set; }
-        public List<Result> results { get; set; }
     }
 
     public class Datos
@@ -69,6 +59,6 @@ namespace EspacioPersonaje
     {
         public Datos Datos { get; set; }
         public Caracteristicas Caracteristicas { get; set; }
-        public Result Result { get; set; }
+        public Root Root { get; set; }
     }
 }

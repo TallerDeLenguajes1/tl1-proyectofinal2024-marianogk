@@ -6,7 +6,7 @@ class FabricaDePersonajes
 
     private static readonly Random random = new Random();
 
-    public Personaje CrearPersonajeAleatorio(Result apiResult)
+    public Personaje CrearPersonajeAleatorio(Root apiResult)
     {
         Datos datos = new Datos
         {
@@ -31,7 +31,7 @@ class FabricaDePersonajes
         {
             Datos = datos,
             Caracteristicas = caracteristicas,
-            Result = apiResult
+            Root = apiResult
             };
     }
 
