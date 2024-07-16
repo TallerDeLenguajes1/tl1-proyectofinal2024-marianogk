@@ -24,8 +24,6 @@ namespace EspacioPersonaje
 
         [JsonPropertyName("first-appearance")]
         public string FechaNacimiento { get; set; }
-        public string Publisher { get; set; }
-        public string Alignment { get; set; }
         public int Edad { get; set; } // 0 a 300
     }
 

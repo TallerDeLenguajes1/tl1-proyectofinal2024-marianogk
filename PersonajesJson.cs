@@ -33,14 +33,13 @@ public class PersonajesJson
             }
             else
             {
-                Console.WriteLine("El archivo no existe.");
-                return null;
+                return new List<Personaje>();
             }
         }
         catch (Exception ex)
         {
             Console.WriteLine("Error al leer el archivo: " + ex.Message);
-            return null;
+            return new List<Personaje>();
         }
     }
 
@@ -48,5 +47,38 @@ public class PersonajesJson
     public static bool Existe(string nombreArchivo)
     {
         return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;
+    }
+
+    public static void MostrarPersonajes(List<Personaje> personajes)
+    {
+        Console.WriteLine("Personaje:");
+        foreach (var pj in personajes)
+        {
+            Console.WriteLine("-DATOS-");
+            Console.WriteLine("Tipo: " + pj.Datos.Tipo);
+            Console.WriteLine("Nombre Completo: " + pj.Datos.Nombre);
+            Console.WriteLine("Apodo: " + pj.Datos.Apodo);
+            Console.WriteLine("Fecha de nacimiento: " + pj.Datos.FechaDeNacimiento);
+            Console.WriteLine("Edad: " + pj.Datos.Edad);
+
+            Console.WriteLine("-CARACTERISTICAS-");
+            Console.WriteLine("Velocidad: " + pj.Caracteristicas.Velocidad);
+            Console.WriteLine("Destreza: " + pj.Caracteristicas.Destreza);
+            Console.WriteLine("Fuerza: " + pj.Caracteristicas.Fuerza);
+            Console.WriteLine("Nivel: " + pj.Caracteristicas.Nivel);
+            Console.WriteLine("Armadura: " + pj.Caracteristicas.Armadura);
+            Console.WriteLine("Salud: " + pj.Caracteristicas.Salud);
+        }
+    }
+
+    public static void MostrarNombres(List<Personaje> personajes)
+    {
+        foreach (var pj in personajes)
+        {
+            Console.WriteLine("-");
+            Console.WriteLine("Tipo: " + pj.Datos.Tipo);
+            Console.WriteLine("Nombre Completo: " + pj.Datos.Nombre);
+            Console.WriteLine("Apodo: " + pj.Datos.Apodo);
+        }
     }
 }
