@@ -1,0 +1,38 @@
+[
+  {
+    "Datos": {
+      "Tipo": null,
+      "Nombre": "Natasha Romanoff",
+      "Apodo": "Black Widow",
+      "FechaDeNacimiento": "1906-12-19T00:00:00",
+      "Edad": 113
+    },
+    "Caracteristicas": {
+      "Velocidad": 6,
+      "Destreza": 5,
+      "Fuerza": 4,
+      "Nivel": 8,
+      "Armadura": 9,
+      "Salud": 100
+    },
+    "Root": {
+      "response": "success",
+      "id": "107",
+      "name": "Black Widow",
+      "biography": {
+        "full-name": "Natasha Romanoff",
+        "place-of-birth": "-",
+        "first-appearance": "Tales of Suspense #52",
+        "Publisher": null,
+        "Alignment": null,
+        "Edad": 0
+      },
+      "appearance": {
+        "Gender": null,
+        "Race": null,
+        "eye-color": "Green",
+        "hair-color": "Auburn"
+      }
+    }
+  }
+]

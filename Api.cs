@@ -33,17 +33,4 @@ public class Api
     }
 }
 
-// string fileJson = JsonSerializer.Serialize(salida);
 
-// string ruta = @"C:\taller1\tl1-proyectofinal2024-marianogk\player.json";
-
-// if (File.Exists(ruta))
-// {
-//     Console.WriteLine("El archivo ya existe");
-
-// }
-// else
-// {
-//     File.WriteAllText(ruta, fileJson);
-//     Console.WriteLine("Datos guardados en " + ruta);
-// }

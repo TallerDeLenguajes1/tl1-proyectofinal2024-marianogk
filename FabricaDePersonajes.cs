@@ -14,8 +14,8 @@ class FabricaDePersonajes
             Tipo = apiResult.appearance.Race,
             Nombre = apiResult.biography.Fullname,
             Apodo = apiResult.name,
-            FechaDeNacimiento = apiResult.biography.FechaNacimiento,
-            Edad = CalcularEdad(apiResult.biography.FechaNacimiento)
+            FechaDeNacimiento = GenerarNacimiento(),
+            Edad = CalcularEdad(GenerarNacimiento())
         };
 
         Caracteristicas caracteristicas = new Caracteristicas
@@ -33,49 +33,28 @@ class FabricaDePersonajes
             Datos = datos,
             Caracteristicas = caracteristicas,
             Root = apiResult
-            };
+        };
     }
 
-    private int CalcularEdad(string fechaNacimiento)
+    private DateTime GenerarNacimiento()
     {
-        // Convertir la fecha string en datetime
-        string formato = "dd/MM/yyyy"; // Formato
+        int year = random.Next(1900, 2015);
+        int month = random.Next(1, 13);
 
-        DateTime fecha = DateTime.ParseExact(fechaNacimiento, formato, CultureInfo.InvariantCulture);
+        int maxDay = DateTime.DaysInMonth(year, month);
 
-        int edad = DateTime.Today.Year - fecha.Year;
+        // Generamos un día aleatorio dentro del rango válido para el mes
+        int day = random.Next(1, maxDay + 1);
+
+        // Creamos la fecha de nacimiento aleatoria
+        DateTime fechaNacimiento = new DateTime(year, month, day);
+
+        return fechaNacimiento;
+    }
+    private int CalcularEdad(DateTime fechaNacimiento)
+    {
+        int edad = DateTime.Today.Year - fechaNacimiento.Year;
 
         return edad;
     }
-
-    public class Api
-{
-
-// public static async Task<Root> GetPersonaje(int idP)
-// {
-//     var url = $"https://www.superheroapi.com/api.php/05d397d99a857530dc23cf8bd992412d/{idP}";
-
-//     try
-//     {
-//         HttpClient client = new HttpClient();
-//         HttpResponseMessage response = await client.GetAsync(url);
-//         response.EnsureSuccessStatusCode();
-//         string responseBody = await response.Content.ReadAsStringAsync();
-
-//         Root personaje = JsonSerializer.Deserialize<Root>(responseBody);
-//         return personaje;
-//     }
-//     catch (HttpRequestException e)
-//     {
-//         Console.WriteLine("Problemas de acceso a la API");
-//         Console.WriteLine($"Error al realizar la solicitud HTTP: {e.Message}");
-//         return null;
-//     }
-//     catch (JsonException e)
-//     {
-//         Console.WriteLine($"Error de deserialización JSON: {e.Message}");
-//         return null;
-//     }
-// }
-}
 }
