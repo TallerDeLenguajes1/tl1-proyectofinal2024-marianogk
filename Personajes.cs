@@ -4,9 +4,6 @@ namespace EspacioPersonaje
 {
     public class Appearance
     {
-        public string Gender { get; set; }
-        public string Race { get; set; }
-
         [JsonPropertyName("eye-color")]
         public string eyecolor { get; set; }
 

@@ -15,10 +15,10 @@ public class Programa
             List<Personaje> personajes = await PersonajesJson.LeerPersonajes(nombreArchivo);
             while (personajes.Count < 11)
             {
-                // Crear un indice aleatorio para la api del personaje
-                Random randomId = new Random();
-                int[] idsPersonajes = { 332, 659, 620, 623, 579, 165, 344, 720, 107, 69, 309, 370, 644, 149, 346, 263, 717, 655 };
-                int idP = idsPersonajes[randomId.Next(0, idsPersonajes.Length)];
+                List<int> idsPersonajes = new List<int> { 332, 659, 620, 623, 579, 165, 344, 720, 107, 69 };
+                int p = 0;
+                int idP = idsPersonajes[p];
+                p++;
 
                 Root salida = await Api.GetPersonaje(idP); // Obtener el personaje desde la API
 

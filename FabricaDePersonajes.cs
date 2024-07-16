@@ -11,7 +11,7 @@ class FabricaDePersonajes
     {
         Datos datos = new Datos
         {
-            Tipo = apiResult.appearance.Race,
+            Tipo = null,
             Nombre = apiResult.biography.Fullname,
             Apodo = apiResult.name,
             FechaDeNacimiento = GenerarNacimiento(),
