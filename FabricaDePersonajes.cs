@@ -4,14 +4,15 @@ using System.Text.Json;
 using EspacioPersonaje;
 class FabricaDePersonajes
 {
-
     private static readonly Random random = new Random();
-
+    private readonly string[] tipo = ["Superheroe", "Villano"];
     public Personaje CrearPersonajeAleatorio(Root apiResult)
     {
+        int i = random.Next(2);
+        
         Datos datos = new Datos
         {
-            Tipo = null,
+            Tipo = tipo[i],
             Nombre = apiResult.biography.Fullname,
             Apodo = apiResult.name,
             FechaDeNacimiento = GenerarNacimiento(),

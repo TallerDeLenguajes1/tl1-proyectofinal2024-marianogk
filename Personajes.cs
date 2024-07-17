@@ -15,13 +15,6 @@ namespace EspacioPersonaje
     {
         [JsonPropertyName("full-name")]
         public string Fullname { get; set; }
-
-        [JsonPropertyName("place-of-birth")]
-        public string placeofbirth { get; set; }
-
-        [JsonPropertyName("first-appearance")]
-        public string FechaNacimiento { get; set; }
-        public int Edad { get; set; } // 0 a 300
     }
 
     public class Root

@@ -7,20 +7,21 @@ public class Programa
 {
     public static async Task Main(string[] args)
     {
-        string nombreArchivo = @"C:\taller1\tl1-proyectofinal2024-marianogk\players.json";
+        string nombreArchivo = @"C:\taller1\tl1-proyectofinal2024-marianogk\characters.json";
 
         if (!File.Exists(nombreArchivo))
         {
             FabricaDePersonajes fabrica = new FabricaDePersonajes();
             List<Personaje> personajes = await PersonajesJson.LeerPersonajes(nombreArchivo);
+            int p = 0;
             while (personajes.Count < 11)
             {
-                List<int> idsPersonajes = new List<int> { 332, 659, 620, 623, 579, 165, 344, 720, 107, 69 };
-                int p = 0;
+                List<int> idsPersonajes = new List<int> { 332, 659, 620, 623, 579, 165, 344, 720, 107, 69, 309};
+
                 int idP = idsPersonajes[p];
                 p++;
 
-                Root salida = await Api.GetPersonaje(idP); // Obtener el personaje desde la API
+                Root salida = await Api.GetPersonaje(idP); // Obtener el personaje desde la API                
 
                 if (salida != null)
                 {
