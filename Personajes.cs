@@ -41,7 +41,7 @@ namespace EspacioPersonaje
         public int Fuerza { get; set; }    // 1 a 10
         public int Nivel { get; set; }     // 1 a 10
         public int Armadura { get; set; }  // 1 a 10
-        public int Salud { get; set; }     // 100
+        public float Salud { get; set; }     // 100
     }
     public class Personaje
     {

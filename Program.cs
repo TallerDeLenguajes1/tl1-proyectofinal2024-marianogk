@@ -58,14 +58,24 @@ public class Programa
             }
         }
 
-        // Crear historial
+        // Elegir 2 personajes para la pelea
+
+
+
+        // Pelear
+
+        Personaje ganador = new Personaje();
+
+        ganador = Batalla.Pelear(player1, player2);
+
+        // Mostrar y guardar ganador
+
+        Console.WriteLine("El ganador es: " + ganador);
 
         string archivoHistorial = @"C:\taller1\tl1-proyectofinal2024-marianogk\historial.json";
 
-        // Console.WriteLine("El ganador es: " + ganador);
-
-        // await HistorialJson.GuardarGanador(ganador, archivoHistorial);
-        // Console.WriteLine("Ganador guardado en el archivo de historial correctamente.");
+        await HistorialJson.GuardarGanador(ganador, archivoHistorial);
+        Console.WriteLine("Ganador guardado en el archivo de historial correctamente.");
 
     }
 
