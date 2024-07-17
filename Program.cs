@@ -5,18 +5,21 @@ using EspacioPersonaje;
 
 public class Programa
 {
+
     public static async Task Main(string[] args)
     {
-        string nombreArchivo = @"C:\taller1\tl1-proyectofinal2024-marianogk\characters.json";
+        string archivoPersonajes = @"C:\taller1\tl1-proyectofinal2024-marianogk\characters.json";
 
-        if (!File.Exists(nombreArchivo))
+        // Crear 10 personajes si no existe el archivo
+
+        if (!File.Exists(archivoPersonajes))
         {
             FabricaDePersonajes fabrica = new FabricaDePersonajes();
-            List<Personaje> personajes = await PersonajesJson.LeerPersonajes(nombreArchivo);
+            List<Personaje> personajes = await PersonajesJson.LeerPersonajes(archivoPersonajes);
             int p = 0;
             while (personajes.Count < 11)
             {
-                List<int> idsPersonajes = new List<int> { 332, 659, 620, 623, 579, 165, 344, 720, 107, 69, 309};
+                List<int> idsPersonajes = new List<int> { 332, 659, 620, 623, 579, 165, 344, 720, 107, 69, 309 };
 
                 int idP = idsPersonajes[p];
                 p++;
@@ -31,8 +34,8 @@ public class Programa
 
                     // Guardar personajes en JSON
 
-                    await PersonajesJson.GuardarPersonajes(personajes, nombreArchivo);
-                    Console.WriteLine("Personaje guardado en el archivo JSON correctamente: " + nombreArchivo);
+                    await PersonajesJson.GuardarPersonajes(personajes, archivoPersonajes);
+                    Console.WriteLine("Personaje guardado en el archivo JSON correctamente: " + archivoPersonajes);
                 }
                 else
                 {
@@ -44,7 +47,7 @@ public class Programa
         else
         {
             // Leer personajes desde JSON
-            List<Personaje> personajesLeidos = await PersonajesJson.LeerPersonajes(nombreArchivo);
+            List<Personaje> personajesLeidos = await PersonajesJson.LeerPersonajes(archivoPersonajes);
             if (personajesLeidos != null)
             {
                 PersonajesJson.MostrarNombres(personajesLeidos);
@@ -54,6 +57,16 @@ public class Programa
                 Console.WriteLine("No se encontraron personajes en el archivo JSON.");
             }
         }
+
+        // Crear historial
+
+        string archivoHistorial = @"C:\taller1\tl1-proyectofinal2024-marianogk\historial.json";
+
+        // Console.WriteLine("El ganador es: " + ganador);
+
+        // await HistorialJson.GuardarGanador(ganador, archivoHistorial);
+        // Console.WriteLine("Ganador guardado en el archivo de historial correctamente.");
+
     }
 
 }

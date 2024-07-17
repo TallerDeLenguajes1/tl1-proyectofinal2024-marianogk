@@ -5,7 +5,7 @@ using EspacioPersonaje;
 
 public class PersonajesJson
 {
-    // Método para guardar una lista de personajes en un archivo JSON
+    // Metodo para guardar una lista de personajes en un archivo JSON
     public static async Task GuardarPersonajes(List<Personaje> personajes, string nombreArchivo)
     {
         try
@@ -20,7 +20,7 @@ public class PersonajesJson
         }
     }
 
-    // Método para leer una lista de personajes desde un archivo JSON
+    // Metodo para leer una lista de personajes desde un archivo JSON
     public static async Task<List<Personaje>> LeerPersonajes(string nombreArchivo)
     {
         try
@@ -43,7 +43,7 @@ public class PersonajesJson
         }
     }
 
-    // Método para verificar si un archivo existe y tiene datos
+    // Metodo para verificar si un archivo existe y tiene datos
     public static bool Existe(string nombreArchivo)
     {
         return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;
