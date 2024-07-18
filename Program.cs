@@ -22,7 +22,7 @@ public class Programa
             int p = 0;
             while (personajes.Count < 11)
             {
-                
+
                 int id = idsPersonajes[p];
                 p++;
 
@@ -90,15 +90,14 @@ public class Programa
 
             // Mostrar y guardar ganador
 
-            Console.WriteLine("El ganador es: " + ganador);
+            Console.WriteLine("\n\nEL GANADOR ES: ");
+            PersonajesJson.MostrarPersonaje(ganador);
 
             string archivoHistorial = @"C:\taller1\tl1-proyectofinal2024-marianogk\historial.json";
 
             await HistorialJson.GuardarGanador(ganador, archivoHistorial);
             Console.WriteLine("Ganador guardado en el archivo de historial correctamente.");
         }
-
-
 
     }
 

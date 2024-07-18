@@ -34,20 +34,21 @@ public class Batalla
     public static Personaje Pelear(Personaje p1, Personaje p2)
     {
         // Mientras los dos tengan salud
-        while (p1.Caracteristicas.Salud > 0 || p1.Caracteristicas.Salud > 0)
+        do
         {
             // Player 1 ataca
-            Console.WriteLine("ATACA: " + p1.Datos.Apodo);
+            Console.WriteLine("\nATACA: " + p1.Datos.Apodo);
             Console.WriteLine("Salud: " + p1.Caracteristicas.Salud);
             Console.WriteLine("Daño provocado: " + Danio(p1, p2));
             p2.Caracteristicas.Salud = p2.Caracteristicas.Salud - Danio(p1, p2);
 
             // Player 2 ataca
-            Console.WriteLine("ATACA: " + p2.Datos.Apodo);
+            
+            Console.WriteLine("\nATACA: " + p2.Datos.Apodo);
             Console.WriteLine("Salud: " + p2.Caracteristicas.Salud);
             Console.WriteLine("Daño provocado: " + Danio(p2, p1));
             p1.Caracteristicas.Salud = p1.Caracteristicas.Salud - Danio(p2, p1);
-        }
+        } while (p1.Caracteristicas.Salud > 0 && p1.Caracteristicas.Salud > 0);
 
         if (p2.Caracteristicas.Salud < 0)
         {

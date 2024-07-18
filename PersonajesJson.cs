@@ -54,20 +54,7 @@ public class PersonajesJson
         Console.WriteLine("Personaje:");
         foreach (var pj in personajes)
         {
-            Console.WriteLine("-DATOS-");
-            Console.WriteLine("Tipo: " + pj.Datos.Tipo);
-            Console.WriteLine("Nombre Completo: " + pj.Datos.Nombre);
-            Console.WriteLine("Apodo: " + pj.Datos.Apodo);
-            Console.WriteLine("Fecha de nacimiento: " + pj.Datos.FechaDeNacimiento);
-            Console.WriteLine("Edad: " + pj.Datos.Edad);
-
-            Console.WriteLine("-CARACTERISTICAS-");
-            Console.WriteLine("Velocidad: " + pj.Caracteristicas.Velocidad);
-            Console.WriteLine("Destreza: " + pj.Caracteristicas.Destreza);
-            Console.WriteLine("Fuerza: " + pj.Caracteristicas.Fuerza);
-            Console.WriteLine("Nivel: " + pj.Caracteristicas.Nivel);
-            Console.WriteLine("Armadura: " + pj.Caracteristicas.Armadura);
-            Console.WriteLine("Salud: " + pj.Caracteristicas.Salud);
+            MostrarPersonaje(pj);
         }
     }
 
@@ -80,5 +67,25 @@ public class PersonajesJson
             Console.WriteLine("Nombre Completo: " + pj.Datos.Nombre);
             Console.WriteLine("Apodo: " + pj.Datos.Apodo);
         }
+    }
+
+    public static void MostrarPersonaje(Personaje pj)
+    {
+
+        Console.WriteLine("-DATOS-");
+        Console.WriteLine("Tipo: " + pj.Datos.Tipo);
+        Console.WriteLine("Nombre Completo: " + pj.Datos.Nombre);
+        Console.WriteLine("Apodo: " + pj.Datos.Apodo);
+        Console.WriteLine("Fecha de nacimiento: " + pj.Datos.FechaDeNacimiento);
+        Console.WriteLine("Edad: " + pj.Datos.Edad);
+
+        Console.WriteLine("-CARACTERISTICAS-");
+        Console.WriteLine("Velocidad: " + pj.Caracteristicas.Velocidad);
+        Console.WriteLine("Destreza: " + pj.Caracteristicas.Destreza);
+        Console.WriteLine("Fuerza: " + pj.Caracteristicas.Fuerza);
+        Console.WriteLine("Nivel: " + pj.Caracteristicas.Nivel);
+        Console.WriteLine("Armadura: " + pj.Caracteristicas.Armadura);
+        Console.WriteLine("Salud: " + pj.Caracteristicas.Salud);
+
     }
 }
