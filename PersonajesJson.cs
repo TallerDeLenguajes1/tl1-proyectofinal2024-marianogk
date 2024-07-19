@@ -62,10 +62,9 @@ public class PersonajesJson
     {
         foreach (var pj in personajes)
         {
-            Console.WriteLine("-");
-            Console.WriteLine("Tipo: " + pj.Datos.Tipo);
-            Console.WriteLine("Nombre Completo: " + pj.Datos.Nombre);
             Console.WriteLine("Apodo: " + pj.Datos.Apodo);
+            Console.WriteLine("\nNombre Completo: " + pj.Datos.Nombre);
+            Console.WriteLine("\nTipo: " + pj.Datos.Tipo);
         }
     }
 

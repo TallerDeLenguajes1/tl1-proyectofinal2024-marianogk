@@ -1,7 +1,7 @@
 {
-  "Tipo": "Superheroe",
-  "Nombre": "Bruce Banner",
-  "Apodo": "Hulk",
-  "FechaDeNacimiento": "2000-01-16T00:00:00",
-  "Edad": 66
+  "Tipo": "Villano",
+  "Nombre": "Natasha Romanoff",
+  "Apodo": "Black Widow",
+  "FechaDeNacimiento": "1975-07-23T00:00:00",
+  "Edad": 110
 }
