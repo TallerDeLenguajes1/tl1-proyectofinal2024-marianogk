@@ -1,7 +1,7 @@
 {
   "Tipo": "Superheroe",
-  "Nombre": "Bruce Wayne",
-  "Apodo": "Batman",
-  "FechaDeNacimiento": "1947-08-15T00:00:00",
-  "Edad": 10
+  "Nombre": "Clark Kent",
+  "Apodo": "Superman",
+  "FechaDeNacimiento": "1909-07-06T00:00:00",
+  "Edad": 14
 }

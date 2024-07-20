@@ -5,7 +5,6 @@ using EspacioPersonaje;
 
 public class Programa
 {
-
     public static async Task Main(string[] args)
     {
         // Lista de id de los personajes de la api
@@ -50,6 +49,7 @@ public class Programa
         {
             Console.WriteLine("PRESIONE 1 PARA JUGAR: ");
             int seguir = int.Parse(Console.ReadLine());
+            
 
             while (seguir == 1)
             {
@@ -118,11 +118,18 @@ public class Programa
                 Console.WriteLine("Ganador guardado en el archivo de historial correctamente.");
 
                 Console.WriteLine("\nPRESIONE 1 PARA JUGAR OTRA VEZ: ");
-                seguir = int.Parse(Console.ReadLine());
+                string input = Console.ReadLine();
+
+                if (int.TryParse(input, out seguir))
+
+                if (seguir != 1)
+                {
+                    break;
+                }
             }
-
-
+            //Fin del juego
         };
+        
     }
 
 }
