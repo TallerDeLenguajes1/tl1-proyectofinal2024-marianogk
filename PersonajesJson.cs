@@ -60,12 +60,14 @@ public class PersonajesJson
 
     public static void MostrarNombres(List<Personaje> personajes)
     {
+        Console.WriteLine("+-----------------+---------------------+-----------------+");
+        Console.WriteLine("|     Apodo       |  Nombre Completo    |      Tipo       |");
+        Console.WriteLine("+-----------------+---------------------+-----------------+");
         foreach (var pj in personajes)
         {
-            Console.WriteLine("Apodo: " + pj.Datos.Apodo);
-            Console.WriteLine("\nNombre Completo: " + pj.Datos.Nombre);
-            Console.WriteLine("\nTipo: " + pj.Datos.Tipo);
+            Console.WriteLine($"| {pj.Datos.Apodo.PadRight(15)} | {pj.Datos.Nombre.PadRight(19)} | {pj.Datos.Tipo.PadRight(15)} |");
         }
+        Console.WriteLine("+-----------------+---------------------+-----------------+");
     }
 
     public static void MostrarPersonaje(Personaje pj)

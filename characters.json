@@ -4,15 +4,15 @@
       "Tipo": "Superheroe",
       "Nombre": "Bruce Banner",
       "Apodo": "Hulk",
-      "FechaDeNacimiento": "2000-01-16T00:00:00",
-      "Edad": 66
+      "FechaDeNacimiento": "1916-04-16T00:00:00",
+      "Edad": 85
     },
     "Caracteristicas": {
-      "Velocidad": 4,
+      "Velocidad": 6,
       "Destreza": 5,
-      "Fuerza": 9,
-      "Nivel": 9,
-      "Armadura": 10,
+      "Fuerza": 1,
+      "Nivel": 4,
+      "Armadura": 3,
       "Salud": 100
     },
     "Root": {
@@ -30,47 +30,18 @@
   },
   {
     "Datos": {
-      "Tipo": "Superheroe",
-      "Nombre": "Thor Odinson",
-      "Apodo": "Thor",
-      "FechaDeNacimiento": "1968-04-03T00:00:00",
-      "Edad": 53
-    },
-    "Caracteristicas": {
-      "Velocidad": 3,
-      "Destreza": 5,
-      "Fuerza": 5,
-      "Nivel": 9,
-      "Armadura": 6,
-      "Salud": 100
-    },
-    "Root": {
-      "response": "success",
-      "id": "659",
-      "name": "Thor",
-      "biography": {
-        "full-name": "Thor Odinson"
-      },
-      "appearance": {
-        "eye-color": "Blue",
-        "hair-color": "Blond"
-      }
-    }
-  },
-  {
-    "Datos": {
-      "Tipo": "Superheroe",
+      "Tipo": "Villano",
       "Nombre": "Peter Parker",
       "Apodo": "Spider-Man",
-      "FechaDeNacimiento": "1966-01-10T00:00:00",
-      "Edad": 60
+      "FechaDeNacimiento": "1909-12-03T00:00:00",
+      "Edad": 73
     },
     "Caracteristicas": {
-      "Velocidad": 6,
-      "Destreza": 1,
-      "Fuerza": 9,
+      "Velocidad": 5,
+      "Destreza": 3,
+      "Fuerza": 4,
       "Nivel": 6,
-      "Armadura": 7,
+      "Armadura": 8,
       "Salud": 100
     },
     "Root": {
@@ -89,132 +60,16 @@
   {
     "Datos": {
       "Tipo": "Villano",
-      "Nombre": "Jessica Drew",
-      "Apodo": "Spider-Woman",
-      "FechaDeNacimiento": "1931-06-22T00:00:00",
-      "Edad": 102
-    },
-    "Caracteristicas": {
-      "Velocidad": 5,
-      "Destreza": 3,
-      "Fuerza": 7,
-      "Nivel": 2,
-      "Armadura": 1,
-      "Salud": 100
-    },
-    "Root": {
-      "response": "success",
-      "id": "623",
-      "name": "Spider-Woman",
-      "biography": {
-        "full-name": "Jessica Drew"
-      },
-      "appearance": {
-        "eye-color": "Green",
-        "hair-color": "Black"
-      }
-    }
-  },
-  {
-    "Datos": {
-      "Tipo": "Villano",
-      "Nombre": "Wanda Maximoff",
-      "Apodo": "Scarlet Witch",
-      "FechaDeNacimiento": "2006-10-19T00:00:00",
-      "Edad": 54
-    },
-    "Caracteristicas": {
-      "Velocidad": 5,
-      "Destreza": 2,
-      "Fuerza": 5,
-      "Nivel": 8,
-      "Armadura": 4,
-      "Salud": 100
-    },
-    "Root": {
-      "response": "success",
-      "id": "579",
-      "name": "Scarlet Witch",
-      "biography": {
-        "full-name": "Wanda Maximoff"
-      },
-      "appearance": {
-        "eye-color": "Blue",
-        "hair-color": "Brown"
-      }
-    }
-  },
-  {
-    "Datos": {
-      "Tipo": "Villano",
-      "Nombre": "Selina Kyle",
-      "Apodo": "Catwoman",
-      "FechaDeNacimiento": "1933-07-14T00:00:00",
-      "Edad": 75
-    },
-    "Caracteristicas": {
-      "Velocidad": 10,
-      "Destreza": 4,
-      "Fuerza": 1,
-      "Nivel": 2,
-      "Armadura": 7,
-      "Salud": 100
-    },
-    "Root": {
-      "response": "success",
-      "id": "165",
-      "name": "Catwoman",
-      "biography": {
-        "full-name": "Selina Kyle"
-      },
-      "appearance": {
-        "eye-color": "Green",
-        "hair-color": "Black"
-      }
-    }
-  },
-  {
-    "Datos": {
-      "Tipo": "Superheroe",
-      "Nombre": "Susan Storm Richards",
-      "Apodo": "Invisible Woman",
-      "FechaDeNacimiento": "1924-07-12T00:00:00",
-      "Edad": 93
-    },
-    "Caracteristicas": {
-      "Velocidad": 6,
-      "Destreza": 3,
-      "Fuerza": 10,
-      "Nivel": 9,
-      "Armadura": 2,
-      "Salud": 100
-    },
-    "Root": {
-      "response": "success",
-      "id": "344",
-      "name": "Invisible Woman",
-      "biography": {
-        "full-name": "Susan Storm Richards"
-      },
-      "appearance": {
-        "eye-color": "blue",
-        "hair-color": "Blond"
-      }
-    }
-  },
-  {
-    "Datos": {
-      "Tipo": "Villano",
       "Nombre": "Diana Prince",
       "Apodo": "Wonder Woman",
-      "FechaDeNacimiento": "1921-05-14T00:00:00",
+      "FechaDeNacimiento": "1924-01-25T00:00:00",
       "Edad": 97
     },
     "Caracteristicas": {
-      "Velocidad": 5,
-      "Destreza": 4,
-      "Fuerza": 3,
-      "Nivel": 1,
+      "Velocidad": 9,
+      "Destreza": 1,
+      "Fuerza": 2,
+      "Nivel": 6,
       "Armadura": 3,
       "Salud": 100
     },
@@ -233,59 +88,30 @@
   },
   {
     "Datos": {
-      "Tipo": "Villano",
-      "Nombre": "Natasha Romanoff",
-      "Apodo": "Black Widow",
-      "FechaDeNacimiento": "1975-07-23T00:00:00",
-      "Edad": 110
+      "Tipo": "Superheroe",
+      "Nombre": "Bruce Wayne",
+      "Apodo": "Batman",
+      "FechaDeNacimiento": "1947-08-15T00:00:00",
+      "Edad": 10
     },
     "Caracteristicas": {
       "Velocidad": 4,
-      "Destreza": 4,
-      "Fuerza": 2,
-      "Nivel": 8,
-      "Armadura": 8,
-      "Salud": 100
-    },
-    "Root": {
-      "response": "success",
-      "id": "107",
-      "name": "Black Widow",
-      "biography": {
-        "full-name": "Natasha Romanoff"
-      },
-      "appearance": {
-        "eye-color": "Green",
-        "hair-color": "Auburn"
-      }
-    }
-  },
-  {
-    "Datos": {
-      "Tipo": "Villano",
-      "Nombre": "Terry McGinnis",
-      "Apodo": "Batman",
-      "FechaDeNacimiento": "1999-10-01T00:00:00",
-      "Edad": 11
-    },
-    "Caracteristicas": {
-      "Velocidad": 5,
       "Destreza": 3,
-      "Fuerza": 4,
-      "Nivel": 1,
-      "Armadura": 1,
+      "Fuerza": 9,
+      "Nivel": 9,
+      "Armadura": 3,
       "Salud": 100
     },
     "Root": {
       "response": "success",
-      "id": "69",
+      "id": "70",
       "name": "Batman",
       "biography": {
-        "full-name": "Terry McGinnis"
+        "full-name": "Bruce Wayne"
       },
       "appearance": {
-        "eye-color": "Blue",
-        "hair-color": "Black"
+        "eye-color": "blue",
+        "hair-color": "black"
       }
     }
   },
@@ -294,15 +120,15 @@
       "Tipo": "Villano",
       "Nombre": "Harley Quinn",
       "Apodo": "Harley Quinn",
-      "FechaDeNacimiento": "2007-04-25T00:00:00",
-      "Edad": 23
+      "FechaDeNacimiento": "1906-04-29T00:00:00",
+      "Edad": 36
     },
     "Caracteristicas": {
-      "Velocidad": 9,
-      "Destreza": 3,
-      "Fuerza": 3,
-      "Nivel": 6,
-      "Armadura": 2,
+      "Velocidad": 6,
+      "Destreza": 1,
+      "Fuerza": 5,
+      "Nivel": 3,
+      "Armadura": 10,
       "Salud": 100
     },
     "Root": {
@@ -315,6 +141,209 @@
       "appearance": {
         "eye-color": "Blue",
         "hair-color": "Blond"
+      }
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Villano",
+      "Nombre": "Jack Napier",
+      "Apodo": "Joker",
+      "FechaDeNacimiento": "1998-02-03T00:00:00",
+      "Edad": 43
+    },
+    "Caracteristicas": {
+      "Velocidad": 1,
+      "Destreza": 4,
+      "Fuerza": 10,
+      "Nivel": 9,
+      "Armadura": 7,
+      "Salud": 100
+    },
+    "Root": {
+      "response": "success",
+      "id": "370",
+      "name": "Joker",
+      "biography": {
+        "full-name": "Jack Napier"
+      },
+      "appearance": {
+        "eye-color": "Green",
+        "hair-color": "Green"
+      }
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Superheroe",
+      "Nombre": "Clark Kent",
+      "Apodo": "Superman",
+      "FechaDeNacimiento": "1909-07-06T00:00:00",
+      "Edad": 14
+    },
+    "Caracteristicas": {
+      "Velocidad": 4,
+      "Destreza": 3,
+      "Fuerza": 5,
+      "Nivel": 2,
+      "Armadura": 5,
+      "Salud": 100
+    },
+    "Root": {
+      "response": "success",
+      "id": "644",
+      "name": "Superman",
+      "biography": {
+        "full-name": "Clark Kent"
+      },
+      "appearance": {
+        "eye-color": "Blue",
+        "hair-color": "Black"
+      }
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Superheroe",
+      "Nombre": "Tony Stark",
+      "Apodo": "Iron Man",
+      "FechaDeNacimiento": "1910-03-09T00:00:00",
+      "Edad": 112
+    },
+    "Caracteristicas": {
+      "Velocidad": 10,
+      "Destreza": 5,
+      "Fuerza": 2,
+      "Nivel": 1,
+      "Armadura": 9,
+      "Salud": 100
+    },
+    "Root": {
+      "response": "success",
+      "id": "346",
+      "name": "Iron Man",
+      "biography": {
+        "full-name": "Tony Stark"
+      },
+      "appearance": {
+        "eye-color": "Blue",
+        "hair-color": "Black"
+      }
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Superheroe",
+      "Nombre": "Logan",
+      "Apodo": "Wolverine",
+      "FechaDeNacimiento": "1968-09-27T00:00:00",
+      "Edad": 63
+    },
+    "Caracteristicas": {
+      "Velocidad": 1,
+      "Destreza": 4,
+      "Fuerza": 6,
+      "Nivel": 5,
+      "Armadura": 9,
+      "Salud": 100
+    },
+    "Root": {
+      "response": "success",
+      "id": "717",
+      "name": "Wolverine",
+      "biography": {
+        "full-name": "Logan"
+      },
+      "appearance": {
+        "eye-color": "Blue",
+        "hair-color": "Black"
+      }
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Villano",
+      "Nombre": "Carol Danvers",
+      "Apodo": "Captain Marvel",
+      "FechaDeNacimiento": "1927-01-17T00:00:00",
+      "Edad": 79
+    },
+    "Caracteristicas": {
+      "Velocidad": 4,
+      "Destreza": 1,
+      "Fuerza": 8,
+      "Nivel": 9,
+      "Armadura": 4,
+      "Salud": 100
+    },
+    "Root": {
+      "response": "success",
+      "id": "157",
+      "name": "Captain Marvel",
+      "biography": {
+        "full-name": "Carol Danvers"
+      },
+      "appearance": {
+        "eye-color": "Blue",
+        "hair-color": "Blond"
+      }
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Superheroe",
+      "Nombre": "Wade Wilson",
+      "Apodo": "Deadpool",
+      "FechaDeNacimiento": "1971-02-06T00:00:00",
+      "Edad": 26
+    },
+    "Caracteristicas": {
+      "Velocidad": 3,
+      "Destreza": 4,
+      "Fuerza": 5,
+      "Nivel": 5,
+      "Armadura": 8,
+      "Salud": 100
+    },
+    "Root": {
+      "response": "success",
+      "id": "213",
+      "name": "Deadpool",
+      "biography": {
+        "full-name": "Wade Wilson"
+      },
+      "appearance": {
+        "eye-color": "Brown",
+        "hair-color": "No Hair"
+      }
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Superheroe",
+      "Nombre": "Selina Kyle",
+      "Apodo": "Catwoman",
+      "FechaDeNacimiento": "2014-09-27T00:00:00",
+      "Edad": 25
+    },
+    "Caracteristicas": {
+      "Velocidad": 6,
+      "Destreza": 2,
+      "Fuerza": 10,
+      "Nivel": 7,
+      "Armadura": 4,
+      "Salud": 100
+    },
+    "Root": {
+      "response": "success",
+      "id": "165",
+      "name": "Catwoman",
+      "biography": {
+        "full-name": "Selina Kyle"
+      },
+      "appearance": {
+        "eye-color": "Green",
+        "hair-color": "Black"
       }
     }
   }

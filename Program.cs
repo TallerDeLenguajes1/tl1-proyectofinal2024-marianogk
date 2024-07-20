@@ -8,59 +8,56 @@ public class Programa
 
     public static async Task Main(string[] args)
     {
+        // Lista de id de los personajes de la api
+        List<int> idsPersonajes = new List<int> { 332, 620, 720, 70, 309, 370, 644, 346, 717, 157, 213, 165 };
 
-        Console.WriteLine("PRESIONE 1 PARA JUGAR: ");
-        int seguir = int.Parse(Console.ReadLine());
+        string archivoPersonajes = @"C:\taller1\tl1-proyectofinal2024-marianogk\characters.json";
 
-        while (seguir == 1)
+        // Crear 10 personajes si no existe el archivo
+
+        if (!File.Exists(archivoPersonajes))
         {
-
-
-            // Lista de id de los personajes de la api
-            List<int> idsPersonajes = new List<int> { 332, 659, 620, 623, 579, 165, 344, 720, 107, 69, 309 };
-
-            string archivoPersonajes = @"C:\taller1\tl1-proyectofinal2024-marianogk\characters.json";
-
-            // Crear 10 personajes si no existe el archivo
-
-            if (!File.Exists(archivoPersonajes))
+            FabricaDePersonajes fabrica = new FabricaDePersonajes();
+            List<Personaje> personajes = await PersonajesJson.LeerPersonajes(archivoPersonajes);
+            int p = 0;
+            while (personajes.Count < 12)
             {
-                FabricaDePersonajes fabrica = new FabricaDePersonajes();
-                List<Personaje> personajes = await PersonajesJson.LeerPersonajes(archivoPersonajes);
-                int p = 0;
-                while (personajes.Count < 11)
+
+                int id = idsPersonajes[p];
+                p++;
+
+                Root salida = await Api.GetPersonaje(id); // Obtener el personaje desde la API                
+
+                if (salida != null)
                 {
 
-                    int id = idsPersonajes[p];
-                    p++;
+                    Personaje personaje = fabrica.CrearPersonajeAleatorio(salida);
+                    personajes.Add(personaje);
 
-                    Root salida = await Api.GetPersonaje(id); // Obtener el personaje desde la API                
+                    // Guardar personajes en JSON
 
-                    if (salida != null)
-                    {
-
-                        Personaje personaje = fabrica.CrearPersonajeAleatorio(salida);
-                        personajes.Add(personaje);
-
-                        // Guardar personajes en JSON
-
-                        await PersonajesJson.GuardarPersonajes(personajes, archivoPersonajes);
-                        Console.WriteLine("Personaje guardado en el archivo JSON correctamente: " + archivoPersonajes);
-                    }
-                    else
-                    {
-                        Console.WriteLine("No se pudo obtener el personaje de la api");
-                    }
+                    await PersonajesJson.GuardarPersonajes(personajes, archivoPersonajes);
+                    Console.WriteLine("Personaje guardado en el archivo JSON correctamente: " + archivoPersonajes);
                 }
-
+                else
+                {
+                    Console.WriteLine("No se pudo obtener el personaje de la api");
+                }
             }
-            else
+
+        }
+        else
+        {
+            Console.WriteLine("PRESIONE 1 PARA JUGAR: ");
+            int seguir = int.Parse(Console.ReadLine());
+
+            while (seguir == 1)
             {
                 // Leer personajes desde JSON
                 List<Personaje> personajesLeidos = await PersonajesJson.LeerPersonajes(archivoPersonajes);
                 if (personajesLeidos != null)
                 {
-                    Console.WriteLine("\nPERSONAJES\n");
+                    Ascii.PersonajesTitulo();
                     PersonajesJson.MostrarNombres(personajesLeidos);
                 }
                 else
@@ -113,15 +110,18 @@ public class Programa
 
                 Console.WriteLine("\n\nEL GANADOR ES: ");
                 PersonajesJson.MostrarPersonaje(ganador);
+                Ascii.MostrarGanador(ganador);
 
                 string archivoHistorial = @"C:\taller1\tl1-proyectofinal2024-marianogk\historial.json";
 
                 await HistorialJson.GuardarGanador(ganador, archivoHistorial);
                 Console.WriteLine("Ganador guardado en el archivo de historial correctamente.");
+
+                Console.WriteLine("\nPRESIONE 1 PARA JUGAR OTRA VEZ: ");
+                seguir = int.Parse(Console.ReadLine());
             }
 
-            Console.WriteLine("\nPRESIONE 1 PARA JUGAR OTRA VEZ: ");
-            seguir = int.Parse(Console.ReadLine());
+
         };
     }
 
