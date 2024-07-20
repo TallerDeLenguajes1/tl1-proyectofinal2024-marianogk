@@ -1,7 +1,7 @@
 {
   "Tipo": "Superheroe",
-  "Nombre": "Clark Kent",
-  "Apodo": "Superman",
-  "FechaDeNacimiento": "1909-07-06T00:00:00",
-  "Edad": 14
+  "Nombre": "Logan",
+  "Apodo": "Wolverine",
+  "FechaDeNacimiento": "1968-09-27T00:00:00",
+  "Edad": 63
 }

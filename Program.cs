@@ -48,10 +48,9 @@ public class Programa
         else
         {
             Console.WriteLine("PRESIONE 1 PARA JUGAR: ");
-            int seguir = int.Parse(Console.ReadLine());
-            
+            string seguir = Console.ReadLine();
 
-            while (seguir == 1)
+            while (seguir == "1")
             {
                 // Leer personajes desde JSON
                 List<Personaje> personajesLeidos = await PersonajesJson.LeerPersonajes(archivoPersonajes);
@@ -118,18 +117,12 @@ public class Programa
                 Console.WriteLine("Ganador guardado en el archivo de historial correctamente.");
 
                 Console.WriteLine("\nPRESIONE 1 PARA JUGAR OTRA VEZ: ");
-                string input = Console.ReadLine();
-
-                if (int.TryParse(input, out seguir))
-
-                if (seguir != 1)
-                {
-                    break;
-                }
+                seguir = Console.ReadLine();
             }
             //Fin del juego
+            Ascii.Fin();
         };
-        
+
     }
 
 }
