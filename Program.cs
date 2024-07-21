@@ -47,10 +47,9 @@ public class Programa
         }
         else
         {
-            Console.WriteLine("PRESIONE 1 PARA JUGAR: ");
-            string seguir = Console.ReadLine();
+            string seguir="1";
 
-            while (seguir == "1")
+            do
             {
                 // Leer personajes desde JSON
                 List<Personaje> personajesLeidos = await PersonajesJson.LeerPersonajes(archivoPersonajes);
@@ -88,37 +87,38 @@ public class Programa
 
                 player2 = personajesLeidos[idP2];
 
-                Console.WriteLine("\nPERSONAJE 1: \n");
+                Console.WriteLine("\n+-----------------+-----------PERSONAJE 1----------+-----------------+\n");
                 PersonajesJson.MostrarPersonaje(player1);
-                Console.WriteLine("\nPERSONAJE 2: \n");
+                Console.WriteLine("\n+-----------------+-----------PERSONAJE 2----------+-----------------+\n");
                 PersonajesJson.MostrarPersonaje(player2);
 
-                // personajesElegidos.Add(player1);
-                // personajesElegidos.Add(player2);
+                // Batalla
 
-                // PersonajesJson.MostrarPersonajes(personajesElegidos);
+                Ascii.Comienzo();
 
-                // Pelear
-
-                Personaje ganador;
-
-
-                ganador = Batalla.Pelear(player1, player2);
+                Personaje ganador = Batalla.Pelear(player1, player2);
 
                 // Mostrar y guardar ganador
 
-                Console.WriteLine("\n\nEL GANADOR ES: ");
-                PersonajesJson.MostrarPersonaje(ganador);
+                Thread.Sleep(1000);
+                string texto = "\n\nEL GANADOR ES... \n";
+                Ascii.ImprimirConDelay(texto, 100);
+                Thread.Sleep(1000);
                 Ascii.MostrarGanador(ganador);
+                Thread.Sleep(1500);
+                PersonajesJson.MostrarPersonaje(ganador);
 
                 string archivoHistorial = @"C:\taller1\tl1-proyectofinal2024-marianogk\historial.json";
 
                 await HistorialJson.GuardarGanador(ganador, archivoHistorial);
                 Console.WriteLine("Ganador guardado en el archivo de historial correctamente.");
 
-                Console.WriteLine("\nPRESIONE 1 PARA JUGAR OTRA VEZ: ");
+                Thread.Sleep(1000);
+                Console.WriteLine("\nINGRESE 1 PARA JUGAR OTRA VEZ: ");
                 seguir = Console.ReadLine();
-            }
+
+            } while (seguir == "1");
+
             //Fin del juego
             Ascii.Fin();
         };

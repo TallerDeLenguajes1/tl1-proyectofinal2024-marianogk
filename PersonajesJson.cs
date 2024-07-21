@@ -73,14 +73,14 @@ public class PersonajesJson
     public static void MostrarPersonaje(Personaje pj)
     {
 
-        Console.WriteLine("-DATOS-");
+        Console.WriteLine("\n\n-DATOS-\n");
         Console.WriteLine("Tipo: " + pj.Datos.Tipo);
         Console.WriteLine("Nombre Completo: " + pj.Datos.Nombre);
         Console.WriteLine("Apodo: " + pj.Datos.Apodo);
         Console.WriteLine("Fecha de nacimiento: " + pj.Datos.FechaDeNacimiento);
         Console.WriteLine("Edad: " + pj.Datos.Edad);
 
-        Console.WriteLine("-CARACTERISTICAS-");
+        Console.WriteLine("\n-CARACTERISTICAS-\n");
         Console.WriteLine("Velocidad: " + pj.Caracteristicas.Velocidad);
         Console.WriteLine("Destreza: " + pj.Caracteristicas.Destreza);
         Console.WriteLine("Fuerza: " + pj.Caracteristicas.Fuerza);

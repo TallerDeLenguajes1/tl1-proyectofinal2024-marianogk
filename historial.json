@@ -1,7 +1,7 @@
 {
   "Tipo": "Superheroe",
-  "Nombre": "Logan",
-  "Apodo": "Wolverine",
-  "FechaDeNacimiento": "1968-09-27T00:00:00",
-  "Edad": 63
+  "Nombre": "Bruce Banner",
+  "Apodo": "Hulk",
+  "FechaDeNacimiento": "1916-04-16T00:00:00",
+  "Edad": 85
 }

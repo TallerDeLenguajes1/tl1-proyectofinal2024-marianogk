@@ -2,8 +2,6 @@ using EspacioPersonaje;
 
 public class Batalla
 {
-    Personaje personaje1, personaje2;
-
     // Destreza * Fuerza * Nivel (del personaje que ataca)
     public static int Ataque(Personaje p)
     {
@@ -27,7 +25,7 @@ public class Batalla
     // Daño provocado = (Ataque * Efectividad) - Defensa) / Constante de Ajuste
     public static float Danio(Personaje p1, Personaje p2)
     {
-        return ((Ataque(p1) * Efectividad()) - Defensa(p2)) / 500;
+        return (Math.Max(0,(Ataque(p1) * Efectividad() - Defensa(p2)) / 500));
     }
 
     // Combate de los 2 personajes
@@ -37,34 +35,30 @@ public class Batalla
         // Mientras los dos tengan salud
         do
         {
-            Console.WriteLine("Presiona una tecla para iniciar la batalla...");
+            Console.WriteLine("\nATACA PLAYER 1");
+            Console.WriteLine("\nPresiona una tecla para atacar...");
             Console.ReadKey();
-            // Player 1 ataca
+
             Console.WriteLine("\nATACA: " + p1.Datos.Apodo);
             Console.WriteLine("Salud: " + p1.Caracteristicas.Salud);
             Console.WriteLine("Daño provocado: " + Danio(p1, p2));
-            p2.Caracteristicas.Salud = p2.Caracteristicas.Salud - Danio(p1, p2);
+            p2.Caracteristicas.Salud = Math.Max(0, p2.Caracteristicas.Salud - Danio(p1, p2));
 
             // Comprobar que el player 2 tenga salud todavia
             if (p2.Caracteristicas.Salud <= 0)
             {
-                Console.WriteLine("\n" + p2.Datos.Apodo + " HA SIDO DERROTADO");
                 break;
             }
 
-            // Player 2 ataca
+            Console.WriteLine("\nATACA PLAYER 2");
+            Console.WriteLine("\nPresiona una tecla para atacar...");
+            Console.ReadKey();
 
             Console.WriteLine("\nATACA: " + p2.Datos.Apodo);
             Console.WriteLine("Salud: " + p2.Caracteristicas.Salud);
             Console.WriteLine("Daño provocado: " + Danio(p2, p1));
-            p1.Caracteristicas.Salud = p1.Caracteristicas.Salud - Danio(p2, p1);
+            p1.Caracteristicas.Salud = Math.Max(0, p1.Caracteristicas.Salud - Danio(p2, p1));
 
-            // Comprobar que el player 1 tenga salud todavia
-            if (p1.Caracteristicas.Salud <= 0)
-            {
-                Console.WriteLine("\n" + p2.Datos.Apodo + "  HA SIDO DERROTADO");
-                break;
-            }
 
         } while (p1.Caracteristicas.Salud > 0 && p2.Caracteristicas.Salud > 0);
 
