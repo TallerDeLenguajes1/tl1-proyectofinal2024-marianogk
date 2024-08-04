@@ -49,6 +49,7 @@ public class Programa
         {
             Personaje ganadorTemp = null;
             string seguir = "1";
+
             // Leer personajes desde JSON
             List<Personaje> personajesLeidos = await PersonajesJson.LeerPersonajes(archivoPersonajes);
 
@@ -68,11 +69,7 @@ public class Programa
 
             do
             {
-
                 // Elegir 2 personajes para la pelea
-
-                List<Personaje> personajesElegidos = new List<Personaje>();
-
                 Personaje player1, player2, ganador;
 
                 Random randomId = new Random();
@@ -88,31 +85,32 @@ public class Programa
                     // Crear un indice aleatorio para el personaje 1
                     int idP1 = randomId.Next(0, idsPersonajes.Count);
 
-                    // Borrar el id del personaje 1, para que no se repita
-                    idsPersonajes.RemoveAt(idP1);
-
                     player1 = personajesLeidos[idP1];
+
                 }
 
-                // Crear un indice aleatorio para el personaje 2
-                int idP2 = randomId.Next(0, idsPersonajes.Count);
-                player2 = personajesLeidos[idP2];
+                // Crear una lista de personajes disponibles para la pelea
+                List<Personaje> personajesDisponibles = new List<Personaje>(personajesLeidos);
+                personajesDisponibles.Remove(player1);
 
-                Thread.Sleep(1000);
+                 // Crear un indice aleatorio para el personaje 2
+                int idP2 = randomId.Next(0, personajesDisponibles.Count);
+                player2 = personajesDisponibles[idP2];
+
                 Console.WriteLine("\n+-----------------+-----------PERSONAJE 1----------+-----------------+\n");
                 PersonajesJson.MostrarPersonaje(player1);
-                Thread.Sleep(1000);
+                Thread.Sleep(2500);
                 Console.WriteLine("\n+-----------------+-----------PERSONAJE 2----------+-----------------+\n");
                 PersonajesJson.MostrarPersonaje(player2);
+                Thread.Sleep(2500);
 
                 // Batalla
-
                 Ascii.Comienzo();
+                Thread.Sleep(1000);
 
                 ganador = Batalla.Pelear(player1, player2);
 
                 // Mostrar y guardar ganador
-
                 Thread.Sleep(1000);
                 string texto = "\n\nEL GANADOR ES... \n";
                 Ascii.ImprimirConDelay(texto, 100);
@@ -121,17 +119,18 @@ public class Programa
                 Thread.Sleep(1500);
                 PersonajesJson.MostrarPersonaje(ganador);
 
-                // Eliminar perdedor
+                ganador.Caracteristicas.Salud = 100;
 
+                // Eliminar perdedor
                 if (ganador.Datos.Apodo == player1.Datos.Apodo)
                 {
                     ganadorTemp = player1;
-                    personajesElegidos.Remove(player2);
+                    personajesLeidos.Remove(player2);
                 }
                 else
                 {
                     ganadorTemp = player2;
-                    personajesElegidos.Remove(player1);
+                    personajesLeidos.Remove(player1);
                 }
 
                 // Guardar ganador en json
@@ -140,9 +139,12 @@ public class Programa
                 // await HistorialJson.GuardarGanador(ganador, archivoHistorial);
                 // Console.WriteLine("Ganador guardado en el archivo de historial correctamente.");
 
-                Thread.Sleep(1000);
-                Console.WriteLine("\nINGRESE 1 PARA SEGUIR JUGANDO: ");
-                seguir = Console.ReadLine();
+                if (personajesLeidos.Count > 1)
+                {
+                    Thread.Sleep(1000);
+                    Console.WriteLine("\nINGRESE 1 PARA SEGUIR JUGANDO: ");
+                    seguir = Console.ReadLine();
+                }
 
                 // Console.WriteLine("\nINGRESE 1 PARA JUGAR OTRA VEZ: ");
                 // seguir = Console.ReadLine();
