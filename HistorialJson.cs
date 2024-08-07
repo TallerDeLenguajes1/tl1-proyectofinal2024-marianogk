@@ -10,7 +10,7 @@ public class HistorialJson
     {
         try
         {
-            string jsonString = JsonSerializer.Serialize(personaje.Datos, new JsonSerializerOptions { WriteIndented = true });
+            string jsonString = JsonSerializer.Serialize(personaje, new JsonSerializerOptions { WriteIndented = true });
             await File.WriteAllTextAsync(nombreArchivo, jsonString);
             Console.WriteLine("Datos guardados en " + nombreArchivo);
         }
@@ -21,7 +21,7 @@ public class HistorialJson
     }
 
     // Metodo para leer el personaje ganador desde un archivo JSON
-    public static async Task<List<Personaje>> LeerGanador(string nombreArchivo)
+    public static async Task<List<Personaje>> LeerGanadores(string nombreArchivo)
     {
         try
         {
@@ -47,5 +47,16 @@ public class HistorialJson
     public static bool Existe(string nombreArchivo)
     {
         return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;
+    }
+
+    public static void MostrarGanadores(List<Personaje> personajes)
+    {
+        foreach (var pj in personajes)
+        {
+            Console.WriteLine($"| {pj.Datos.Apodo.PadRight(15)} | {pj.Datos.Nombre.PadRight(19)} | {pj.Datos.Tipo.PadRight(15)} |");
+            // Console.WriteLine("Apodo: " + pj.Datos.Apodo);
+            // Console.WriteLine("Nombre Completo: " + pj.Datos.Nombre);
+            // Console.WriteLine("Tipo : " + pj.Datos.Tipo);
+        }
     }
 }

@@ -11,29 +11,27 @@ public class Programa
         List<int> idsPersonajes = new List<int> { 332, 620, 720, 70, 309, 370, 644, 346, 717, 157, 213, 165 };
 
         string archivoPersonajes = @"C:\taller1\tl1-proyectofinal2024-marianogk\characters.json";
+        string archivoHistorial = @"C:\taller1\tl1-proyectofinal2024-marianogk\historial.json";
 
         string opcion = "0";
 
-        Console.WriteLine("\n1. CREAR PERSONAJES \n");
-        Console.WriteLine("\n2. JUGAR \n");
-        Console.WriteLine("\n3. SALIR \n");
-        Console.WriteLine("\nINGRESE:");
+        MenuPrincipal();
         opcion = Console.ReadLine();
 
         // Crear 10 personajes si no existe el archivo o la opcion es 1
-        if (opcion == "1")
+        if (opcion == "1" || !PersonajesJson.Existe(archivoPersonajes))
         {
-            if (File.Exists(archivoPersonajes))
+            // Elimina el archivo si existe
+            if (PersonajesJson.Existe(archivoPersonajes))
             {
                 File.Delete(archivoPersonajes);
-                await CrearPersonajes(idsPersonajes, archivoPersonajes);
             }
             else
             {
                 await CrearPersonajes(idsPersonajes, archivoPersonajes);
             }
         }
-        if (File.Exists(archivoPersonajes))
+        if (PersonajesJson.Existe(archivoPersonajes) && opcion != "3")
         {
             Personaje ganadorTemp = null;
             string seguir = "1";
@@ -126,11 +124,6 @@ public class Programa
                     personajesLeidos.Remove(player1);
                 }
 
-                // Guardar ganador en json
-                // string archivoHistorial = @"C:\taller1\tl1-proyectofinal2024-marianogk\historial.json";
-
-                // await HistorialJson.GuardarGanador(ganador, archivoHistorial);
-                // Console.WriteLine("Ganador guardado en el archivo de historial correctamente.");
 
                 if (personajesLeidos.Count > 1)
                 {
@@ -144,11 +137,25 @@ public class Programa
 
             } while (seguir == "1" && personajesLeidos.Count > 1);
 
+            if (ganadorTemp != null)
+            {
+                // Guardar ganador en json
+                await HistorialJson.GuardarGanador(ganadorTemp, archivoHistorial);
+                Console.WriteLine("Ganador guardado en el archivo de historial correctamente.");
+            }
+
             //Fin del juego
             Ascii.Fin();
         }
         else
         {
+            // Mostrar ganadores
+            if (HistorialJson.Existe(archivoHistorial))
+            {
+                List<Personaje> personajesGanadores = await HistorialJson.LeerGanadores(archivoHistorial);
+                Console.WriteLine("\nHistorial de ganadores:\n");
+                HistorialJson.MostrarGanadores(personajesGanadores);
+            }
             //Fin del juego
             Ascii.Fin();
         }
@@ -181,6 +188,14 @@ public class Programa
                     Console.WriteLine("No se pudo obtener el personaje de la api");
                 }
             }
+        }
+
+        static void MenuPrincipal()
+        {
+            Console.WriteLine("\n1. CREAR PERSONAJES \n");
+            Console.WriteLine("\n2. JUGAR \n");
+            Console.WriteLine("\n3. SALIR \n");
+            Console.WriteLine("\nINGRESE:");
         }
     }
 
