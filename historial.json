@@ -1,28 +1,28 @@
 {
   "Datos": {
     "Tipo": "Villano",
-    "Nombre": "Logan",
-    "Apodo": "Wolverine",
-    "FechaDeNacimiento": "1978-07-10T00:00:00",
-    "Edad": 46
+    "Nombre": "Selina Kyle",
+    "Apodo": "Catwoman",
+    "FechaDeNacimiento": "1911-05-27T00:00:00",
+    "Edad": 113
   },
   "Caracteristicas": {
-    "Velocidad": 10,
+    "Velocidad": 7,
     "Destreza": 3,
-    "Fuerza": 6,
-    "Nivel": 9,
+    "Fuerza": 5,
+    "Nivel": 10,
     "Armadura": 5,
     "Salud": 110
   },
   "Root": {
     "response": "success",
-    "id": "717",
-    "name": "Wolverine",
+    "id": "165",
+    "name": "Catwoman",
     "biography": {
-      "full-name": "Logan"
+      "full-name": "Selina Kyle"
     },
     "appearance": {
-      "eye-color": "Blue",
+      "eye-color": "Green",
       "hair-color": "Black"
     }
   }

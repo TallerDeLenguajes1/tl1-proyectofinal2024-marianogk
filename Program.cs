@@ -56,52 +56,23 @@ public class Programa
             do
             {
                 // Elegir 2 personajes para la pelea
+
                 Personaje player1, player2, ganador = null;
-
-                Random randomId = new Random();
-
-                // Si ya hay un ganador, sigue el mismo personaje
-
-                if (ganadorTemp != null)
-                {
-                    player1 = ganadorTemp;
-                }
-                else
-                {
-                    // Crear un indice aleatorio para el personaje 1
-                    int idP1 = randomId.Next(0, idsPersonajes.Count);
-
-                    player1 = personajesLeidos[idP1];
-
-                }
-
+                player1 = ElegirPersonaje(ganadorTemp, personajesLeidos);
                 // Guardar salud inicial player 1
                 float saludInicial1 = player1.Caracteristicas.Salud;
-
-
-                // Crear una lista de personajes disponibles para la pelea
-                List<Personaje> personajesDisponibles = new List<Personaje>(personajesLeidos);
-                personajesDisponibles.Remove(player1);
-
-                // Crear un indice aleatorio para el personaje 2
-                int idP2 = randomId.Next(0, personajesDisponibles.Count);
-                player2 = personajesDisponibles[idP2];
+                player2 = ElegirOponente(player1, personajesLeidos);
                 // Guardar salud inicial player 2
                 float saludInicial2 = player2.Caracteristicas.Salud;
 
-                Console.WriteLine("\n+-----------------+-----------PERSONAJE 1----------+-----------------+\n");
-                PersonajesJson.MostrarPersonaje(player1);
-                Thread.Sleep(2500);
-                Console.WriteLine("\n+-----------------+-----------PERSONAJE 2----------+-----------------+\n");
-                PersonajesJson.MostrarPersonaje(player2);
-                Thread.Sleep(2500);
+                // Mostrar los 2 personajes
+                MostrarContrincantes(player1, player2);
 
                 // Batalla
                 Ascii.Comienzo();
                 Thread.Sleep(1000);
 
                 ganador = Batalla.Pelear(player1, player2);
-
 
                 // Mostrar y guardar ganador
                 Thread.Sleep(1000);
@@ -111,8 +82,6 @@ public class Programa
                 Ascii.MostrarGanador(ganador);
                 Thread.Sleep(1500);
                 PersonajesJson.MostrarPersonaje(ganador);
-
-
 
                 // Eliminar perdedor
                 if (ganador.Datos.Apodo == player1.Datos.Apodo)
@@ -130,7 +99,6 @@ public class Programa
                     ganadorTemp.Caracteristicas.Salud = Batalla.AumentarSalud(saludInicial2);
                     personajesLeidos.Remove(player1);
                 }
-
 
 
                 if (personajesLeidos.Count > 1)
@@ -215,4 +183,50 @@ public class Programa
         }
     }
 
+    private static Personaje ElegirPersonaje(Personaje ganadorTemp, List<Personaje> personajesLeidos)
+    {
+        Random randomId = new Random();
+        Personaje player1;
+
+        // Si ya hay un ganador, sigue el mismo personaje
+
+        if (ganadorTemp != null)
+        {
+            player1 = ganadorTemp;
+        }
+        else
+        {
+            // Crear un indice aleatorio para el personaje 1
+            int idP1 = randomId.Next(0, personajesLeidos.Count);
+
+            player1 = personajesLeidos[idP1];
+
+        }
+        return player1;
+    }
+
+    private static Personaje ElegirOponente(Personaje player1, List<Personaje> personajesLeidos)
+    {
+        Random randomId = new Random();
+        Personaje player2;
+        
+        // Crear una lista de personajes disponibles para la pelea
+        List<Personaje> personajesDisponibles = new List<Personaje>(personajesLeidos);
+        personajesDisponibles.Remove(player1);
+
+        // Crear un indice aleatorio para el personaje 2
+        int idP2 = randomId.Next(0, personajesDisponibles.Count);
+        player2 = personajesDisponibles[idP2];
+        return player2;
+    }
+
+    private static void MostrarContrincantes(Personaje player1, Personaje player2)
+    {
+        Console.WriteLine("\n+-----------------+-----------PERSONAJE 1----------+-----------------+\n");
+        PersonajesJson.MostrarPersonaje(player1);
+        Thread.Sleep(2500);
+        Console.WriteLine("\n+-----------------+-----------PERSONAJE 2----------+-----------------+\n");
+        PersonajesJson.MostrarPersonaje(player2);
+        Thread.Sleep(2500);
+    }
 }
