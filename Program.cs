@@ -135,7 +135,7 @@ public class Programa
         // Cargar partida guardada
         if (archivoPartida != null)
         {
-            CargarPartida(archivoPartida, ganadorTemp, personajesLeidos);
+            CargarPartida(archivoPartida, ref ganadorTemp, ref personajesLeidos);
         }
         else
         {
@@ -231,7 +231,7 @@ public class Programa
             await HistorialJson.GuardarGanador(ganadorTemp, archivoHistorial);
         }
 
-        static void CargarPartida(string archivoPartida, Personaje ganadorTemp, List<Personaje> personajesLeidos)
+        static void CargarPartida(string archivoPartida, ref Personaje ganadorTemp, ref List<Personaje> personajesLeidos)
         {
             if (PartidaJson.Existe(archivoPartida))
             {
