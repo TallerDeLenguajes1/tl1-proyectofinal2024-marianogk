@@ -49,4 +49,6 @@ namespace EspacioPersonaje
         public Caracteristicas Caracteristicas { get; set; }
         public Root Root { get; set; }
     }
+
+    
 }

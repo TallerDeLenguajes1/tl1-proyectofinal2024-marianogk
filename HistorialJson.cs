@@ -10,9 +10,27 @@ public class HistorialJson
     {
         try
         {
-            string jsonString = JsonSerializer.Serialize(personaje, new JsonSerializerOptions { WriteIndented = true });
+            List<Personaje> personajes;
+
+            if (Existe(nombreArchivo))
+            {
+                // Leer los ganadores si ya existe el archivo
+                personajes = await LeerGanadores(nombreArchivo);
+            }
+            else
+            {
+                // Crear una nueva lista si el archivo no existe
+                personajes = new List<Personaje>();
+            }
+
+            // Agregar el nuevo ganador a la lista
+            personajes.Add(personaje);
+
+            // Guardar la lista en el archivo
+            string jsonString = JsonSerializer.Serialize(personajes, new JsonSerializerOptions { WriteIndented = true });
             await File.WriteAllTextAsync(nombreArchivo, jsonString);
-            Console.WriteLine("Datos guardados en " + nombreArchivo);
+
+            Console.WriteLine("Ganador agregado al archivo de historial correctamente.");
         }
         catch (Exception ex)
         {
@@ -25,7 +43,7 @@ public class HistorialJson
     {
         try
         {
-            if (File.Exists(nombreArchivo))
+            if (Existe(nombreArchivo))
             {
                 string jsonString = await File.ReadAllTextAsync(nombreArchivo);
                 List<Personaje> personajes = JsonSerializer.Deserialize<List<Personaje>>(jsonString);
