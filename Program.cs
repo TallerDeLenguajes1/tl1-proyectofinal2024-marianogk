@@ -14,7 +14,6 @@ public class Programa
         string archivoHistorial = @"C:\taller1\tl1-proyectofinal2024-marianogk\historial.json";
 
         string opcionMenu = "0";
-
         do
         {
             MenuPrincipal();
@@ -211,7 +210,6 @@ public class Programa
         {
             // Guardar ganador en json
             await HistorialJson.GuardarGanador(ganadorTemp, archivoHistorial);
-            Console.WriteLine("Ganador guardado en el archivo de historial correctamente.");
         }
     }
 }

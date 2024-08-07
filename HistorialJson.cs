@@ -30,7 +30,7 @@ public class HistorialJson
             string jsonString = JsonSerializer.Serialize(personajes, new JsonSerializerOptions { WriteIndented = true });
             await File.WriteAllTextAsync(nombreArchivo, jsonString);
 
-            Console.WriteLine("Ganador agregado al archivo de historial correctamente.");
+            Console.WriteLine("Ganador guardado en el archivo de historial correctamente.");
         }
         catch (Exception ex)
         {
@@ -69,12 +69,11 @@ public class HistorialJson
 
     public static void MostrarGanadores(List<Personaje> personajes)
     {
+        Console.WriteLine("|     Apodo       |  Nombre Completo    |      Tipo       |");
         foreach (var pj in personajes)
         {
+            
             Console.WriteLine($"| {pj.Datos.Apodo.PadRight(15)} | {pj.Datos.Nombre.PadRight(19)} | {pj.Datos.Tipo.PadRight(15)} |");
-            // Console.WriteLine("Apodo: " + pj.Datos.Apodo);
-            // Console.WriteLine("Nombre Completo: " + pj.Datos.Nombre);
-            // Console.WriteLine("Tipo : " + pj.Datos.Tipo);
         }
     }
 }

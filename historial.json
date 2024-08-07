@@ -1,0 +1,60 @@
+[
+  {
+    "Datos": {
+      "Tipo": "Superheroe",
+      "Nombre": "Clark Kent",
+      "Apodo": "Superman",
+      "FechaDeNacimiento": "2012-05-03T00:00:00",
+      "Edad": 12
+    },
+    "Caracteristicas": {
+      "Velocidad": 4,
+      "Destreza": 5,
+      "Fuerza": 9,
+      "Nivel": 7,
+      "Armadura": 8,
+      "Salud": 190
+    },
+    "Root": {
+      "response": "success",
+      "id": "644",
+      "name": "Superman",
+      "biography": {
+        "full-name": "Clark Kent"
+      },
+      "appearance": {
+        "eye-color": "Blue",
+        "hair-color": "Black"
+      }
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Villano",
+      "Nombre": "Carol Danvers",
+      "Apodo": "Captain Marvel",
+      "FechaDeNacimiento": "1903-03-15T00:00:00",
+      "Edad": 121
+    },
+    "Caracteristicas": {
+      "Velocidad": 8,
+      "Destreza": 5,
+      "Fuerza": 7,
+      "Nivel": 10,
+      "Armadura": 7,
+      "Salud": 180
+    },
+    "Root": {
+      "response": "success",
+      "id": "157",
+      "name": "Captain Marvel",
+      "biography": {
+        "full-name": "Carol Danvers"
+      },
+      "appearance": {
+        "eye-color": "Blue",
+        "hair-color": "Blond"
+      }
+    }
+  }
+]
