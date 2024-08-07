@@ -75,8 +75,9 @@ public class Programa
 
                 }
 
-                // Guardar salud inicial
-                float saludInicial = player1.Caracteristicas.Salud;
+                // Guardar salud inicial player 1
+                float saludInicial1 = player1.Caracteristicas.Salud;
+
 
                 // Crear una lista de personajes disponibles para la pelea
                 List<Personaje> personajesDisponibles = new List<Personaje>(personajesLeidos);
@@ -85,6 +86,8 @@ public class Programa
                 // Crear un indice aleatorio para el personaje 2
                 int idP2 = randomId.Next(0, personajesDisponibles.Count);
                 player2 = personajesDisponibles[idP2];
+                // Guardar salud inicial player 2
+                float saludInicial2 = player2.Caracteristicas.Salud;
 
                 Console.WriteLine("\n+-----------------+-----------PERSONAJE 1----------+-----------------+\n");
                 PersonajesJson.MostrarPersonaje(player1);
@@ -109,33 +112,45 @@ public class Programa
                 Thread.Sleep(1500);
                 PersonajesJson.MostrarPersonaje(ganador);
 
-                // Aumentar salud ganador
-                ganador.Caracteristicas.Salud = Batalla.AumentarSalud(saludInicial);
+
 
                 // Eliminar perdedor
                 if (ganador.Datos.Apodo == player1.Datos.Apodo)
                 {
                     ganadorTemp = player1;
+                    // Aumentar salud ganador
+                    ganadorTemp.Caracteristicas.Salud = Batalla.AumentarSalud(saludInicial1);
                     personajesLeidos.Remove(player2);
                 }
                 else
                 {
+
                     ganadorTemp = player2;
+                    // Aumentar salud ganador
+                    ganadorTemp.Caracteristicas.Salud = Batalla.AumentarSalud(saludInicial2);
                     personajesLeidos.Remove(player1);
                 }
+
 
 
                 if (personajesLeidos.Count > 1)
                 {
                     Thread.Sleep(1000);
                     Console.WriteLine("\nINGRESE 1 PARA SEGUIR JUGANDO: ");
+                    Console.WriteLine("\nINGRESE 2 PARA GUARDAR LA PARTIDA: \n");
                     seguir = Console.ReadLine();
+
                 }
 
                 // Console.WriteLine("\nINGRESE 1 PARA JUGAR OTRA VEZ: ");
                 // seguir = Console.ReadLine();
 
             } while (seguir == "1" && personajesLeidos.Count > 1);
+
+            if (seguir == "2")
+            {
+                // Guardar partida
+            }
 
             if (ganadorTemp != null)
             {
@@ -194,7 +209,8 @@ public class Programa
         {
             Console.WriteLine("\n1. CREAR PERSONAJES \n");
             Console.WriteLine("\n2. JUGAR \n");
-            Console.WriteLine("\n3. SALIR \n");
+            Console.WriteLine("\n3. MOSTRAR HISTORIAL \n");
+            Console.WriteLine("\n4. SALIR \n");
             Console.WriteLine("\nINGRESE:");
         }
     }

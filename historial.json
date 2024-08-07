@@ -1,0 +1,29 @@
+{
+  "Datos": {
+    "Tipo": "Villano",
+    "Nombre": "Logan",
+    "Apodo": "Wolverine",
+    "FechaDeNacimiento": "1978-07-10T00:00:00",
+    "Edad": 46
+  },
+  "Caracteristicas": {
+    "Velocidad": 10,
+    "Destreza": 3,
+    "Fuerza": 6,
+    "Nivel": 9,
+    "Armadura": 5,
+    "Salud": 110
+  },
+  "Root": {
+    "response": "success",
+    "id": "717",
+    "name": "Wolverine",
+    "biography": {
+      "full-name": "Logan"
+    },
+    "appearance": {
+      "eye-color": "Blue",
+      "hair-color": "Black"
+    }
+  }
+}
