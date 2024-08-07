@@ -5,18 +5,19 @@ using EspacioPersonaje;
 class FabricaDePersonajes
 {
     private static readonly Random random = new Random();
-    private readonly string[] tipo = ["Superheroe", "Villano"];
+    private readonly string[] tipo = {"Superheroe", "Villano"};
     public Personaje CrearPersonajeAleatorio(Root apiResult)
     {
         int i = random.Next(2);
+        DateTime fechaNacimiento = GenerarNacimiento();
         
         Datos datos = new Datos
         {
             Tipo = tipo[i],
             Nombre = apiResult.biography.Fullname,
             Apodo = apiResult.name,
-            FechaDeNacimiento = GenerarNacimiento(),
-            Edad = CalcularEdad(GenerarNacimiento())
+            FechaDeNacimiento = fechaNacimiento,
+            Edad = CalcularEdad(fechaNacimiento)
         };
 
         Caracteristicas caracteristicas = new Caracteristicas
@@ -47,14 +48,18 @@ class FabricaDePersonajes
         // Generamos un día aleatorio dentro del rango válido para el mes
         int day = random.Next(1, maxDay + 1);
 
-        // Creamos la fecha de nacimiento aleatoria
-        DateTime fechaNacimiento = new DateTime(year, month, day);
-
-        return fechaNacimiento;
+        // Retorna la fecha de nacimiento aleatoria
+        return new DateTime(year, month, day);
     }
     private int CalcularEdad(DateTime fechaNacimiento)
     {
         int edad = DateTime.Today.Year - fechaNacimiento.Year;
+
+        // Si aun no cumplio, resta uno
+        if (DateTime.Today < fechaNacimiento.AddYears(edad))
+        {
+            edad--;
+        }
 
         return edad;
     }

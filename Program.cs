@@ -12,40 +12,28 @@ public class Programa
 
         string archivoPersonajes = @"C:\taller1\tl1-proyectofinal2024-marianogk\characters.json";
 
-        // Crear 10 personajes si no existe el archivo
+        string opcion = "0";
 
-        if (!File.Exists(archivoPersonajes))
+        Console.WriteLine("\n1. CREAR PERSONAJES \n");
+        Console.WriteLine("\n2. JUGAR \n");
+        Console.WriteLine("\n3. SALIR \n");
+        Console.WriteLine("\nINGRESE:");
+        opcion = Console.ReadLine();
+
+        // Crear 10 personajes si no existe el archivo o la opcion es 1
+        if (opcion == "1")
         {
-            FabricaDePersonajes fabrica = new FabricaDePersonajes();
-            List<Personaje> personajes = await PersonajesJson.LeerPersonajes(archivoPersonajes);
-            int p = 0; // indice para la lista de los indices de personajes
-            while (personajes.Count < 12)
+            if (File.Exists(archivoPersonajes))
             {
-
-                int id = idsPersonajes[p];
-                p++;
-
-                Root salida = await Api.GetPersonaje(id); // Obtener el personaje desde la API                
-
-                if (salida != null)
-                {
-
-                    Personaje personaje = fabrica.CrearPersonajeAleatorio(salida);
-                    personajes.Add(personaje);
-
-                    // Guardar personajes en JSON
-
-                    await PersonajesJson.GuardarPersonajes(personajes, archivoPersonajes);
-                    Console.WriteLine("Personaje guardado en el archivo JSON correctamente: " + archivoPersonajes);
-                }
-                else
-                {
-                    Console.WriteLine("No se pudo obtener el personaje de la api");
-                }
+                File.Delete(archivoPersonajes);
+                await CrearPersonajes(idsPersonajes, archivoPersonajes);
             }
-
+            else
+            {
+                await CrearPersonajes(idsPersonajes, archivoPersonajes);
+            }
         }
-        else
+        if (File.Exists(archivoPersonajes))
         {
             Personaje ganadorTemp = null;
             string seguir = "1";
@@ -158,8 +146,42 @@ public class Programa
 
             //Fin del juego
             Ascii.Fin();
-        };
+        }
+        else
+        {
+            //Fin del juego
+            Ascii.Fin();
+        }
 
+        static async Task CrearPersonajes(List<int> idsPersonajes, string archivoPersonajes)
+        {
+            FabricaDePersonajes fabrica = new FabricaDePersonajes();
+            List<Personaje> personajes = await PersonajesJson.LeerPersonajes(archivoPersonajes);
+            int p = 0; // indice para la lista de los indices de personajes
+            while (personajes.Count < 12)
+            {
+                int id = idsPersonajes[p];
+                p++;
+
+                Root salida = await Api.GetPersonaje(id); // Obtener el personaje desde la API                
+
+                if (salida != null)
+                {
+
+                    Personaje personaje = fabrica.CrearPersonajeAleatorio(salida);
+                    personajes.Add(personaje);
+
+                    // Guardar personajes en JSON
+
+                    await PersonajesJson.GuardarPersonajes(personajes, archivoPersonajes);
+                    Console.WriteLine("Personaje guardado en el archivo JSON correctamente: " + archivoPersonajes);
+                }
+                else
+                {
+                    Console.WriteLine("No se pudo obtener el personaje de la api");
+                }
+            }
+        }
     }
 
 }
