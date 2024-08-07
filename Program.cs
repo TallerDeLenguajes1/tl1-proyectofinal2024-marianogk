@@ -70,7 +70,7 @@ public class Programa
             do
             {
                 // Elegir 2 personajes para la pelea
-                Personaje player1, player2, ganador;
+                Personaje player1, player2, ganador = null;
 
                 Random randomId = new Random();
 
@@ -89,11 +89,14 @@ public class Programa
 
                 }
 
+                // Guardar salud inicial
+                float saludInicial = player1.Caracteristicas.Salud;
+
                 // Crear una lista de personajes disponibles para la pelea
                 List<Personaje> personajesDisponibles = new List<Personaje>(personajesLeidos);
                 personajesDisponibles.Remove(player1);
 
-                 // Crear un indice aleatorio para el personaje 2
+                // Crear un indice aleatorio para el personaje 2
                 int idP2 = randomId.Next(0, personajesDisponibles.Count);
                 player2 = personajesDisponibles[idP2];
 
@@ -110,6 +113,7 @@ public class Programa
 
                 ganador = Batalla.Pelear(player1, player2);
 
+
                 // Mostrar y guardar ganador
                 Thread.Sleep(1000);
                 string texto = "\n\nEL GANADOR ES... \n";
@@ -119,7 +123,8 @@ public class Programa
                 Thread.Sleep(1500);
                 PersonajesJson.MostrarPersonaje(ganador);
 
-                ganador.Caracteristicas.Salud = 100;
+                // Aumentar salud ganador
+                ganador.Caracteristicas.Salud = Batalla.AumentarSalud(saludInicial);
 
                 // Eliminar perdedor
                 if (ganador.Datos.Apodo == player1.Datos.Apodo)
