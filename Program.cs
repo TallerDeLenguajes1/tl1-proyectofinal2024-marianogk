@@ -12,6 +12,7 @@ public class Programa
 
         string archivoPersonajes = @"C:\taller1\tl1-proyectofinal2024-marianogk\characters.json";
         string archivoHistorial = @"C:\taller1\tl1-proyectofinal2024-marianogk\historial.json";
+        string archivoPartida = @"C:\taller1\tl1-proyectofinal2024-marianogk\partida.json";
 
         string opcionMenu = "0";
         do
@@ -35,7 +36,7 @@ public class Programa
                 case "2":
                     if (PersonajesJson.Existe(archivoPersonajes))
                     {
-                        await Jugar(archivoPersonajes, archivoHistorial);
+                        await Jugar(archivoPersonajes, archivoHistorial, null);
                     }
                     else
                     {
@@ -44,7 +45,14 @@ public class Programa
                     break;
 
                 case "3":
-                    Console.WriteLine("\nCargando partida...\n");// En desarrollo
+                    if (PartidaJson.Existe(archivoPartida))
+                    {
+                        await Jugar(archivoPartida, archivoHistorial, archivoPartida);
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nNo se encontró ninguna partida guardada.\n");
+                    }
                     break;
 
                 case "4":
@@ -60,10 +68,12 @@ public class Programa
                         Console.WriteLine("\nTodavia no hay historial de ganadores\n");
                     }
                     break;
+
                 case "5":
                     Console.WriteLine("\nSaliendo del juego...\n");
                     opcionMenu = "5";
                     break;
+
                 default:
                     Console.WriteLine("\nOpcionMenu no valida. Ingrese de nuevo\n");
                     break;
@@ -95,11 +105,11 @@ public class Programa
                 // Guardar personajes en JSON
 
                 await PersonajesJson.GuardarPersonajes(personajes, archivoPersonajes);
-                Console.WriteLine("Personaje guardado en el archivo JSON correctamente: " + archivoPersonajes);
+                Console.WriteLine("\nPersonaje guardado en el archivo JSON correctamente: " + archivoPersonajes);
             }
             else
             {
-                Console.WriteLine("No se pudo obtener el personaje de la api");
+                Console.WriteLine("\nNo se pudo obtener el personaje de la api");
             }
         }
     }
@@ -115,29 +125,39 @@ public class Programa
     }
 
 
-    private static async Task Jugar(string archivoPersonajes, string archivoHistorial)
+    private static async Task Jugar(string archivoPersonajes, string archivoHistorial, string archivoPartida)
     {
         Personaje ganadorTemp = null;
         string seguirJugando = "1";
 
-        // Leer personajes desde JSON
-        List<Personaje> personajesLeidos = await PersonajesJson.LeerPersonajes(archivoPersonajes);
+        List<Personaje> personajesLeidos = null;
 
-        if (personajesLeidos != null )
+        // Cargar partida guardada
+        if (archivoPartida != null)
         {
-            Ascii.PersonajesTitulo();
-            PersonajesJson.MostrarNombres(personajesLeidos);
+            CargarPartida(archivoPartida, ganadorTemp, personajesLeidos);
         }
         else
         {
-            Console.WriteLine("No se encontraron personajes en el archivo JSON.");
-            return;
+
+            // Leer personajes desde JSON
+            personajesLeidos = await PersonajesJson.LeerPersonajes(archivoPersonajes);
+
+            if (personajesLeidos != null)
+            {
+                Ascii.PersonajesTitulo();
+                PersonajesJson.MostrarNombres(personajesLeidos);
+            }
+            else
+            {
+                Console.WriteLine("No se encontraron personajes en el archivo JSON.");
+                return;
+            }
+
+            Console.WriteLine("\nA continuacion se eligiran dos personajes aleatorios");
+            Console.WriteLine("\nPresiona una tecla para seguir...");
+            Console.ReadKey();
         }
-
-        Console.WriteLine("\nA continuacion se eligiran dos personajes aleatorios");
-        Console.WriteLine("\nPresiona una tecla para seguir...");
-        Console.ReadKey();
-
         do
         {
             // Elegir 2 personajes para la pelea
@@ -194,22 +214,42 @@ public class Programa
                 Console.WriteLine("\nINGRESE 3 PARA SALIR SIN GUARDAR: \n");
                 seguirJugando = Console.ReadLine();
 
+                if (seguirJugando == "2")
+                {
+                    // Guardar partida
+                    PartidaJson partida = new PartidaJson(ganadorTemp, personajesLeidos);
+                    PartidaJson.GuardarPartida(partida, archivoPartida, ganadorTemp);
+                    Console.WriteLine("\nPartida guardada correctamente.");
+                }
             }
 
-            // Console.WriteLine("\nINGRESE 1 PARA JUGAR OTRA VEZ: ");
-            // seguir = Console.ReadLine();
-
         } while (seguirJugando == "1" && personajesLeidos.Count > 1);
-
-        if (seguirJugando == "2")
-        {
-            // Guardar partida
-        }
 
         if (ganadorTemp != null && personajesLeidos.Count == 1)
         {
             // Guardar ganador en json
             await HistorialJson.GuardarGanador(ganadorTemp, archivoHistorial);
         }
+
+        static void CargarPartida(string archivoPartida, Personaje ganadorTemp, List<Personaje> personajesLeidos)
+        {
+            if (PartidaJson.Existe(archivoPartida))
+            {
+                PartidaJson partida = PartidaJson.CargarPartida(archivoPartida);
+                if (partida != null)
+                {
+                    ganadorTemp = partida.Jugador;
+                    personajesLeidos = partida.Oponentes;
+                    Console.WriteLine("\nPartida cargada exitosamente.");
+                }
+                else
+                {
+                    Console.WriteLine("No se pudo cargar la partida.");
+                    return;
+                }
+            }
+        }
     }
+
+
 }

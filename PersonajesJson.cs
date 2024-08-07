@@ -12,11 +12,11 @@ public class PersonajesJson
         {
             string jsonString = JsonSerializer.Serialize(personajes, new JsonSerializerOptions { WriteIndented = true });
             await File.WriteAllTextAsync(nombreArchivo, jsonString);
-            Console.WriteLine("Datos guardados en " + nombreArchivo);
+            Console.WriteLine("\nDatos guardados en " + nombreArchivo);
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error al guardar el archivo: " + ex.Message);
+            Console.WriteLine("\nError al guardar el archivo: " + ex.Message);
         }
     }
 
@@ -38,7 +38,7 @@ public class PersonajesJson
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error al leer el archivo: " + ex.Message);
+            Console.WriteLine("\nError al leer el archivo: " + ex.Message);
             return new List<Personaje>();
         }
     }

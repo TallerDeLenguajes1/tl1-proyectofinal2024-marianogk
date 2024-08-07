@@ -43,7 +43,7 @@ public class Batalla
             Console.WriteLine("\nATACA PERSONAJE 1");
             if (saltar == "1")
             {
-                Console.WriteLine("\nPresiona una tecla para atacar...");
+                Console.WriteLine("\nPresiona una tecla para que ataque...");
                 Console.ReadKey();
             }
 
@@ -60,11 +60,11 @@ public class Batalla
             }
 
             Console.WriteLine("\nATACA PERSONAJE 2");
-            // if (saltar == "1")
-            // {
-            //     Console.WriteLine("\nPresiona una tecla para defender...");
-            //     Console.ReadKey();
-            // }
+            if (saltar == "1")
+            {
+                Console.WriteLine("\nPresiona una tecla para que ataque...");
+                Console.ReadKey();
+            }
 
             Console.WriteLine("\nATACA: " + p2.Datos.Apodo);
             Console.WriteLine("Salud: " + p2.Caracteristicas.Salud);

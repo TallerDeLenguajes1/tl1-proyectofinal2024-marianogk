@@ -30,11 +30,11 @@ public class HistorialJson
             string jsonString = JsonSerializer.Serialize(personajes, new JsonSerializerOptions { WriteIndented = true });
             await File.WriteAllTextAsync(nombreArchivo, jsonString);
 
-            Console.WriteLine("Ganador guardado en el archivo de historial correctamente.");
+            Console.WriteLine("\nGanador guardado en el archivo de historial correctamente.");
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error al guardar el archivo: " + ex.Message);
+            Console.WriteLine("\nError al guardar el archivo: " + ex.Message);
         }
     }
 
@@ -56,7 +56,7 @@ public class HistorialJson
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error al leer el archivo: " + ex.Message);
+            Console.WriteLine("\nError al leer el archivo: " + ex.Message);
             return new List<Personaje>();
         }
     }
@@ -69,7 +69,8 @@ public class HistorialJson
 
     public static void MostrarGanadores(List<Personaje> personajes)
     {
-        Console.WriteLine("|     Apodo       |  Nombre Completo    |      Tipo       |");
+        Console.WriteLine("|     Apodo       |  Nombre Completo    |      Tipo       |\n");
+
         foreach (var pj in personajes)
         {
             
