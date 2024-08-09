@@ -10,9 +10,9 @@ public class Programa
         // Lista de id de los personajes de la api
         List<int> idsPersonajes = new List<int> { 332, 620, 720, 70, 309, 370, 644, 346, 717, 157, 213, 165 };
 
-        string archivoPersonajes = @"C:\taller1\tl1-proyectofinal2024-marianogk\characters.json";
-        string archivoHistorial = @"C:\taller1\tl1-proyectofinal2024-marianogk\historial.json";
-        string archivoPartida = @"C:\taller1\tl1-proyectofinal2024-marianogk\partida.json";
+        string archivoPersonajes = "characters.json";
+        string archivoHistorial = "historial.json";
+        string archivoPartida = "partida.json";
 
         string opcionMenu = "0";
         do
@@ -36,7 +36,7 @@ public class Programa
                 case "2":
                     if (PersonajesJson.Existe(archivoPersonajes))
                     {
-                        await Jugar(archivoPersonajes, archivoHistorial, null);
+                        await Jugar(archivoPersonajes, archivoHistorial, archivoPartida, false);
                     }
                     else
                     {
@@ -47,7 +47,7 @@ public class Programa
                 case "3":
                     if (PartidaJson.Existe(archivoPartida))
                     {
-                        await Jugar(archivoPartida, archivoHistorial, archivoPartida);
+                        await Jugar(archivoPersonajes, archivoHistorial, archivoPartida, true);
                     }
                     else
                     {
@@ -75,7 +75,7 @@ public class Programa
                     break;
 
                 default:
-                    Console.WriteLine("\nOpcionMenu no valida. Ingrese de nuevo\n");
+                    Console.WriteLine("\nOpcion no valida. Ingrese de nuevo\n");
                     break;
             }
 
@@ -125,7 +125,7 @@ public class Programa
     }
 
 
-    private static async Task Jugar(string archivoPersonajes, string archivoHistorial, string archivoPartida)
+    private static async Task Jugar(string archivoPersonajes, string archivoHistorial, string archivoPartida, bool cargar)
     {
         Personaje ganadorTemp = null;
         string seguirJugando = "1";
@@ -133,8 +133,9 @@ public class Programa
         List<Personaje> personajesLeidos = null;
 
         // Cargar partida guardada
-        if (archivoPartida != null)
+        if (cargar)
         {
+
             CargarPartida(archivoPartida, ref ganadorTemp, ref personajesLeidos);
         }
         else
@@ -155,7 +156,7 @@ public class Programa
             }
 
             Console.WriteLine("\nA continuacion se eligiran dos personajes aleatorios");
-            Console.WriteLine("\nPresiona una tecla para seguir...");
+            Console.WriteLine("\nPresione una tecla para seguir...");
             Console.ReadKey();
         }
         do
@@ -165,10 +166,10 @@ public class Programa
             Personaje player1, player2, ganador = null;
             player1 = PersonajesJson.ElegirPersonaje(ganadorTemp, personajesLeidos);
             // Guardar salud inicial player 1
-            float saludInicial1 = player1.Caracteristicas.Salud;
+            float saludInicial1 = PersonajesFn.GetSaludInicial(player1);
             player2 = PersonajesJson.ElegirOponente(player1, personajesLeidos);
             // Guardar salud inicial player 2
-            float saludInicial2 = player2.Caracteristicas.Salud;
+            float saludInicial2 = PersonajesFn.GetSaludInicial(player2);
 
             // Mostrar los 2 personajes
             PersonajesJson.MostrarContrincantes(player1, player2);
@@ -216,10 +217,19 @@ public class Programa
 
                 if (seguirJugando == "2")
                 {
-                    // Guardar partida
+                    personajesLeidos.Remove(ganadorTemp); // Eliminar ganador para que no se repita
                     PartidaJson partida = new PartidaJson(ganadorTemp, personajesLeidos);
-                    PartidaJson.GuardarPartida(partida, archivoPartida, ganadorTemp);
-                    Console.WriteLine("\nPartida guardada correctamente.");
+
+                    try // Crear partida para guardarla
+                    {
+                        PartidaJson.GuardarPartida(partida, archivoPartida);
+                        Console.WriteLine("\nPartida guardada correctamente.");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error al guardar la partida: {ex.Message}");
+                    }
+
                 }
             }
 
@@ -229,6 +239,7 @@ public class Programa
         {
             // Guardar ganador en json
             await HistorialJson.GuardarGanador(ganadorTemp, archivoHistorial);
+            Thread.Sleep(2000);
         }
 
         static void CargarPartida(string archivoPartida, ref Personaje ganadorTemp, ref List<Personaje> personajesLeidos)
@@ -249,6 +260,7 @@ public class Programa
                 }
             }
         }
+
     }
 
 
