@@ -25,6 +25,7 @@ public class Programa
             switch (opcionMenu)
             {
                 case "1":
+                    Console.WriteLine("\nCreando personajes...");
                     // Elimina el archivo si existe
                     if (PersonajesJson.Existe(archivoPersonajes))
                     {
@@ -98,20 +99,17 @@ public class Programa
 
             if (salida != null)
             {
-
                 Personaje personaje = fabrica.CrearPersonajeAleatorio(salida);
                 personajes.Add(personaje);
-
-                // Guardar personajes en JSON
-
-                await PersonajesJson.GuardarPersonajes(personajes, archivoPersonajes);
-                Console.WriteLine("\nPersonaje guardado en el archivo JSON correctamente: " + archivoPersonajes);
             }
             else
             {
                 Console.WriteLine("\nNo se pudo obtener el personaje de la api");
             }
         }
+
+        // Guardar personajes en JSON
+        await PersonajesJson.GuardarPersonajes(personajes, archivoPersonajes);
     }
 
     static void MenuPrincipal()
@@ -123,7 +121,6 @@ public class Programa
         Console.WriteLine("\n5. SALIR ");
         Console.WriteLine("\nINGRESE:");
     }
-
 
     private static async Task Jugar(string archivoPersonajes, string archivoHistorial, string archivoPartida, bool cargar)
     {

@@ -56,5 +56,92 @@
         "hair-color": "Blond"
       }
     }
+  },
+  {
+    "Datos": {
+      "Tipo": "Villano",
+      "Nombre": "Tony Stark",
+      "Apodo": "Iron Man",
+      "FechaDeNacimiento": "1920-09-30T00:00:00",
+      "Edad": 103
+    },
+    "Caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 4,
+      "Fuerza": 8,
+      "Nivel": 9,
+      "Armadura": 6,
+      "Salud": 210
+    },
+    "Root": {
+      "response": "success",
+      "id": "346",
+      "name": "Iron Man",
+      "biography": {
+        "full-name": "Tony Stark"
+      },
+      "appearance": {
+        "eye-color": "Blue",
+        "hair-color": "Black"
+      }
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Villano",
+      "Nombre": "Tony Stark",
+      "Apodo": "Iron Man",
+      "FechaDeNacimiento": "1920-09-30T00:00:00",
+      "Edad": 103
+    },
+    "Caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 4,
+      "Fuerza": 8,
+      "Nivel": 9,
+      "Armadura": 6,
+      "Salud": 210
+    },
+    "Root": {
+      "response": "success",
+      "id": "346",
+      "name": "Iron Man",
+      "biography": {
+        "full-name": "Tony Stark"
+      },
+      "appearance": {
+        "eye-color": "Blue",
+        "hair-color": "Black"
+      }
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Villano",
+      "Nombre": "Tony Stark",
+      "Apodo": "Iron Man",
+      "FechaDeNacimiento": "1920-09-30T00:00:00",
+      "Edad": 103
+    },
+    "Caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 4,
+      "Fuerza": 8,
+      "Nivel": 9,
+      "Armadura": 6,
+      "Salud": 210
+    },
+    "Root": {
+      "response": "success",
+      "id": "346",
+      "name": "Iron Man",
+      "biography": {
+        "full-name": "Tony Stark"
+      },
+      "appearance": {
+        "eye-color": "Blue",
+        "hair-color": "Black"
+      }
+    }
   }
 ]
