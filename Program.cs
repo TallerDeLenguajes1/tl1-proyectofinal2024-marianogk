@@ -8,26 +8,25 @@ public class Programa
     public static async Task Main(string[] args)
     {
         // Lista de id de los personajes de la api
-        List<int> idsPersonajes = new List<int> { 332, 620, 720, 70, 309, 370, 644, 346, 717, 157, 213, 165 };
+        List<int> idsPersonajes = [332, 620, 720, 70, 309, 370, 644, 346, 717, 157, 213, 165];
 
         string archivoPersonajes = "characters.json";
         string archivoHistorial = "historial.json";
         string archivoPartida = "partida.json";
 
-        string opcionMenu = "0";
+        string opcionMenu;
         do
         {
+            Ascii.JuegoTitulo();
             Ascii.MenuPrincipal();
             opcionMenu = Console.ReadLine();
-
-            // Crear 10 personajes si no existe el archivo o la opcion es 1
 
             switch (opcionMenu)
             {
                 case "1":
                     Console.WriteLine("\nCreando personajes...");
                     // Elimina el archivo si existe
-                    await PersonajesFn.VolverACrear(idsPersonajes, archivoPersonajes);
+                    await PersonajesFn.ActualizarPersonajes(idsPersonajes, archivoPersonajes);
                     break;
 
                 case "2":
@@ -54,11 +53,12 @@ public class Programa
 
                 case "4":
                     // Mostrar ganadores
-                    await MostrarGanadores(archivoHistorial);
+                    await PersonajesFn.MostrarGanadores(archivoHistorial);
                     break;
 
                 case "5":
                     Console.WriteLine("\nSaliendo del juego...\n");
+                    Thread.Sleep(1000);
                     opcionMenu = "5";
                     break;
 
@@ -72,26 +72,13 @@ public class Programa
         Ascii.Fin();
     }
 
-    private static async Task MostrarGanadores(string archivoHistorial)
-    {
-        if (HistorialJson.Existe(archivoHistorial))
-        {
-            List<Personaje> personajesGanadores = await HistorialJson.LeerGanadores(archivoHistorial);
-            Console.WriteLine("\nHistorial de ganadores:\n");
-            HistorialJson.MostrarGanadores(personajesGanadores);
-        }
-        else
-        {
-            Console.WriteLine("\nTodavia no hay historial de ganadores\n");
-        }
-    }
-
+    //------------------------------Funciones---------------------------/
     private static async Task Jugar(string archivoPersonajes, string archivoHistorial, string archivoPartida, bool cargar)
     {
         Personaje ganadorTemp = null;
         string seguirJugando = "1";
 
-        List<Personaje> personajesLeidos = null;
+        List<Personaje> personajesLeidos;
 
         // Cargar partida guardada
         if (cargar)
@@ -99,7 +86,6 @@ public class Programa
             var (ganador, personajes) = PersonajesFn.CargarPartida(archivoPartida);
             ganadorTemp = ganador;
             personajesLeidos = personajes;
-            // CargarPartida(archivoPartida);
         }
         else
         {
@@ -169,7 +155,6 @@ public class Programa
             Thread.Sleep(2000);
         }
 
-
     }
 
     // Determina si gano el personaje 1 o 2, le asigna la salud al ganador, y elimina el perdedor de la lista
@@ -181,7 +166,6 @@ public class Programa
             ganadorTemp = player1;
             // Aumentar salud ganador
             PersonajesFn.ModificarSalud(ganadorTemp, Batalla.BonusSalud(saludInicial1));
-            // ganadorTemp.Caracteristicas.Salud = Batalla.BonusSalud(saludInicial1);
             personajesLeidos.Remove(player2);
         }
         else
@@ -190,7 +174,6 @@ public class Programa
             ganadorTemp = player2;
             // Aumentar salud ganador
             PersonajesFn.ModificarSalud(ganadorTemp, Batalla.BonusSalud(saludInicial2));
-            // ganadorTemp.Caracteristicas.Salud = Batalla.BonusSalud(saludInicial2);
             personajesLeidos.Remove(player1);
         }
 

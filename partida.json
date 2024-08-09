@@ -2,28 +2,28 @@
   "Jugador": {
     "Datos": {
       "Tipo": "Villano",
-      "Nombre": "Selina Kyle",
-      "Apodo": "Catwoman",
-      "FechaDeNacimiento": "1907-11-28T00:00:00",
-      "Edad": 116
+      "Nombre": "Diana Prince",
+      "Apodo": "Wonder Woman",
+      "FechaDeNacimiento": "1903-05-31T00:00:00",
+      "Edad": 121
     },
     "Caracteristicas": {
-      "Velocidad": 5,
+      "Velocidad": 1,
       "Destreza": 5,
       "Fuerza": 9,
-      "Nivel": 7,
-      "Armadura": 7,
-      "Salud": 140
+      "Nivel": 3,
+      "Armadura": 3,
+      "Salud": 110
     },
     "Root": {
       "response": "success",
-      "id": "165",
-      "name": "Catwoman",
+      "id": "720",
+      "name": "Wonder Woman",
       "biography": {
-        "full-name": "Selina Kyle"
+        "full-name": "Diana Prince"
       },
       "appearance": {
-        "eye-color": "Green",
+        "eye-color": "Blue",
         "hair-color": "Black"
       }
     }
@@ -31,18 +31,18 @@
   "Oponentes": [
     {
       "Datos": {
-        "Tipo": "Superheroe",
+        "Tipo": "Villano",
         "Nombre": "Bruce Banner",
         "Apodo": "Hulk",
-        "FechaDeNacimiento": "1955-05-04T00:00:00",
-        "Edad": 69
+        "FechaDeNacimiento": "1997-02-19T00:00:00",
+        "Edad": 27
       },
       "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 2,
-        "Fuerza": 2,
-        "Nivel": 9,
-        "Armadura": 4,
+        "Velocidad": 8,
+        "Destreza": 5,
+        "Fuerza": 1,
+        "Nivel": 5,
+        "Armadura": 8,
         "Salud": 100
       },
       "Root": {
@@ -60,18 +60,18 @@
     },
     {
       "Datos": {
-        "Tipo": "Villano",
+        "Tipo": "Superheroe",
         "Nombre": "Peter Parker",
         "Apodo": "Spider-Man",
-        "FechaDeNacimiento": "1994-07-24T00:00:00",
-        "Edad": 30
+        "FechaDeNacimiento": "1921-04-01T00:00:00",
+        "Edad": 103
       },
       "Caracteristicas": {
-        "Velocidad": 1,
+        "Velocidad": 9,
         "Destreza": 1,
-        "Fuerza": 9,
-        "Nivel": 1,
-        "Armadura": 6,
+        "Fuerza": 4,
+        "Nivel": 5,
+        "Armadura": 9,
         "Salud": 100
       },
       "Root": {
@@ -89,18 +89,47 @@
     },
     {
       "Datos": {
+        "Tipo": "Superheroe",
+        "Nombre": "Bruce Wayne",
+        "Apodo": "Batman",
+        "FechaDeNacimiento": "1989-04-27T00:00:00",
+        "Edad": 35
+      },
+      "Caracteristicas": {
+        "Velocidad": 9,
+        "Destreza": 1,
+        "Fuerza": 3,
+        "Nivel": 9,
+        "Armadura": 4,
+        "Salud": 100
+      },
+      "Root": {
+        "response": "success",
+        "id": "70",
+        "name": "Batman",
+        "biography": {
+          "full-name": "Bruce Wayne"
+        },
+        "appearance": {
+          "eye-color": "blue",
+          "hair-color": "black"
+        }
+      }
+    },
+    {
+      "Datos": {
         "Tipo": "Villano",
         "Nombre": "Harley Quinn",
         "Apodo": "Harley Quinn",
-        "FechaDeNacimiento": "1908-08-31T00:00:00",
-        "Edad": 115
+        "FechaDeNacimiento": "1980-02-26T00:00:00",
+        "Edad": 44
       },
       "Caracteristicas": {
-        "Velocidad": 10,
+        "Velocidad": 2,
         "Destreza": 2,
-        "Fuerza": 8,
-        "Nivel": 3,
-        "Armadura": 3,
+        "Fuerza": 10,
+        "Nivel": 5,
+        "Armadura": 7,
         "Salud": 100
       },
       "Root": {
@@ -118,18 +147,47 @@
     },
     {
       "Datos": {
-        "Tipo": "Superheroe",
-        "Nombre": "Clark Kent",
-        "Apodo": "Superman",
-        "FechaDeNacimiento": "1905-06-13T00:00:00",
-        "Edad": 119
+        "Tipo": "Villano",
+        "Nombre": "Jack Napier",
+        "Apodo": "Joker",
+        "FechaDeNacimiento": "1980-06-09T00:00:00",
+        "Edad": 44
       },
       "Caracteristicas": {
-        "Velocidad": 4,
-        "Destreza": 5,
-        "Fuerza": 4,
-        "Nivel": 1,
-        "Armadura": 6,
+        "Velocidad": 3,
+        "Destreza": 3,
+        "Fuerza": 10,
+        "Nivel": 3,
+        "Armadura": 1,
+        "Salud": 100
+      },
+      "Root": {
+        "response": "success",
+        "id": "370",
+        "name": "Joker",
+        "biography": {
+          "full-name": "Jack Napier"
+        },
+        "appearance": {
+          "eye-color": "Green",
+          "hair-color": "Green"
+        }
+      }
+    },
+    {
+      "Datos": {
+        "Tipo": "Villano",
+        "Nombre": "Clark Kent",
+        "Apodo": "Superman",
+        "FechaDeNacimiento": "2012-09-26T00:00:00",
+        "Edad": 11
+      },
+      "Caracteristicas": {
+        "Velocidad": 9,
+        "Destreza": 4,
+        "Fuerza": 1,
+        "Nivel": 3,
+        "Armadura": 7,
         "Salud": 100
       },
       "Root": {
@@ -147,17 +205,17 @@
     },
     {
       "Datos": {
-        "Tipo": "Villano",
+        "Tipo": "Superheroe",
         "Nombre": "Tony Stark",
         "Apodo": "Iron Man",
-        "FechaDeNacimiento": "1921-09-17T00:00:00",
-        "Edad": 102
+        "FechaDeNacimiento": "1921-06-06T00:00:00",
+        "Edad": 103
       },
       "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 1,
-        "Fuerza": 3,
-        "Nivel": 8,
+        "Velocidad": 10,
+        "Destreza": 5,
+        "Fuerza": 10,
+        "Nivel": 2,
         "Armadura": 1,
         "Salud": 100
       },
@@ -179,15 +237,15 @@
         "Tipo": "Superheroe",
         "Nombre": "Logan",
         "Apodo": "Wolverine",
-        "FechaDeNacimiento": "1995-02-13T00:00:00",
-        "Edad": 29
+        "FechaDeNacimiento": "2013-02-04T00:00:00",
+        "Edad": 11
       },
       "Caracteristicas": {
-        "Velocidad": 9,
-        "Destreza": 2,
-        "Fuerza": 7,
-        "Nivel": 4,
-        "Armadura": 7,
+        "Velocidad": 8,
+        "Destreza": 3,
+        "Fuerza": 9,
+        "Nivel": 8,
+        "Armadura": 6,
         "Salud": 100
       },
       "Root": {
@@ -208,15 +266,15 @@
         "Tipo": "Superheroe",
         "Nombre": "Carol Danvers",
         "Apodo": "Captain Marvel",
-        "FechaDeNacimiento": "1994-07-31T00:00:00",
-        "Edad": 30
+        "FechaDeNacimiento": "1903-09-30T00:00:00",
+        "Edad": 120
       },
       "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 2,
-        "Fuerza": 8,
-        "Nivel": 1,
-        "Armadura": 2,
+        "Velocidad": 2,
+        "Destreza": 4,
+        "Fuerza": 3,
+        "Nivel": 5,
+        "Armadura": 10,
         "Salud": 100
       },
       "Root": {
@@ -229,6 +287,35 @@
         "appearance": {
           "eye-color": "Blue",
           "hair-color": "Blond"
+        }
+      }
+    },
+    {
+      "Datos": {
+        "Tipo": "Villano",
+        "Nombre": "Selina Kyle",
+        "Apodo": "Catwoman",
+        "FechaDeNacimiento": "1987-09-26T00:00:00",
+        "Edad": 36
+      },
+      "Caracteristicas": {
+        "Velocidad": 1,
+        "Destreza": 1,
+        "Fuerza": 1,
+        "Nivel": 7,
+        "Armadura": 1,
+        "Salud": 100
+      },
+      "Root": {
+        "response": "success",
+        "id": "165",
+        "name": "Catwoman",
+        "biography": {
+          "full-name": "Selina Kyle"
+        },
+        "appearance": {
+          "eye-color": "Green",
+          "hair-color": "Black"
         }
       }
     }

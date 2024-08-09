@@ -30,7 +30,7 @@ public static class PersonajesFn
     }
 
     // Borrar personajes, y crearlos de nuevo
-    public static async Task VolverACrear(List<int> idsPersonajes, string archivoPersonajes)
+    public static async Task ActualizarPersonajes(List<int> idsPersonajes, string archivoPersonajes)
     {
         if (PersonajesJson.Existe(archivoPersonajes))
         {
@@ -199,5 +199,19 @@ public static class PersonajesFn
         Ascii.MostrarGanador(ganador);
         Thread.Sleep(1500);
         MostrarPersonaje(ganador);
+    }
+
+        public static async Task MostrarGanadores(string archivoHistorial)
+    {
+        if (HistorialJson.Existe(archivoHistorial))
+        {
+            List<Personaje> personajesGanadores = await HistorialJson.LeerGanadores(archivoHistorial);
+            Console.WriteLine("\nHistorial de ganadores:\n");
+            HistorialJson.MostrarGanadores(personajesGanadores);
+        }
+        else
+        {
+            Console.WriteLine("\nTodavia no hay historial de ganadores\n");
+        }
     }
 }
