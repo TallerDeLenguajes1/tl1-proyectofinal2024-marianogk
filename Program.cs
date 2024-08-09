@@ -27,11 +27,7 @@ public class Programa
                 case "1":
                     Console.WriteLine("\nCreando personajes...");
                     // Elimina el archivo si existe
-                    if (PersonajesJson.Existe(archivoPersonajes))
-                    {
-                        File.Delete(archivoPersonajes);
-                    }
-                    await PersonajesFn.CrearPersonajes(idsPersonajes, archivoPersonajes);
+                    await PersonajesFn.VolverACrear(idsPersonajes, archivoPersonajes);
                     break;
 
                 case "2":
@@ -58,16 +54,7 @@ public class Programa
 
                 case "4":
                     // Mostrar ganadores
-                    if (HistorialJson.Existe(archivoHistorial))
-                    {
-                        List<Personaje> personajesGanadores = await HistorialJson.LeerGanadores(archivoHistorial);
-                        Console.WriteLine("\nHistorial de ganadores:\n");
-                        HistorialJson.MostrarGanadores(personajesGanadores);
-                    }
-                    else
-                    {
-                        Console.WriteLine("\nTodavia no hay historial de ganadores\n");
-                    }
+                    await MostrarGanadores(archivoHistorial);
                     break;
 
                 case "5":
@@ -85,6 +72,19 @@ public class Programa
         Ascii.Fin();
     }
 
+    private static async Task MostrarGanadores(string archivoHistorial)
+    {
+        if (HistorialJson.Existe(archivoHistorial))
+        {
+            List<Personaje> personajesGanadores = await HistorialJson.LeerGanadores(archivoHistorial);
+            Console.WriteLine("\nHistorial de ganadores:\n");
+            HistorialJson.MostrarGanadores(personajesGanadores);
+        }
+        else
+        {
+            Console.WriteLine("\nTodavia no hay historial de ganadores\n");
+        }
+    }
 
     private static async Task Jugar(string archivoPersonajes, string archivoHistorial, string archivoPartida, bool cargar)
     {
@@ -96,8 +96,10 @@ public class Programa
         // Cargar partida guardada
         if (cargar)
         {
-
-            CargarPartida(archivoPartida, ref ganadorTemp, ref personajesLeidos);
+            var (ganador, personajes) = PersonajesFn.CargarPartida(archivoPartida);
+            ganadorTemp = ganador;
+            personajesLeidos = personajes;
+            // CargarPartida(archivoPartida);
         }
         else
         {
@@ -141,41 +143,14 @@ public class Programa
 
             ganador = Batalla.Pelear(player1, player2);
 
-            // Mostrar y guardar ganador
-            Thread.Sleep(1000);
-            string texto = "\n\nEL GANADOR ES... \n";
-            Ascii.ImprimirConDelay(texto, 100);
-            Thread.Sleep(1000);
-            Ascii.MostrarGanador(ganador);
-            Thread.Sleep(1500);
-            PersonajesFn.MostrarPersonaje(ganador);
+            PersonajesFn.MostrarGanadorBatalla(ganador);
 
-            // Eliminar perdedor
-            if (ganador.Datos.Apodo == player1.Datos.Apodo)
-            {
-                ganadorTemp = player1;
-                // Aumentar salud ganador
-                PersonajesFn.ModificarSalud(ganadorTemp, Batalla.BonusSalud(saludInicial1));
-                // ganadorTemp.Caracteristicas.Salud = Batalla.BonusSalud(saludInicial1);
-                personajesLeidos.Remove(player2);
-            }
-            else
-            {
-
-                ganadorTemp = player2;
-                // Aumentar salud ganador
-                PersonajesFn.ModificarSalud(ganadorTemp, Batalla.BonusSalud(saludInicial2));
-                // ganadorTemp.Caracteristicas.Salud = Batalla.BonusSalud(saludInicial2);
-                personajesLeidos.Remove(player1);
-            }
-
+            // Asignar ganador
+            ganadorTemp = PersonajeGanador(personajesLeidos, player1, player2, ganador, saludInicial1, saludInicial2);
 
             if (personajesLeidos.Count > 1)
             {
-                Thread.Sleep(1000);
-                Console.WriteLine("\nINGRESE 1 PARA SEGUIR JUGANDO: ");
-                Console.WriteLine("\nINGRESE 2 PARA GUARDAR LA PARTIDA: ");
-                Console.WriteLine("\nINGRESE 3 PARA SALIR SIN GUARDAR: \n");
+                Ascii.MenuSecundario();
                 seguirJugando = Console.ReadLine();
 
                 if (seguirJugando == "2")
@@ -194,25 +169,32 @@ public class Programa
             Thread.Sleep(2000);
         }
 
+
     }
 
-
-    static void CargarPartida(string archivoPartida, ref Personaje ganadorTemp, ref List<Personaje> personajesLeidos)
+    // Determina si gano el personaje 1 o 2, le asigna la salud al ganador, y elimina el perdedor de la lista
+    public static Personaje PersonajeGanador(List<Personaje> personajesLeidos, Personaje player1, Personaje player2, Personaje ganador, float saludInicial1, float saludInicial2)
     {
-        if (PartidaJson.Existe(archivoPartida))
+        Personaje ganadorTemp;
+        if (PersonajesFn.CompararNombres(player1, ganador))
         {
-            PartidaJson partida = PartidaJson.CargarPartida(archivoPartida);
-            if (partida != null)
-            {
-                ganadorTemp = partida.Jugador;
-                personajesLeidos = partida.Oponentes;
-                Console.WriteLine("\nPartida cargada exitosamente.");
-            }
-            else
-            {
-                Console.WriteLine("No se pudo cargar la partida.");
-                return;
-            }
+            ganadorTemp = player1;
+            // Aumentar salud ganador
+            PersonajesFn.ModificarSalud(ganadorTemp, Batalla.BonusSalud(saludInicial1));
+            // ganadorTemp.Caracteristicas.Salud = Batalla.BonusSalud(saludInicial1);
+            personajesLeidos.Remove(player2);
         }
+        else
+        {
+
+            ganadorTemp = player2;
+            // Aumentar salud ganador
+            PersonajesFn.ModificarSalud(ganadorTemp, Batalla.BonusSalud(saludInicial2));
+            // ganadorTemp.Caracteristicas.Salud = Batalla.BonusSalud(saludInicial2);
+            personajesLeidos.Remove(player1);
+        }
+
+        return ganadorTemp;
     }
+
 }

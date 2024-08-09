@@ -13,7 +13,7 @@
       "Fuerza": 9,
       "Nivel": 7,
       "Armadura": 7,
-      "Salud": 120
+      "Salud": 140
     },
     "Root": {
       "response": "success",
@@ -113,35 +113,6 @@
         "appearance": {
           "eye-color": "Blue",
           "hair-color": "Blond"
-        }
-      }
-    },
-    {
-      "Datos": {
-        "Tipo": "Villano",
-        "Nombre": "Jack Napier",
-        "Apodo": "Joker",
-        "FechaDeNacimiento": "1957-12-22T00:00:00",
-        "Edad": 66
-      },
-      "Caracteristicas": {
-        "Velocidad": 9,
-        "Destreza": 4,
-        "Fuerza": 6,
-        "Nivel": 9,
-        "Armadura": 5,
-        "Salud": 100
-      },
-      "Root": {
-        "response": "success",
-        "id": "370",
-        "name": "Joker",
-        "biography": {
-          "full-name": "Jack Napier"
-        },
-        "appearance": {
-          "eye-color": "Green",
-          "hair-color": "Green"
         }
       }
     },
@@ -258,35 +229,6 @@
         "appearance": {
           "eye-color": "Blue",
           "hair-color": "Blond"
-        }
-      }
-    },
-    {
-      "Datos": {
-        "Tipo": "Villano",
-        "Nombre": "Wade Wilson",
-        "Apodo": "Deadpool",
-        "FechaDeNacimiento": "1995-05-09T00:00:00",
-        "Edad": 29
-      },
-      "Caracteristicas": {
-        "Velocidad": 6,
-        "Destreza": 1,
-        "Fuerza": 9,
-        "Nivel": 1,
-        "Armadura": 4,
-        "Salud": 100
-      },
-      "Root": {
-        "response": "success",
-        "id": "213",
-        "name": "Deadpool",
-        "biography": {
-          "full-name": "Wade Wilson"
-        },
-        "appearance": {
-          "eye-color": "Brown",
-          "hair-color": "No Hair"
         }
       }
     }

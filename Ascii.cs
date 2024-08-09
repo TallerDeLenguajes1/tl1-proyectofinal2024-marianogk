@@ -12,6 +12,14 @@ public class Ascii
         Console.WriteLine("\nINGRESE:");
     }
 
+    public static void MenuSecundario()
+    {
+        Thread.Sleep(1000);
+        Console.WriteLine("\nINGRESE 1 PARA SEGUIR JUGANDO: ");
+        Console.WriteLine("\nINGRESE 2 PARA GUARDAR LA PARTIDA: ");
+        Console.WriteLine("\nINGRESE 3 PARA SALIR SIN GUARDAR: \n");
+    }
+
     public static void PersonajesTitulo()
     {
         Console.WriteLine("");
