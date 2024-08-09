@@ -17,7 +17,7 @@ public class Programa
         string opcionMenu = "0";
         do
         {
-            MenuPrincipal();
+            Ascii.MenuPrincipal();
             opcionMenu = Console.ReadLine();
 
             // Crear 10 personajes si no existe el archivo o la opcion es 1
@@ -31,7 +31,7 @@ public class Programa
                     {
                         File.Delete(archivoPersonajes);
                     }
-                    await CrearPersonajes(idsPersonajes, archivoPersonajes);
+                    await PersonajesFn.CrearPersonajes(idsPersonajes, archivoPersonajes);
                     break;
 
                 case "2":
@@ -85,42 +85,6 @@ public class Programa
         Ascii.Fin();
     }
 
-    static async Task CrearPersonajes(List<int> idsPersonajes, string archivoPersonajes)
-    {
-        FabricaDePersonajes fabrica = new FabricaDePersonajes();
-        List<Personaje> personajes = await PersonajesJson.LeerPersonajes(archivoPersonajes);
-        int p = 0; // indice para la lista de los indices de personajes
-        while (personajes.Count < 12)
-        {
-            int id = idsPersonajes[p];
-            p++;
-
-            Root salida = await Api.GetPersonaje(id); // Obtener el personaje desde la API                
-
-            if (salida != null)
-            {
-                Personaje personaje = fabrica.CrearPersonajeAleatorio(salida);
-                personajes.Add(personaje);
-            }
-            else
-            {
-                Console.WriteLine("\nNo se pudo obtener el personaje de la api");
-            }
-        }
-
-        // Guardar personajes en JSON
-        await PersonajesJson.GuardarPersonajes(personajes, archivoPersonajes);
-    }
-
-    static void MenuPrincipal()
-    {
-        Console.WriteLine("\n1. CREAR PERSONAJES ");
-        Console.WriteLine("\n2. NUEVA PARTIDA ");
-        Console.WriteLine("\n3. CARGAR PARTIDA ");
-        Console.WriteLine("\n4. MOSTRAR HISTORIAL ");
-        Console.WriteLine("\n5. SALIR ");
-        Console.WriteLine("\nINGRESE:");
-    }
 
     private static async Task Jugar(string archivoPersonajes, string archivoHistorial, string archivoPartida, bool cargar)
     {
@@ -144,7 +108,7 @@ public class Programa
             if (personajesLeidos != null)
             {
                 Ascii.PersonajesTitulo();
-                PersonajesJson.MostrarNombres(personajesLeidos);
+                PersonajesFn.MostrarNombres(personajesLeidos);
             }
             else
             {
@@ -161,15 +125,15 @@ public class Programa
             // Elegir 2 personajes para la pelea
 
             Personaje player1, player2, ganador = null;
-            player1 = PersonajesJson.ElegirPersonaje(ganadorTemp, personajesLeidos);
+            player1 = PersonajesFn.ElegirPersonaje(ganadorTemp, personajesLeidos);
             // Guardar salud inicial player 1
             float saludInicial1 = PersonajesFn.GetSaludInicial(player1);
-            player2 = PersonajesJson.ElegirOponente(player1, personajesLeidos);
+            player2 = PersonajesFn.ElegirOponente(player1, personajesLeidos);
             // Guardar salud inicial player 2
             float saludInicial2 = PersonajesFn.GetSaludInicial(player2);
 
             // Mostrar los 2 personajes
-            PersonajesJson.MostrarContrincantes(player1, player2);
+            PersonajesFn.MostrarContrincantes(player1, player2);
 
             // Batalla
             Ascii.Comienzo();
@@ -184,14 +148,15 @@ public class Programa
             Thread.Sleep(1000);
             Ascii.MostrarGanador(ganador);
             Thread.Sleep(1500);
-            PersonajesJson.MostrarPersonaje(ganador);
+            PersonajesFn.MostrarPersonaje(ganador);
 
             // Eliminar perdedor
             if (ganador.Datos.Apodo == player1.Datos.Apodo)
             {
                 ganadorTemp = player1;
                 // Aumentar salud ganador
-                ganadorTemp.Caracteristicas.Salud = Batalla.AumentarSalud(saludInicial1);
+                PersonajesFn.ModificarSalud(ganadorTemp, Batalla.BonusSalud(saludInicial1));
+                // ganadorTemp.Caracteristicas.Salud = Batalla.BonusSalud(saludInicial1);
                 personajesLeidos.Remove(player2);
             }
             else
@@ -199,7 +164,8 @@ public class Programa
 
                 ganadorTemp = player2;
                 // Aumentar salud ganador
-                ganadorTemp.Caracteristicas.Salud = Batalla.AumentarSalud(saludInicial2);
+                PersonajesFn.ModificarSalud(ganadorTemp, Batalla.BonusSalud(saludInicial2));
+                // ganadorTemp.Caracteristicas.Salud = Batalla.BonusSalud(saludInicial2);
                 personajesLeidos.Remove(player1);
             }
 
@@ -214,18 +180,7 @@ public class Programa
 
                 if (seguirJugando == "2")
                 {
-                    personajesLeidos.Remove(ganadorTemp); // Eliminar ganador para que no se repita
-                    PartidaJson partida = new PartidaJson(ganadorTemp, personajesLeidos);
-
-                    try // Crear partida para guardarla
-                    {
-                        PartidaJson.GuardarPartida(partida, archivoPartida);
-                        Console.WriteLine("\nPartida guardada correctamente.");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Error al guardar la partida: {ex.Message}");
-                    }
+                    PersonajesFn.GuardarPartida(archivoPartida, ganadorTemp, personajesLeidos);
 
                 }
             }
@@ -239,26 +194,25 @@ public class Programa
             Thread.Sleep(2000);
         }
 
-        static void CargarPartida(string archivoPartida, ref Personaje ganadorTemp, ref List<Personaje> personajesLeidos)
-        {
-            if (PartidaJson.Existe(archivoPartida))
-            {
-                PartidaJson partida = PartidaJson.CargarPartida(archivoPartida);
-                if (partida != null)
-                {
-                    ganadorTemp = partida.Jugador;
-                    personajesLeidos = partida.Oponentes;
-                    Console.WriteLine("\nPartida cargada exitosamente.");
-                }
-                else
-                {
-                    Console.WriteLine("No se pudo cargar la partida.");
-                    return;
-                }
-            }
-        }
-
     }
 
 
+    static void CargarPartida(string archivoPartida, ref Personaje ganadorTemp, ref List<Personaje> personajesLeidos)
+    {
+        if (PartidaJson.Existe(archivoPartida))
+        {
+            PartidaJson partida = PartidaJson.CargarPartida(archivoPartida);
+            if (partida != null)
+            {
+                ganadorTemp = partida.Jugador;
+                personajesLeidos = partida.Oponentes;
+                Console.WriteLine("\nPartida cargada exitosamente.");
+            }
+            else
+            {
+                Console.WriteLine("No se pudo cargar la partida.");
+                return;
+            }
+        }
+    }
 }

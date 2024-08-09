@@ -2,6 +2,15 @@ using EspacioPersonaje;
 
 public class Ascii
 {
+    public static void MenuPrincipal()
+    {
+        Console.WriteLine("\n1. CREAR PERSONAJES ");
+        Console.WriteLine("\n2. NUEVA PARTIDA ");
+        Console.WriteLine("\n3. CARGAR PARTIDA ");
+        Console.WriteLine("\n4. MOSTRAR HISTORIAL ");
+        Console.WriteLine("\n5. SALIR ");
+        Console.WriteLine("\nINGRESE:");
+    }
 
     public static void PersonajesTitulo()
     {
@@ -535,7 +544,7 @@ public class Ascii
         Console.WriteLine(texto);
     }
 
-     public static void ImprimirConDelay(string texto, int ms)
+    public static void ImprimirConDelay(string texto, int ms)
     {
         foreach (char c in texto)
         {

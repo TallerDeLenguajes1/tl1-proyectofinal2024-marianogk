@@ -85,9 +85,9 @@ public class Batalla
         }
     }
 
-    public static float AumentarSalud(float saludInicial)
+    public static float BonusSalud(float saludInicial)
     {
-         // Aumentar salud del ganador en 10, cada vez que gane
-        return saludInicial +=10;
+        // Aumentar salud del ganador en 10, cada vez que gane
+        return saludInicial += 10;
     }
 }
