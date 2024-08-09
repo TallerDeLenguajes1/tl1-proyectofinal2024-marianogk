@@ -7,36 +7,21 @@ using System.Text.Json.Serialization;
 
 public class PartidaJson
 {
-    // Propiedades privadas con getter y setter privados
-    [JsonInclude] // Permite que estas propiedades sean serializadas y deserializadas a través de JSON
     public Personaje Jugador { get; private set; }
-
-    [JsonInclude] // Permite que estas propiedades sean serializadas y deserializadas a través de JSON
     public List<Personaje> Oponentes { get; private set; }
-
-    // Método para guardar una partida en un archivo JSON
-    [JsonConstructor]
     public PartidaJson(Personaje jugador, List<Personaje> oponentes)
     {
         Jugador = jugador;
         Oponentes = oponentes;
     }
 
-    // Metodo para guardar una lista de personajes en un archivo JSON
-    public static void GuardarPartida(PartidaJson partida, string archivoPartida, Personaje ganadorTemporal)
+    // Metodo para guardar la lista de personajes de la partida en un archivo JSON
+    public static void GuardarPartida(PartidaJson partida, string archivoPartida)
     {
         try
         {
-            var opciones = new JsonSerializerOptions { WriteIndented = true };
-            using (var archivo = new FileStream(archivoPartida, FileMode.Create))
-            {
-                using (var strWriter = new StreamWriter(archivo))
-                {
-                    string json = JsonSerializer.Serialize(partida, opciones);
-                    strWriter.WriteLine(json);
-                    strWriter.Flush();
-                }
-            }
+            string jsonString = JsonSerializer.Serialize(partida, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(archivoPartida, jsonString);
         }
         catch (Exception ex)
         {
@@ -47,27 +32,27 @@ public class PartidaJson
     // Metodo para leer partida desde un archivo JSON
     public static PartidaJson CargarPartida(string archivoPartida)
     {
-        PartidaJson partida = null;
+        // PartidaJson partida = null;
+        if (!Existe(archivoPartida))
+        {
+            Console.WriteLine("El archivo no existe.");
+            return null;
+        }
         try
         {
-            if (Existe(archivoPartida))
-            {
-                using (var archivoOpen = new FileStream(archivoPartida, FileMode.Open))
-                {
-                    using (var strReader = new StreamReader(archivoOpen))
-                    {
-                        string json = strReader.ReadToEnd();
-                        partida = JsonSerializer.Deserialize<PartidaJson>(json);
-                    }
-                }
-            }
+            // Leer el contenido del archivo
+            string json = File.ReadAllText(archivoPartida);
+
+            // Deserializar el contenido JSON en un objeto PartidaJson
+            PartidaJson partida = JsonSerializer.Deserialize<PartidaJson>(json);
+
+            return partida;
         }
         catch (Exception ex)
         {
             Console.WriteLine("\nError al leer el archivo: " + ex.Message);
-
+            return null;
         }
-        return partida;
     }
 
     // Metodo para verificar si un archivo existe y tiene datos
@@ -76,8 +61,4 @@ public class PartidaJson
         return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;
     }
 
-    internal static PartidaJson CargarPartida(object archivoPartida)
-    {
-        throw new NotImplementedException();
-    }
 }
