@@ -18,3 +18,26 @@ Sistema de Daño: El daño causado por cada ataque se basa en las característic
 #### . Destreza: Mide la habilidad del personaje para ejecutar ataques precisos en combate.
 #### . Armadura: La armadura define la capacidad del personaje para resistir daño físico durante el combate.
 #### . Nivel: Nivel de experiencia del personaje.
+
+## Como Jugar
+### Menú Principal:
+
+![Captura de pantalla 2024-08-09 210936](https://github.com/user-attachments/assets/de254a22-a36a-4a09-a4fd-93ba853639c0)
+
+
+#### 1. Creación de Personajes:
+Selecciona la opción 1 en el menú principal para crear un conjunto de personajes aleatorios de la lista predefinida. Estos personajes se almacenan en un archivo JSON (characters.json).
+
+#### 2. Iniciar un Juego:
+Selecciona la opción 2 en el menú principal para iniciar un nuevo juego. El juego seleccionará al azar dos personajes para que luchen entre sí.
+La batalla continúa hasta que solo quede un personaje en pie.
+Puedes elegir guardar el juego en cualquier momento y continuar más tarde.
+
+#### 3. Continuar una Partida Guardada:
+Selecciona la opción 3 en el menú principal para continuar una partida guardada. El juego cargará el último estado guardado.
+
+#### 4. Ver el Historial de Ganadores:
+Selecciona la opción 4 para ver una lista de todos los personajes que han ganado juegos anteriores.
+
+![Captura de pantalla 2024-08-09 211011](https://github.com/user-attachments/assets/912e87bd-05c3-413d-a1ea-d0cc8961b3c8)
+
