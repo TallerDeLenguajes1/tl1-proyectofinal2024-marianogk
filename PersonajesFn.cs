@@ -203,7 +203,6 @@ public static class PersonajesFn
         Console.WriteLine("\nComic: " + ganador.Datos.Comic);
         Console.WriteLine("Lugar de nacimiento: " + ganador.Datos.LugarDeNacimiento);
         Console.WriteLine("Ocupacion: " + ganador.Datos.Trabajo);
-        Console.WriteLine(ganador.Datos.BaseT);
     }
 
     public static void MostrarGanadores(List<Personaje> personajes)

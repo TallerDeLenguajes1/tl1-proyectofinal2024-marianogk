@@ -20,8 +20,7 @@ class FabricaDePersonajes
             Edad = CalcularEdad(fechaNacimiento),
             LugarDeNacimiento = apiResult.biography.placeofbirth,
             Comic = apiResult.biography.publisher,
-            Trabajo = apiResult.work.occupation,
-            BaseT = apiResult.work.BaseT
+            Trabajo = apiResult.work.occupation
         };
 
         Caracteristicas caracteristicas = new Caracteristicas

@@ -50,7 +50,6 @@ namespace EspacioPersonaje
         public string LugarDeNacimiento { get; set; }
         public string Comic { get; set; }
         public string Trabajo { get; set; }
-        public string BaseT { get; set; }
     }
     public class Caracteristicas
     {
