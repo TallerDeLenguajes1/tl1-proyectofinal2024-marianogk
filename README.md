@@ -41,3 +41,25 @@ Selecciona la opción 4 para ver una lista de todos los personajes que han ganad
 
 ![Captura de pantalla 2024-08-09 211011](https://github.com/user-attachments/assets/912e87bd-05c3-413d-a1ea-d0cc8961b3c8)
 
+##### Se eligen dos personajes y comienza el combate.
+
+![Captura de pantalla 2024-08-09 211340](https://github.com/user-attachments/assets/6e6fbad6-55a7-4523-9661-8c3aca2b2d10)
+
+## Combate
+
+![Captura de pantalla 2024-08-09 211353](https://github.com/user-attachments/assets/37a7f945-0187-4768-9a53-160d1a780871)
+
+### Funcionamiento
+#### 1. Turnos Alternados: Cada personaje ataca por turnos. El jugador 1 ataca primero, seguido por el jugador 2.
+#### 2. Ataque: Cuando un personaje ataca, se muestra un mensaje en la pantalla indicando el nombre del personaje que ataca, su salud actual, y el daño provocado al oponente.
+#### 3. Condiciones de Victoria: El combate continúa hasta que la salud de uno de los personajes llega a 0, declarando al otro personaje como ganador.
+
+##### Ejemplo de combate
+
+![Captura de pantalla 2024-08-09 211423](https://github.com/user-attachments/assets/5a976464-6d78-4875-81dc-7d04c4610d02)
+
+![Captura de pantalla 2024-08-09 211457](https://github.com/user-attachments/assets/ddd5ed30-bf02-410c-8a08-4414452a8cf1)
+
+### Ganador Final: 
+##### Una vez que solo queda un personaje en pie, este se consagra como el Ganador Final del combate y se guarda en el historial de ganadores.
+
