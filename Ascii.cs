@@ -58,6 +58,8 @@ public class Ascii
 
     public static void Perdiste()
     {
+        Console.WriteLine("");
+        Console.WriteLine("");
         Console.WriteLine("        ▒▒▒▒▒▒▒▒▒▒▒▄▄▄▄░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
         Console.WriteLine("        ▒▒▒▒▒▒▒▒▒▄██████▒▒▒▒▒▄▄▄█▄▒▒▒▒▒▒▒▒▒▒");
         Console.WriteLine("        ▒▒▒▒▒▒▒▄██▀░░▀██▄▒▒▒▒████████▄▒▒▒▒▒▒");

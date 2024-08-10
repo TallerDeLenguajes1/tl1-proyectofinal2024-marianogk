@@ -2,37 +2,37 @@
   "Jugador": {
     "Datos": {
       "Tipo": "Superheroe",
-      "Nombre": "Tony Stark",
-      "Apodo": "Iron Man",
-      "FechaDeNacimiento": "1967-07-06T00:00:00",
-      "Edad": 57,
-      "LugarDeNacimiento": "Long Island, New York",
-      "Comic": "Marvel Comics",
-      "Trabajo": "Inventor, Industrialist; former United States Secretary of Defense",
+      "Nombre": "Diana Prince",
+      "Apodo": "Wonder Woman",
+      "FechaDeNacimiento": "1962-05-31T00:00:00",
+      "Edad": 62,
+      "LugarDeNacimiento": "Themyscira",
+      "Comic": "DC Comics",
+      "Trabajo": "Adventurer, Emissary to the world of Man, Protector of Paradise Island; former Goddess of Truth",
       "BaseT": null
     },
     "Caracteristicas": {
-      "Velocidad": 4,
-      "Destreza": 2,
-      "Fuerza": 5,
-      "Nivel": 4,
+      "Velocidad": 7,
+      "Destreza": 5,
+      "Fuerza": 4,
+      "Nivel": 10,
       "Armadura": 2,
       "Salud": 120
     },
     "Root": {
       "response": "success",
       "Id": null,
-      "name": "Iron Man",
+      "name": "Wonder Woman",
       "biography": {
-        "full-name": "Tony Stark",
-        "place-of-birth": "Long Island, New York",
-        "first-appearance": "Tales of Suspence #39 (March, 1963)",
-        "publisher": "Marvel Comics",
+        "full-name": "Diana Prince",
+        "place-of-birth": "Themyscira",
+        "first-appearance": "All-Star Comics #8 (December, 1941)",
+        "publisher": "DC Comics",
         "Alignment": null
       },
       "Appearance": null,
       "work": {
-        "occupation": "Inventor, Industrialist; former United States Secretary of Defense",
+        "occupation": "Adventurer, Emissary to the world of Man, Protector of Paradise Island; former Goddess of Truth",
         "BaseT": null
       }
     }
@@ -79,37 +79,37 @@
     {
       "Datos": {
         "Tipo": "Superheroe",
-        "Nombre": "Diana Prince",
-        "Apodo": "Wonder Woman",
-        "FechaDeNacimiento": "1962-05-31T00:00:00",
-        "Edad": 62,
-        "LugarDeNacimiento": "Themyscira",
-        "Comic": "DC Comics",
-        "Trabajo": "Adventurer, Emissary to the world of Man, Protector of Paradise Island; former Goddess of Truth",
+        "Nombre": "Peter Parker",
+        "Apodo": "Spider-Man",
+        "FechaDeNacimiento": "1991-08-10T00:00:00",
+        "Edad": 32,
+        "LugarDeNacimiento": "New York, New York",
+        "Comic": "Marvel Comics",
+        "Trabajo": "Freelance photographer, teacher",
         "BaseT": null
       },
       "Caracteristicas": {
         "Velocidad": 7,
-        "Destreza": 5,
-        "Fuerza": 4,
-        "Nivel": 10,
-        "Armadura": 2,
+        "Destreza": 2,
+        "Fuerza": 6,
+        "Nivel": 1,
+        "Armadura": 10,
         "Salud": 100
       },
       "Root": {
         "response": "success",
         "Id": null,
-        "name": "Wonder Woman",
+        "name": "Spider-Man",
         "biography": {
-          "full-name": "Diana Prince",
-          "place-of-birth": "Themyscira",
-          "first-appearance": "All-Star Comics #8 (December, 1941)",
-          "publisher": "DC Comics",
+          "full-name": "Peter Parker",
+          "place-of-birth": "New York, New York",
+          "first-appearance": "Amazing Fantasy #15",
+          "publisher": "Marvel Comics",
           "Alignment": null
         },
         "Appearance": null,
         "work": {
-          "occupation": "Adventurer, Emissary to the world of Man, Protector of Paradise Island; former Goddess of Truth",
+          "occupation": "Freelance photographer, teacher",
           "BaseT": null
         }
       }
@@ -269,37 +269,37 @@
     {
       "Datos": {
         "Tipo": "Superheroe",
-        "Nombre": "Carol Danvers",
-        "Apodo": "Captain Marvel",
-        "FechaDeNacimiento": "2007-07-29T00:00:00",
-        "Edad": 17,
-        "LugarDeNacimiento": "Boston, Massachusetts",
-        "Comic": "Binary",
-        "Trabajo": "Former National Aeronautics and Space Administration security Chief, former magazine editor, former freelance writer, former military intelligence officer.",
+        "Nombre": "Logan",
+        "Apodo": "Wolverine",
+        "FechaDeNacimiento": "1977-09-22T00:00:00",
+        "Edad": 46,
+        "LugarDeNacimiento": "Alberta, Canada",
+        "Comic": "Marvel Comics",
+        "Trabajo": "Adventurer, instructor, former bartender, bouncer, spy, government operative, mercenary, soldier, sailor, miner",
         "BaseT": null
       },
       "Caracteristicas": {
-        "Velocidad": 9,
-        "Destreza": 4,
-        "Fuerza": 3,
+        "Velocidad": 8,
+        "Destreza": 3,
+        "Fuerza": 1,
         "Nivel": 9,
-        "Armadura": 5,
+        "Armadura": 8,
         "Salud": 100
       },
       "Root": {
         "response": "success",
         "Id": null,
-        "name": "Captain Marvel",
+        "name": "Wolverine",
         "biography": {
-          "full-name": "Carol Danvers",
-          "place-of-birth": "Boston, Massachusetts",
-          "first-appearance": "Ms. Marvel #1",
-          "publisher": "Binary",
+          "full-name": "Logan",
+          "place-of-birth": "Alberta, Canada",
+          "first-appearance": "Incredible Hulk Vol. 2 #180",
+          "publisher": "Marvel Comics",
           "Alignment": null
         },
         "Appearance": null,
         "work": {
-          "occupation": "Former National Aeronautics and Space Administration security Chief, former magazine editor, former freelance writer, former military intelligence officer.",
+          "occupation": "Adventurer, instructor, former bartender, bouncer, spy, government operative, mercenary, soldier, sailor, miner",
           "BaseT": null
         }
       }

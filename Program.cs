@@ -77,7 +77,7 @@ public class Programa
     {
         Personaje ganadorTemp = null;
         string seguirJugando = "1";
-        string seguirViendo = "2";
+        string seguirViendo = "1";
         bool gano;
 
         List<Personaje> personajesLeidos;

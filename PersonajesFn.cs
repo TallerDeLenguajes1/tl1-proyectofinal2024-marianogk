@@ -164,7 +164,7 @@ public static class PersonajesFn
     public static void MostrarPersonaje(Personaje pj)
     {
 
-        Console.WriteLine("\n\n-DATOS-\n");
+        Console.WriteLine("-DATOS-\n");
         Console.WriteLine("Tipo: " + pj.Datos.Tipo);
         Console.WriteLine("Nombre Completo: " + pj.Datos.Nombre);
         Console.WriteLine("Apodo: " + pj.Datos.Apodo);
