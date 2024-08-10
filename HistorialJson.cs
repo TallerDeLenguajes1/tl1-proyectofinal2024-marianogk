@@ -67,14 +67,5 @@ public class HistorialJson
         return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;
     }
 
-    public static void MostrarGanadores(List<Personaje> personajes)
-    {
-        Console.WriteLine("|     Apodo       |  Nombre Completo    |      Tipo       |\n");
 
-        foreach (var pj in personajes)
-        {
-            
-            Console.WriteLine($"| {pj.Datos.Apodo.PadRight(15)} | {pj.Datos.Nombre.PadRight(19)} | {pj.Datos.Tipo.PadRight(15)} |");
-        }
-    }
 }

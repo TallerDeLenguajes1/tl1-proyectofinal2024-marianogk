@@ -215,17 +215,28 @@ public static class PersonajesFn
         Ascii.Felicidades();
     }
 
-    public static async Task MostrarGanadores(string archivoHistorial)
+    public static void MostrarGanadores(List<Personaje> personajes)
+    {
+        Console.WriteLine("|     Apodo       |  Nombre Completo    |      Tipo       |\n");
+
+        foreach (var pj in personajes)
+        {
+            
+            Console.WriteLine($"| {pj.Datos.Apodo.PadRight(15)} | {pj.Datos.Nombre.PadRight(19)} | {pj.Datos.Tipo.PadRight(15)} |");
+        }
+    }
+    public static async Task MostrarHistorial(string archivoHistorial)
     {
         if (HistorialJson.Existe(archivoHistorial))
         {
             List<Personaje> personajesGanadores = await HistorialJson.LeerGanadores(archivoHistorial);
             Console.WriteLine("\nHistorial de ganadores:\n");
-            HistorialJson.MostrarGanadores(personajesGanadores);
+            MostrarGanadores(personajesGanadores);
         }
         else
         {
             Console.WriteLine("\nTodavia no hay historial de ganadores\n");
         }
     }
+    
 }

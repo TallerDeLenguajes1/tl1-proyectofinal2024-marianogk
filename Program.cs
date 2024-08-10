@@ -53,7 +53,7 @@ public class Programa
 
                 case "4":
                     // Mostrar ganadores
-                    await PersonajesFn.MostrarGanadores(archivoHistorial);
+                    await PersonajesFn.MostrarHistorial(archivoHistorial);
                     break;
 
                 case "5":
