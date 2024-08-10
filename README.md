@@ -63,3 +63,15 @@ Selecciona la opción 4 para ver una lista de todos los personajes que han ganad
 ### Ganador Final: 
 ##### Una vez que solo queda un personaje en pie, este se consagra como el Ganador Final del combate y se guarda en el historial de ganadores.
 
+### Uso de la API SuperHero API
+La SuperHero API es un recurso en línea que ofrece información detallada sobre superhéroes y villanos de cómics. Es útil para desarrolladores que buscan integrar datos de personajes de cómics en sus aplicaciones o juegos, como en el caso de este proyecto.
+
+Endpoints Utilizados:
+
+Buscar Personaje por ID: Obtén información detallada sobre un personaje usando el siguiente endpoint:
+
+#### [SuperHero Api] [https://superheroapi.com/api.php/YOUR_ACCESS_TOKEN/{id}]
+
+Aquí, {id} es el identificador único del personaje, y YOUR_ACCESS_TOKEN es tu token de acceso a la API.
+
+Ejemplo de Datos Utilizados: La API proporciona estadísticas como nombre, nombre completo, lugar de nacimiento, editorial por la que fue publicado.
