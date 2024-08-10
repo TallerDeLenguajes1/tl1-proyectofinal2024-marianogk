@@ -1,147 +1,192 @@
 {
   "Jugador": {
     "Datos": {
-      "Tipo": "Villano",
-      "Nombre": "Diana Prince",
-      "Apodo": "Wonder Woman",
-      "FechaDeNacimiento": "1903-05-31T00:00:00",
-      "Edad": 121
+      "Tipo": "Superheroe",
+      "Nombre": "Tony Stark",
+      "Apodo": "Iron Man",
+      "FechaDeNacimiento": "1967-07-06T00:00:00",
+      "Edad": 57,
+      "LugarDeNacimiento": "Long Island, New York",
+      "Comic": "Marvel Comics",
+      "Trabajo": "Inventor, Industrialist; former United States Secretary of Defense",
+      "BaseT": null
     },
     "Caracteristicas": {
-      "Velocidad": 1,
-      "Destreza": 5,
-      "Fuerza": 9,
-      "Nivel": 3,
-      "Armadura": 3,
-      "Salud": 110
+      "Velocidad": 4,
+      "Destreza": 2,
+      "Fuerza": 5,
+      "Nivel": 4,
+      "Armadura": 2,
+      "Salud": 120
     },
     "Root": {
       "response": "success",
-      "id": "720",
-      "name": "Wonder Woman",
+      "Id": null,
+      "name": "Iron Man",
       "biography": {
-        "full-name": "Diana Prince"
+        "full-name": "Tony Stark",
+        "place-of-birth": "Long Island, New York",
+        "first-appearance": "Tales of Suspence #39 (March, 1963)",
+        "publisher": "Marvel Comics",
+        "Alignment": null
       },
-      "appearance": {
-        "eye-color": "Blue",
-        "hair-color": "Black"
+      "Appearance": null,
+      "work": {
+        "occupation": "Inventor, Industrialist; former United States Secretary of Defense",
+        "BaseT": null
       }
     }
   },
   "Oponentes": [
     {
       "Datos": {
-        "Tipo": "Villano",
+        "Tipo": "Superheroe",
         "Nombre": "Bruce Banner",
         "Apodo": "Hulk",
-        "FechaDeNacimiento": "1997-02-19T00:00:00",
-        "Edad": 27
+        "FechaDeNacimiento": "1925-07-19T00:00:00",
+        "Edad": 99,
+        "LugarDeNacimiento": "Dayton, Ohio",
+        "Comic": "Marvel Comics",
+        "Trabajo": "Nuclear physicist, Agent of S.H.I.E.L.D.",
+        "BaseT": null
       },
       "Caracteristicas": {
-        "Velocidad": 8,
-        "Destreza": 5,
-        "Fuerza": 1,
-        "Nivel": 5,
-        "Armadura": 8,
+        "Velocidad": 3,
+        "Destreza": 2,
+        "Fuerza": 9,
+        "Nivel": 7,
+        "Armadura": 1,
         "Salud": 100
       },
       "Root": {
         "response": "success",
-        "id": "332",
+        "Id": null,
         "name": "Hulk",
         "biography": {
-          "full-name": "Bruce Banner"
+          "full-name": "Bruce Banner",
+          "place-of-birth": "Dayton, Ohio",
+          "first-appearance": "Incredible Hulk #1 (May, 1962)",
+          "publisher": "Marvel Comics",
+          "Alignment": null
         },
-        "appearance": {
-          "eye-color": "Green",
-          "hair-color": "Green"
+        "Appearance": null,
+        "work": {
+          "occupation": "Nuclear physicist, Agent of S.H.I.E.L.D.",
+          "BaseT": null
         }
       }
     },
     {
       "Datos": {
         "Tipo": "Superheroe",
-        "Nombre": "Peter Parker",
-        "Apodo": "Spider-Man",
-        "FechaDeNacimiento": "1921-04-01T00:00:00",
-        "Edad": 103
+        "Nombre": "Diana Prince",
+        "Apodo": "Wonder Woman",
+        "FechaDeNacimiento": "1962-05-31T00:00:00",
+        "Edad": 62,
+        "LugarDeNacimiento": "Themyscira",
+        "Comic": "DC Comics",
+        "Trabajo": "Adventurer, Emissary to the world of Man, Protector of Paradise Island; former Goddess of Truth",
+        "BaseT": null
       },
       "Caracteristicas": {
-        "Velocidad": 9,
-        "Destreza": 1,
+        "Velocidad": 7,
+        "Destreza": 5,
         "Fuerza": 4,
-        "Nivel": 5,
+        "Nivel": 10,
+        "Armadura": 2,
+        "Salud": 100
+      },
+      "Root": {
+        "response": "success",
+        "Id": null,
+        "name": "Wonder Woman",
+        "biography": {
+          "full-name": "Diana Prince",
+          "place-of-birth": "Themyscira",
+          "first-appearance": "All-Star Comics #8 (December, 1941)",
+          "publisher": "DC Comics",
+          "Alignment": null
+        },
+        "Appearance": null,
+        "work": {
+          "occupation": "Adventurer, Emissary to the world of Man, Protector of Paradise Island; former Goddess of Truth",
+          "BaseT": null
+        }
+      }
+    },
+    {
+      "Datos": {
+        "Tipo": "Villano",
+        "Nombre": "Bruce Wayne",
+        "Apodo": "Batman",
+        "FechaDeNacimiento": "1905-12-19T00:00:00",
+        "Edad": 118,
+        "LugarDeNacimiento": "Crest Hill, Bristol Township; Gotham County",
+        "Comic": "DC Comics",
+        "Trabajo": "Businessman",
+        "BaseT": null
+      },
+      "Caracteristicas": {
+        "Velocidad": 7,
+        "Destreza": 3,
+        "Fuerza": 10,
+        "Nivel": 9,
+        "Armadura": 10,
+        "Salud": 100
+      },
+      "Root": {
+        "response": "success",
+        "Id": null,
+        "name": "Batman",
+        "biography": {
+          "full-name": "Bruce Wayne",
+          "place-of-birth": "Crest Hill, Bristol Township; Gotham County",
+          "first-appearance": "Detective Comics #27",
+          "publisher": "DC Comics",
+          "Alignment": null
+        },
+        "Appearance": null,
+        "work": {
+          "occupation": "Businessman",
+          "BaseT": null
+        }
+      }
+    },
+    {
+      "Datos": {
+        "Tipo": "Superheroe",
+        "Nombre": "Harley Quinn",
+        "Apodo": "Harley Quinn",
+        "FechaDeNacimiento": "1977-07-01T00:00:00",
+        "Edad": 47,
+        "LugarDeNacimiento": "-",
+        "Comic": "DC Comics",
+        "Trabajo": "Psychiatrist",
+        "BaseT": null
+      },
+      "Caracteristicas": {
+        "Velocidad": 6,
+        "Destreza": 4,
+        "Fuerza": 9,
+        "Nivel": 9,
         "Armadura": 9,
         "Salud": 100
       },
       "Root": {
         "response": "success",
-        "id": "620",
-        "name": "Spider-Man",
-        "biography": {
-          "full-name": "Peter Parker"
-        },
-        "appearance": {
-          "eye-color": "Hazel",
-          "hair-color": "Brown"
-        }
-      }
-    },
-    {
-      "Datos": {
-        "Tipo": "Superheroe",
-        "Nombre": "Bruce Wayne",
-        "Apodo": "Batman",
-        "FechaDeNacimiento": "1989-04-27T00:00:00",
-        "Edad": 35
-      },
-      "Caracteristicas": {
-        "Velocidad": 9,
-        "Destreza": 1,
-        "Fuerza": 3,
-        "Nivel": 9,
-        "Armadura": 4,
-        "Salud": 100
-      },
-      "Root": {
-        "response": "success",
-        "id": "70",
-        "name": "Batman",
-        "biography": {
-          "full-name": "Bruce Wayne"
-        },
-        "appearance": {
-          "eye-color": "blue",
-          "hair-color": "black"
-        }
-      }
-    },
-    {
-      "Datos": {
-        "Tipo": "Villano",
-        "Nombre": "Harley Quinn",
-        "Apodo": "Harley Quinn",
-        "FechaDeNacimiento": "1980-02-26T00:00:00",
-        "Edad": 44
-      },
-      "Caracteristicas": {
-        "Velocidad": 2,
-        "Destreza": 2,
-        "Fuerza": 10,
-        "Nivel": 5,
-        "Armadura": 7,
-        "Salud": 100
-      },
-      "Root": {
-        "response": "success",
-        "id": "309",
+        "Id": null,
         "name": "Harley Quinn",
         "biography": {
-          "full-name": "Harley Quinn"
+          "full-name": "Harley Quinn",
+          "place-of-birth": "-",
+          "first-appearance": "Batman: Harley Quinn (October, 1999)",
+          "publisher": "DC Comics",
+          "Alignment": null
         },
-        "appearance": {
-          "eye-color": "Blue",
-          "hair-color": "Blond"
+        "Appearance": null,
+        "work": {
+          "occupation": "Psychiatrist",
+          "BaseT": null
         }
       }
     },
@@ -150,27 +195,36 @@
         "Tipo": "Villano",
         "Nombre": "Jack Napier",
         "Apodo": "Joker",
-        "FechaDeNacimiento": "1980-06-09T00:00:00",
-        "Edad": 44
+        "FechaDeNacimiento": "1908-07-25T00:00:00",
+        "Edad": 116,
+        "LugarDeNacimiento": "-",
+        "Comic": "DC Comics",
+        "Trabajo": "-",
+        "BaseT": null
       },
       "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 3,
-        "Fuerza": 10,
-        "Nivel": 3,
-        "Armadura": 1,
+        "Velocidad": 1,
+        "Destreza": 1,
+        "Fuerza": 5,
+        "Nivel": 5,
+        "Armadura": 2,
         "Salud": 100
       },
       "Root": {
         "response": "success",
-        "id": "370",
+        "Id": null,
         "name": "Joker",
         "biography": {
-          "full-name": "Jack Napier"
+          "full-name": "Jack Napier",
+          "place-of-birth": "-",
+          "first-appearance": "Batman #1 (Spring 1940)",
+          "publisher": "DC Comics",
+          "Alignment": null
         },
-        "appearance": {
-          "eye-color": "Green",
-          "hair-color": "Green"
+        "Appearance": null,
+        "work": {
+          "occupation": "-",
+          "BaseT": null
         }
       }
     },
@@ -179,85 +233,36 @@
         "Tipo": "Villano",
         "Nombre": "Clark Kent",
         "Apodo": "Superman",
-        "FechaDeNacimiento": "2012-09-26T00:00:00",
-        "Edad": 11
+        "FechaDeNacimiento": "1980-08-17T00:00:00",
+        "Edad": 43,
+        "LugarDeNacimiento": "Krypton",
+        "Comic": "Superman Prime One-Million",
+        "Trabajo": "Reporter for the Daily Planet and novelist",
+        "BaseT": null
       },
       "Caracteristicas": {
-        "Velocidad": 9,
+        "Velocidad": 5,
         "Destreza": 4,
-        "Fuerza": 1,
-        "Nivel": 3,
-        "Armadura": 7,
-        "Salud": 100
-      },
-      "Root": {
-        "response": "success",
-        "id": "644",
-        "name": "Superman",
-        "biography": {
-          "full-name": "Clark Kent"
-        },
-        "appearance": {
-          "eye-color": "Blue",
-          "hair-color": "Black"
-        }
-      }
-    },
-    {
-      "Datos": {
-        "Tipo": "Superheroe",
-        "Nombre": "Tony Stark",
-        "Apodo": "Iron Man",
-        "FechaDeNacimiento": "1921-06-06T00:00:00",
-        "Edad": 103
-      },
-      "Caracteristicas": {
-        "Velocidad": 10,
-        "Destreza": 5,
-        "Fuerza": 10,
-        "Nivel": 2,
-        "Armadura": 1,
-        "Salud": 100
-      },
-      "Root": {
-        "response": "success",
-        "id": "346",
-        "name": "Iron Man",
-        "biography": {
-          "full-name": "Tony Stark"
-        },
-        "appearance": {
-          "eye-color": "Blue",
-          "hair-color": "Black"
-        }
-      }
-    },
-    {
-      "Datos": {
-        "Tipo": "Superheroe",
-        "Nombre": "Logan",
-        "Apodo": "Wolverine",
-        "FechaDeNacimiento": "2013-02-04T00:00:00",
-        "Edad": 11
-      },
-      "Caracteristicas": {
-        "Velocidad": 8,
-        "Destreza": 3,
         "Fuerza": 9,
         "Nivel": 8,
-        "Armadura": 6,
+        "Armadura": 4,
         "Salud": 100
       },
       "Root": {
         "response": "success",
-        "id": "717",
-        "name": "Wolverine",
+        "Id": null,
+        "name": "Superman",
         "biography": {
-          "full-name": "Logan"
+          "full-name": "Clark Kent",
+          "place-of-birth": "Krypton",
+          "first-appearance": "ACTION COMICS #1",
+          "publisher": "Superman Prime One-Million",
+          "Alignment": null
         },
-        "appearance": {
-          "eye-color": "Blue",
-          "hair-color": "Black"
+        "Appearance": null,
+        "work": {
+          "occupation": "Reporter for the Daily Planet and novelist",
+          "BaseT": null
         }
       }
     },
@@ -266,27 +271,74 @@
         "Tipo": "Superheroe",
         "Nombre": "Carol Danvers",
         "Apodo": "Captain Marvel",
-        "FechaDeNacimiento": "1903-09-30T00:00:00",
-        "Edad": 120
+        "FechaDeNacimiento": "2007-07-29T00:00:00",
+        "Edad": 17,
+        "LugarDeNacimiento": "Boston, Massachusetts",
+        "Comic": "Binary",
+        "Trabajo": "Former National Aeronautics and Space Administration security Chief, former magazine editor, former freelance writer, former military intelligence officer.",
+        "BaseT": null
       },
       "Caracteristicas": {
-        "Velocidad": 2,
+        "Velocidad": 9,
         "Destreza": 4,
         "Fuerza": 3,
-        "Nivel": 5,
+        "Nivel": 9,
+        "Armadura": 5,
+        "Salud": 100
+      },
+      "Root": {
+        "response": "success",
+        "Id": null,
+        "name": "Captain Marvel",
+        "biography": {
+          "full-name": "Carol Danvers",
+          "place-of-birth": "Boston, Massachusetts",
+          "first-appearance": "Ms. Marvel #1",
+          "publisher": "Binary",
+          "Alignment": null
+        },
+        "Appearance": null,
+        "work": {
+          "occupation": "Former National Aeronautics and Space Administration security Chief, former magazine editor, former freelance writer, former military intelligence officer.",
+          "BaseT": null
+        }
+      }
+    },
+    {
+      "Datos": {
+        "Tipo": "Villano",
+        "Nombre": "Wade Wilson",
+        "Apodo": "Deadpool",
+        "FechaDeNacimiento": "1921-12-05T00:00:00",
+        "Edad": 102,
+        "LugarDeNacimiento": "Canada",
+        "Comic": "Evil Deadpool",
+        "Trabajo": "Mercenary; former enforcer, government operative, sumo wrestler, soldier, assassin, anti-hero, others",
+        "BaseT": null
+      },
+      "Caracteristicas": {
+        "Velocidad": 8,
+        "Destreza": 1,
+        "Fuerza": 4,
+        "Nivel": 1,
         "Armadura": 10,
         "Salud": 100
       },
       "Root": {
         "response": "success",
-        "id": "157",
-        "name": "Captain Marvel",
+        "Id": null,
+        "name": "Deadpool",
         "biography": {
-          "full-name": "Carol Danvers"
+          "full-name": "Wade Wilson",
+          "place-of-birth": "Canada",
+          "first-appearance": "New Mutants #98 (February, 1991)",
+          "publisher": "Evil Deadpool",
+          "Alignment": null
         },
-        "appearance": {
-          "eye-color": "Blue",
-          "hair-color": "Blond"
+        "Appearance": null,
+        "work": {
+          "occupation": "Mercenary; former enforcer, government operative, sumo wrestler, soldier, assassin, anti-hero, others",
+          "BaseT": null
         }
       }
     },
@@ -295,27 +347,36 @@
         "Tipo": "Villano",
         "Nombre": "Selina Kyle",
         "Apodo": "Catwoman",
-        "FechaDeNacimiento": "1987-09-26T00:00:00",
-        "Edad": 36
+        "FechaDeNacimiento": "2014-02-16T00:00:00",
+        "Edad": 10,
+        "LugarDeNacimiento": "Gotham City",
+        "Comic": "DC Comics",
+        "Trabajo": "Thief",
+        "BaseT": null
       },
       "Caracteristicas": {
         "Velocidad": 1,
-        "Destreza": 1,
+        "Destreza": 3,
         "Fuerza": 1,
-        "Nivel": 7,
-        "Armadura": 1,
+        "Nivel": 10,
+        "Armadura": 5,
         "Salud": 100
       },
       "Root": {
         "response": "success",
-        "id": "165",
+        "Id": null,
         "name": "Catwoman",
         "biography": {
-          "full-name": "Selina Kyle"
+          "full-name": "Selina Kyle",
+          "place-of-birth": "Gotham City",
+          "first-appearance": "Detective Comics #569",
+          "publisher": "DC Comics",
+          "Alignment": null
         },
-        "appearance": {
-          "eye-color": "Green",
-          "hair-color": "Black"
+        "Appearance": null,
+        "work": {
+          "occupation": "Thief",
+          "BaseT": null
         }
       }
     }

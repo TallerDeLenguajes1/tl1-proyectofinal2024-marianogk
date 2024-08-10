@@ -11,13 +11,17 @@ class FabricaDePersonajes
         int i = random.Next(2);
         DateTime fechaNacimiento = GenerarNacimiento();
         
-        Datos datos = new Datos
+        Datos datos = new()
         {
             Tipo = tipo[i],
             Nombre = apiResult.biography.Fullname,
             Apodo = apiResult.name,
             FechaDeNacimiento = fechaNacimiento,
-            Edad = CalcularEdad(fechaNacimiento)
+            Edad = CalcularEdad(fechaNacimiento),
+            LugarDeNacimiento = apiResult.biography.placeofbirth,
+            Comic = apiResult.biography.publisher,
+            Trabajo = apiResult.work.occupation,
+            BaseT = apiResult.work.BaseT
         };
 
         Caracteristicas caracteristicas = new Caracteristicas
@@ -38,7 +42,7 @@ class FabricaDePersonajes
         };
     }
 
-    private DateTime GenerarNacimiento()
+    private static DateTime GenerarNacimiento()
     {
         int year = random.Next(1900, 2015);
         int month = random.Next(1, 13);
@@ -51,7 +55,7 @@ class FabricaDePersonajes
         // Retorna la fecha de nacimiento aleatoria
         return new DateTime(year, month, day);
     }
-    private int CalcularEdad(DateTime fechaNacimiento)
+    private static int CalcularEdad(DateTime fechaNacimiento)
     {
         int edad = DateTime.Today.Year - fechaNacimiento.Year;
 

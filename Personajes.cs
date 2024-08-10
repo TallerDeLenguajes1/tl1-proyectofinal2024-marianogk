@@ -15,16 +15,30 @@ namespace EspacioPersonaje
     {
         [JsonPropertyName("full-name")]
         public string Fullname { get; set; }
-    }
 
+        [JsonPropertyName("place-of-birth")]
+        public string placeofbirth { get; set; }
+
+        [JsonPropertyName("first-appearance")]
+        public string firstappearance { get; set; }
+        public string publisher { get; set; }
+        public string Alignment { get; set; }
+    }
+    public class Work
+    {
+        public string occupation { get; set; }
+        public string BaseT { get; set; }
+    }
     public class Root
     {
         public string response { get; set; }
-        public string id { get; set; }
+        public string Id { get; set; }
         public string name { get; set; }
         public Biography biography { get; set; }
-        public Appearance appearance { get; set; }
+        public Appearance Appearance { get; set; }
+        public Work work { get; set; }
     }
+
 
     public class Datos
     {
@@ -33,6 +47,10 @@ namespace EspacioPersonaje
         public string Apodo { get; set; }
         public DateTime FechaDeNacimiento { get; set; }
         public int Edad { get; set; }
+        public string LugarDeNacimiento { get; set; }
+        public string Comic { get; set; }
+        public string Trabajo { get; set; }
+        public string BaseT { get; set; }
     }
     public class Caracteristicas
     {
@@ -50,5 +68,5 @@ namespace EspacioPersonaje
         public Root Root { get; set; }
     }
 
-    
+
 }

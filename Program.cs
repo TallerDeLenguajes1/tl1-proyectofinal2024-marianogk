@@ -72,11 +72,13 @@ public class Programa
         Ascii.Fin();
     }
 
-    //------------------------------Funciones---------------------------/
+    //------------------------------Funciones---------------------------
     private static async Task Jugar(string archivoPersonajes, string archivoHistorial, string archivoPartida, bool cargar)
     {
         Personaje ganadorTemp = null;
         string seguirJugando = "1";
+        string seguirViendo = "2";
+        bool gano;
 
         List<Personaje> personajesLeidos;
 
@@ -112,7 +114,7 @@ public class Programa
         {
             // Elegir 2 personajes para la pelea
 
-            Personaje player1, player2, ganador = null;
+            Personaje player1, player2;
             player1 = PersonajesFn.ElegirPersonaje(ganadorTemp, personajesLeidos);
             // Guardar salud inicial player 1
             float saludInicial1 = PersonajesFn.GetSaludInicial(player1);
@@ -127,29 +129,41 @@ public class Programa
             Ascii.Comienzo();
             Thread.Sleep(1000);
 
-            ganador = Batalla.Pelear(player1, player2);
+            Personaje ganador = Batalla.Pelear(player1, player2);
 
             PersonajesFn.MostrarGanadorBatalla(ganador);
 
+            gano = PersonajesFn.CompararNombres(player1, ganador); // devuelve true si ganó
             // Asignar ganador
             ganadorTemp = PersonajeGanador(personajesLeidos, player1, player2, ganador, saludInicial1, saludInicial2);
 
-            if (personajesLeidos.Count > 1)
+            if (gano)
             {
-                Ascii.MenuSecundario();
-                seguirJugando = Console.ReadLine();
 
-                if (seguirJugando == "2")
+                if (personajesLeidos.Count > 1)
                 {
-                    PersonajesFn.GuardarPartida(archivoPartida, ganadorTemp, personajesLeidos);
+                    Ascii.MenuSecundario();
+                    seguirJugando = Console.ReadLine();
 
+                    if (seguirJugando == "2")
+                    {
+                        PersonajesFn.GuardarPartida(archivoPartida, ganadorTemp, personajesLeidos);
+
+                    }
                 }
             }
+            else
+            {
+                Thread.Sleep(2000);
+                Ascii.Perdiste();
+                Console.WriteLine("\nSeguir viendo:   1.SI 2.NO");
+                seguirViendo = Console.ReadLine();
+            }
+        } while (seguirJugando == "1" && personajesLeidos.Count > 1 && seguirViendo != "2");
 
-        } while (seguirJugando == "1" && personajesLeidos.Count > 1);
-
-        if (ganadorTemp != null && personajesLeidos.Count == 1)
+        if (ganadorTemp != null && personajesLeidos.Count == 1 && gano)
         {
+            PersonajesFn.MostrarGanadorFinal(ganadorTemp);
             // Guardar ganador en json
             await HistorialJson.GuardarGanador(ganadorTemp, archivoHistorial);
             Thread.Sleep(2000);
@@ -170,7 +184,6 @@ public class Programa
         }
         else
         {
-
             ganadorTemp = player2;
             // Aumentar salud ganador
             PersonajesFn.ModificarSalud(ganadorTemp, Batalla.BonusSalud(saludInicial2));

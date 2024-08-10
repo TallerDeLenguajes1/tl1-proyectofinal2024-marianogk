@@ -15,9 +15,10 @@ public class Ascii
     public static void MenuSecundario()
     {
         Thread.Sleep(1000);
-        Console.WriteLine("\nINGRESE 1 PARA SEGUIR JUGANDO: ");
-        Console.WriteLine("\nINGRESE 2 PARA GUARDAR LA PARTIDA: ");
-        Console.WriteLine("\nINGRESE 3 PARA SALIR SIN GUARDAR: \n");
+        Console.WriteLine("\n1. PARA SEGUIR JUGANDO: ");
+        Console.WriteLine("\n2. PARA GUARDAR LA PARTIDA: ");
+        Console.WriteLine("\n3. PARA SALIR SIN GUARDAR: \n");
+        Console.WriteLine("\nINGRESE:");
     }
 
     public static void JuegoTitulo()
@@ -44,6 +45,16 @@ public class Ascii
         Console.WriteLine("╚═╝░░░░░╚══════╝╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚══╝╚═╝░░╚═╝░╚════╝░╚══════╝╚═════╝░");
         Console.WriteLine("");
     }
+    public static void GanadorFinal()
+    {
+        string texto = @"
+
+█▀▀ █░░   █▀▀ ▄▀█ █▄░█ ▄▀█ █▀▄ █▀█ █▀█   █▀▀ █▀ ░ ░ ░
+██▄ █▄▄   █▄█ █▀█ █░▀█ █▀█ █▄▀ █▄█ █▀▄   ██▄ ▄█ ▄ ▄ ▄";
+        ImprimirConDelay(texto, 10);
+
+    }
+
 
     public static void Perdiste()
     {
@@ -100,6 +111,19 @@ public class Ascii
 ██║░░░░░██║╚██████╔╝██║░░██║░░░██║░░░██╗
 ╚═╝░░░░░╚═╝░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝";
         Console.WriteLine(texto);
+    }
+
+    public static void Felicidades()
+    {
+        string texto = @"
+
+
+█████████████████████████████████████████████████████████████████
+█▄─▄▄─█▄─▄▄─█▄─▄███▄─▄█─▄▄▄─█▄─▄█▄─▄▄▀██▀▄─██▄─▄▄▀█▄─▄▄─█─▄▄▄▄█░█
+██─▄████─▄█▀██─██▀██─██─███▀██─███─██─██─▀─███─██─██─▄█▀█▄▄▄▄─█▄█
+▀▄▄▄▀▀▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▀▄▄▄▄▀▀▄▄▀▄▄▀▄▄▄▄▀▀▄▄▄▄▄▀▄▄▄▄▄▀▄▀";
+        ImprimirConDelay(texto, 10);
+
     }
 
     public static void Fin()

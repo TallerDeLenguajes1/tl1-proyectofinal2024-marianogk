@@ -5,7 +5,11 @@
       "Nombre": "Clark Kent",
       "Apodo": "Superman",
       "FechaDeNacimiento": "2012-05-03T00:00:00",
-      "Edad": 12
+      "Edad": 12,
+      "LugarDeNacimiento": null,
+      "Comic": null,
+      "Trabajo": null,
+      "BaseT": null
     },
     "Caracteristicas": {
       "Velocidad": 4,
@@ -17,15 +21,17 @@
     },
     "Root": {
       "response": "success",
-      "id": "644",
+      "Id": null,
       "name": "Superman",
       "biography": {
-        "full-name": "Clark Kent"
+        "full-name": "Clark Kent",
+        "place-of-birth": null,
+        "first-appearance": null,
+        "publisher": null,
+        "Alignment": null
       },
-      "appearance": {
-        "eye-color": "Blue",
-        "hair-color": "Black"
-      }
+      "Appearance": null,
+      "work": null
     }
   },
   {
@@ -34,7 +40,11 @@
       "Nombre": "Carol Danvers",
       "Apodo": "Captain Marvel",
       "FechaDeNacimiento": "1903-03-15T00:00:00",
-      "Edad": 121
+      "Edad": 121,
+      "LugarDeNacimiento": null,
+      "Comic": null,
+      "Trabajo": null,
+      "BaseT": null
     },
     "Caracteristicas": {
       "Velocidad": 8,
@@ -46,15 +56,17 @@
     },
     "Root": {
       "response": "success",
-      "id": "157",
+      "Id": null,
       "name": "Captain Marvel",
       "biography": {
-        "full-name": "Carol Danvers"
+        "full-name": "Carol Danvers",
+        "place-of-birth": null,
+        "first-appearance": null,
+        "publisher": null,
+        "Alignment": null
       },
-      "appearance": {
-        "eye-color": "Blue",
-        "hair-color": "Blond"
-      }
+      "Appearance": null,
+      "work": null
     }
   },
   {
@@ -63,7 +75,11 @@
       "Nombre": "Tony Stark",
       "Apodo": "Iron Man",
       "FechaDeNacimiento": "1920-09-30T00:00:00",
-      "Edad": 103
+      "Edad": 103,
+      "LugarDeNacimiento": null,
+      "Comic": null,
+      "Trabajo": null,
+      "BaseT": null
     },
     "Caracteristicas": {
       "Velocidad": 7,
@@ -75,15 +91,17 @@
     },
     "Root": {
       "response": "success",
-      "id": "346",
+      "Id": null,
       "name": "Iron Man",
       "biography": {
-        "full-name": "Tony Stark"
+        "full-name": "Tony Stark",
+        "place-of-birth": null,
+        "first-appearance": null,
+        "publisher": null,
+        "Alignment": null
       },
-      "appearance": {
-        "eye-color": "Blue",
-        "hair-color": "Black"
-      }
+      "Appearance": null,
+      "work": null
     }
   },
   {
@@ -92,7 +110,11 @@
       "Nombre": "Tony Stark",
       "Apodo": "Iron Man",
       "FechaDeNacimiento": "1920-09-30T00:00:00",
-      "Edad": 103
+      "Edad": 103,
+      "LugarDeNacimiento": null,
+      "Comic": null,
+      "Trabajo": null,
+      "BaseT": null
     },
     "Caracteristicas": {
       "Velocidad": 7,
@@ -104,15 +126,17 @@
     },
     "Root": {
       "response": "success",
-      "id": "346",
+      "Id": null,
       "name": "Iron Man",
       "biography": {
-        "full-name": "Tony Stark"
+        "full-name": "Tony Stark",
+        "place-of-birth": null,
+        "first-appearance": null,
+        "publisher": null,
+        "Alignment": null
       },
-      "appearance": {
-        "eye-color": "Blue",
-        "hair-color": "Black"
-      }
+      "Appearance": null,
+      "work": null
     }
   },
   {
@@ -121,7 +145,11 @@
       "Nombre": "Tony Stark",
       "Apodo": "Iron Man",
       "FechaDeNacimiento": "1920-09-30T00:00:00",
-      "Edad": 103
+      "Edad": 103,
+      "LugarDeNacimiento": null,
+      "Comic": null,
+      "Trabajo": null,
+      "BaseT": null
     },
     "Caracteristicas": {
       "Velocidad": 7,
@@ -133,14 +161,54 @@
     },
     "Root": {
       "response": "success",
-      "id": "346",
+      "Id": null,
       "name": "Iron Man",
       "biography": {
-        "full-name": "Tony Stark"
+        "full-name": "Tony Stark",
+        "place-of-birth": null,
+        "first-appearance": null,
+        "publisher": null,
+        "Alignment": null
       },
-      "appearance": {
-        "eye-color": "Blue",
-        "hair-color": "Black"
+      "Appearance": null,
+      "work": null
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Villano",
+      "Nombre": "Bruce Wayne",
+      "Apodo": "Batman",
+      "FechaDeNacimiento": "1905-12-19T00:00:00",
+      "Edad": 118,
+      "LugarDeNacimiento": "Crest Hill, Bristol Township; Gotham County",
+      "Comic": "DC Comics",
+      "Trabajo": "Businessman",
+      "BaseT": null
+    },
+    "Caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 3,
+      "Fuerza": 10,
+      "Nivel": 9,
+      "Armadura": 10,
+      "Salud": 150
+    },
+    "Root": {
+      "response": "success",
+      "Id": null,
+      "name": "Batman",
+      "biography": {
+        "full-name": "Bruce Wayne",
+        "place-of-birth": "Crest Hill, Bristol Township; Gotham County",
+        "first-appearance": "Detective Comics #27",
+        "publisher": "DC Comics",
+        "Alignment": null
+      },
+      "Appearance": null,
+      "work": {
+        "occupation": "Businessman",
+        "BaseT": null
       }
     }
   }

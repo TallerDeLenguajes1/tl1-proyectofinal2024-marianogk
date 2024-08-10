@@ -1,3 +1,4 @@
+using System.Text;
 using EspacioPersonaje;
 
 public static class PersonajesFn
@@ -150,14 +151,14 @@ public static class PersonajesFn
 
     public static void MostrarNombres(List<Personaje> personajes)
     {
-        Console.WriteLine("+-----------------+---------------------+-----------------+");
-        Console.WriteLine("|     Apodo       |  Nombre Completo    |      Tipo       |");
-        Console.WriteLine("+-----------------+---------------------+-----------------+");
+        Console.WriteLine("+-----------------+---------------------+-----------------------------+");
+        Console.WriteLine("|     Apodo       |  Nombre Completo    |          Editorial          |");
+        Console.WriteLine("+-----------------+---------------------+-----------------------------+");
         foreach (var pj in personajes)
         {
-            Console.WriteLine($"| {pj.Datos.Apodo.PadRight(15)} | {pj.Datos.Nombre.PadRight(19)} | {pj.Datos.Tipo.PadRight(15)} |");
+            Console.WriteLine($"| {pj.Datos.Apodo.PadRight(15)} | {pj.Datos.Nombre.PadRight(19)} | {pj.Datos.Comic.PadRight(27)} |");
         }
-        Console.WriteLine("+-----------------+---------------------+-----------------+");
+        Console.WriteLine("+-----------------+---------------------+-----------------------------+");
     }
 
     public static void MostrarPersonaje(Personaje pj)
@@ -199,9 +200,22 @@ public static class PersonajesFn
         Ascii.MostrarGanador(ganador);
         Thread.Sleep(1500);
         MostrarPersonaje(ganador);
+        Console.WriteLine("\nComic: " + ganador.Root.biography.publisher);
+        Console.WriteLine("Lugar de nacimiento: " + ganador.Root.biography.placeofbirth);
     }
 
-        public static async Task MostrarGanadores(string archivoHistorial)
+    public static void MostrarGanadorFinal(Personaje pj)
+    {
+        Ascii.GanadorFinal();
+        MostrarGanadorBatalla(pj);
+        Console.WriteLine("\n\n");
+        Console.WriteLine("Ocupacion: " + pj.Root.work.occupation);
+        Console.WriteLine(pj.Root.work.BaseT);
+        Thread.Sleep(1500);
+        Ascii.Felicidades();
+    }
+
+    public static async Task MostrarGanadores(string archivoHistorial)
     {
         if (HistorialJson.Existe(archivoHistorial))
         {
