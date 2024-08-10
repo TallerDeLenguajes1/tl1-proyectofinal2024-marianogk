@@ -2,7 +2,6 @@
 using System.Net.WebSockets;
 using System.IO;
 using EspacioPersonaje;
-
 public class Programa
 {
     public static async Task Main(string[] args)
@@ -13,7 +12,6 @@ public class Programa
         string archivoPersonajes = "characters.json";
         string archivoHistorial = "historial.json";
         string archivoPartida = "partida.json";
-
         string opcionMenu;
         do
         {
@@ -79,7 +77,6 @@ public class Programa
         string seguirJugando = "1";
         string seguirViendo = "1";
         bool gano;
-
         List<Personaje> personajesLeidos;
 
         // Cargar partida guardada
@@ -129,6 +126,7 @@ public class Programa
             Console.WriteLine("\n*--LUGAR DE LA BATALLA: " + Batalla.LugarBatalla(player1, player2) + " --*\n");
 
             // Batalla
+            Thread.Sleep(2000);
             Ascii.Comienzo();
             Thread.Sleep(1000);
 
@@ -197,5 +195,4 @@ public class Programa
 
         return ganadorTemp;
     }
-
 }

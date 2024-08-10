@@ -32,7 +32,6 @@ public class PartidaJson
     // Metodo para leer partida desde un archivo JSON
     public static PartidaJson CargarPartida(string archivoPartida)
     {
-        // PartidaJson partida = null;
         if (!Existe(archivoPartida))
         {
             Console.WriteLine("El archivo no existe.");
