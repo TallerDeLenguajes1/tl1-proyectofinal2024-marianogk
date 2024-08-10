@@ -90,4 +90,19 @@ public class Batalla
         // Aumentar salud del ganador en 10, cada vez que gane
         return saludInicial += 10;
     }
+
+    public static string LugarBatalla(Personaje player1, Personaje player2)
+    {
+        Random random = new Random();
+        int i = random.Next(2);
+        if (i == 1)
+        {
+            return player1.Datos.LugarDeNacimiento;
+        }
+        else
+        {
+            return player2.Datos.LugarDeNacimiento;
+        }
+
+    }
 }

@@ -116,14 +116,17 @@ public class Programa
 
             Personaje player1, player2;
             player1 = PersonajesFn.ElegirPersonaje(ganadorTemp, personajesLeidos);
-            
+
             float saludInicial1 = PersonajesFn.GetSaludInicial(player1); // Guardar salud inicial player 1
             player2 = PersonajesFn.ElegirOponente(player1, personajesLeidos);
-            
+
             float saludInicial2 = PersonajesFn.GetSaludInicial(player2); // Guardar salud inicial player 2
 
             // Mostrar los 2 personajes
             PersonajesFn.MostrarContrincantes(player1, player2);
+
+            // Mostrar lugar aleatorio entre los 2 personajes
+            Console.WriteLine("\n*--LUGAR DE LA BATALLA: " + Batalla.LugarBatalla(player1, player2) + " --*\n");
 
             // Batalla
             Ascii.Comienzo();
@@ -134,7 +137,7 @@ public class Programa
             PersonajesFn.MostrarGanadorBatalla(ganador);
 
             gano = PersonajesFn.CompararNombres(player1, ganador); // devuelve true si ganó
-            
+
             ganadorTemp = PersonajeGanador(personajesLeidos, player1, player2, ganador, saludInicial1, saludInicial2); // Asignar ganador
 
             if (gano)
@@ -166,7 +169,7 @@ public class Programa
             Thread.Sleep(1500);
             Ascii.Felicidades();
             Ascii.Ganaste();
-            
+
             await HistorialJson.GuardarGanador(ganadorTemp, archivoHistorial); // Guardar ganador en json
             Thread.Sleep(2000);
         }
@@ -180,14 +183,14 @@ public class Programa
         if (PersonajesFn.CompararNombres(player1, ganador))
         {
             ganadorTemp = player1;
-            
+
             PersonajesFn.ModificarSalud(ganadorTemp, Batalla.BonusSalud(saludInicial1)); // Aumentar salud ganador
             personajesLeidos.Remove(player2);
         }
         else
         {
             ganadorTemp = player2;
-            
+
             PersonajesFn.ModificarSalud(ganadorTemp, Batalla.BonusSalud(saludInicial2)); // Aumentar salud ganador
             personajesLeidos.Remove(player1);
         }
