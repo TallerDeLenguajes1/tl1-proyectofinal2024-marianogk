@@ -200,19 +200,10 @@ public static class PersonajesFn
         Ascii.MostrarGanador(ganador);
         Thread.Sleep(1500);
         MostrarPersonaje(ganador);
-        Console.WriteLine("\nComic: " + ganador.Root.biography.publisher);
-        Console.WriteLine("Lugar de nacimiento: " + ganador.Root.biography.placeofbirth);
-    }
-
-    public static void MostrarGanadorFinal(Personaje pj)
-    {
-        Ascii.GanadorFinal();
-        MostrarGanadorBatalla(pj);
-        Console.WriteLine("\n\n");
-        Console.WriteLine("Ocupacion: " + pj.Root.work.occupation);
-        Console.WriteLine(pj.Root.work.BaseT);
-        Thread.Sleep(1500);
-        Ascii.Felicidades();
+        Console.WriteLine("\nComic: " + ganador.Datos.Comic);
+        Console.WriteLine("Lugar de nacimiento: " + ganador.Datos.LugarDeNacimiento);
+        Console.WriteLine("Ocupacion: " + ganador.Datos.Trabajo);
+        Console.WriteLine(ganador.Datos.BaseT);
     }
 
     public static void MostrarGanadores(List<Personaje> personajes)

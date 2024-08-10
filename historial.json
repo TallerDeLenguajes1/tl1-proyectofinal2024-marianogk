@@ -211,5 +211,195 @@
         "BaseT": null
       }
     }
+  },
+  {
+    "Datos": {
+      "Tipo": "Villano",
+      "Nombre": "Bruce Wayne",
+      "Apodo": "Batman",
+      "FechaDeNacimiento": "1905-12-19T00:00:00",
+      "Edad": 118,
+      "LugarDeNacimiento": "Crest Hill, Bristol Township; Gotham County",
+      "Comic": "DC Comics",
+      "Trabajo": "Businessman",
+      "BaseT": null
+    },
+    "Caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 3,
+      "Fuerza": 10,
+      "Nivel": 9,
+      "Armadura": 10,
+      "Salud": 180
+    },
+    "Root": {
+      "response": "success",
+      "Id": null,
+      "name": "Batman",
+      "biography": {
+        "full-name": "Bruce Wayne",
+        "place-of-birth": "Crest Hill, Bristol Township; Gotham County",
+        "first-appearance": "Detective Comics #27",
+        "publisher": "DC Comics",
+        "Alignment": null
+      },
+      "Appearance": null,
+      "work": {
+        "occupation": "Businessman",
+        "BaseT": null
+      }
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Villano",
+      "Nombre": "Bruce Wayne",
+      "Apodo": "Batman",
+      "FechaDeNacimiento": "1905-12-19T00:00:00",
+      "Edad": 118,
+      "LugarDeNacimiento": "Crest Hill, Bristol Township; Gotham County",
+      "Comic": "DC Comics",
+      "Trabajo": "Businessman",
+      "BaseT": null
+    },
+    "Caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 3,
+      "Fuerza": 10,
+      "Nivel": 9,
+      "Armadura": 10,
+      "Salud": 180
+    },
+    "Root": {
+      "response": "success",
+      "Id": null,
+      "name": "Batman",
+      "biography": {
+        "full-name": "Bruce Wayne",
+        "place-of-birth": "Crest Hill, Bristol Township; Gotham County",
+        "first-appearance": "Detective Comics #27",
+        "publisher": "DC Comics",
+        "Alignment": null
+      },
+      "Appearance": null,
+      "work": {
+        "occupation": "Businessman",
+        "BaseT": null
+      }
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Villano",
+      "Nombre": "Bruce Wayne",
+      "Apodo": "Batman",
+      "FechaDeNacimiento": "1905-12-19T00:00:00",
+      "Edad": 118,
+      "LugarDeNacimiento": "Crest Hill, Bristol Township; Gotham County",
+      "Comic": "DC Comics",
+      "Trabajo": "Businessman",
+      "BaseT": null
+    },
+    "Caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 3,
+      "Fuerza": 10,
+      "Nivel": 9,
+      "Armadura": 10,
+      "Salud": 180
+    },
+    "Root": {
+      "response": "success",
+      "Id": null,
+      "name": "Batman",
+      "biography": {
+        "full-name": "Bruce Wayne",
+        "place-of-birth": "Crest Hill, Bristol Township; Gotham County",
+        "first-appearance": "Detective Comics #27",
+        "publisher": "DC Comics",
+        "Alignment": null
+      },
+      "Appearance": null,
+      "work": {
+        "occupation": "Businessman",
+        "BaseT": null
+      }
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Villano",
+      "Nombre": "Bruce Wayne",
+      "Apodo": "Batman",
+      "FechaDeNacimiento": "1905-12-19T00:00:00",
+      "Edad": 118,
+      "LugarDeNacimiento": "Crest Hill, Bristol Township; Gotham County",
+      "Comic": "DC Comics",
+      "Trabajo": "Businessman",
+      "BaseT": null
+    },
+    "Caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 3,
+      "Fuerza": 10,
+      "Nivel": 9,
+      "Armadura": 10,
+      "Salud": 180
+    },
+    "Root": {
+      "response": "success",
+      "Id": null,
+      "name": "Batman",
+      "biography": {
+        "full-name": "Bruce Wayne",
+        "place-of-birth": "Crest Hill, Bristol Township; Gotham County",
+        "first-appearance": "Detective Comics #27",
+        "publisher": "DC Comics",
+        "Alignment": null
+      },
+      "Appearance": null,
+      "work": {
+        "occupation": "Businessman",
+        "BaseT": null
+      }
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Villano",
+      "Nombre": "Bruce Wayne",
+      "Apodo": "Batman",
+      "FechaDeNacimiento": "1905-12-19T00:00:00",
+      "Edad": 118,
+      "LugarDeNacimiento": "Crest Hill, Bristol Township; Gotham County",
+      "Comic": "DC Comics",
+      "Trabajo": "Businessman",
+      "BaseT": null
+    },
+    "Caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 3,
+      "Fuerza": 10,
+      "Nivel": 9,
+      "Armadura": 10,
+      "Salud": 180
+    },
+    "Root": {
+      "response": "success",
+      "Id": null,
+      "name": "Batman",
+      "biography": {
+        "full-name": "Bruce Wayne",
+        "place-of-birth": "Crest Hill, Bristol Township; Gotham County",
+        "first-appearance": "Detective Comics #27",
+        "publisher": "DC Comics",
+        "Alignment": null
+      },
+      "Appearance": null,
+      "work": {
+        "occupation": "Businessman",
+        "BaseT": null
+      }
+    }
   }
 ]

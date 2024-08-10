@@ -30,7 +30,7 @@ public class HistorialJson
             string jsonString = JsonSerializer.Serialize(personajes, new JsonSerializerOptions { WriteIndented = true });
             await File.WriteAllTextAsync(nombreArchivo, jsonString);
 
-            Console.WriteLine("\nGanador guardado en el archivo de historial correctamente.");
+            Console.WriteLine("\n\n\nGanador guardado en el archivo de historial correctamente.");
         }
         catch (Exception ex)
         {

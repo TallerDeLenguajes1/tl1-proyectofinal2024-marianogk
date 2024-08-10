@@ -52,7 +52,7 @@ public class Programa
                     break;
 
                 case "4":
-                    // Mostrar ganadores
+                    // Mostrar historial de ganadores
                     await PersonajesFn.MostrarHistorial(archivoHistorial);
                     break;
 
@@ -116,11 +116,11 @@ public class Programa
 
             Personaje player1, player2;
             player1 = PersonajesFn.ElegirPersonaje(ganadorTemp, personajesLeidos);
-            // Guardar salud inicial player 1
-            float saludInicial1 = PersonajesFn.GetSaludInicial(player1);
+            
+            float saludInicial1 = PersonajesFn.GetSaludInicial(player1); // Guardar salud inicial player 1
             player2 = PersonajesFn.ElegirOponente(player1, personajesLeidos);
-            // Guardar salud inicial player 2
-            float saludInicial2 = PersonajesFn.GetSaludInicial(player2);
+            
+            float saludInicial2 = PersonajesFn.GetSaludInicial(player2); // Guardar salud inicial player 2
 
             // Mostrar los 2 personajes
             PersonajesFn.MostrarContrincantes(player1, player2);
@@ -134,8 +134,8 @@ public class Programa
             PersonajesFn.MostrarGanadorBatalla(ganador);
 
             gano = PersonajesFn.CompararNombres(player1, ganador); // devuelve true si ganó
-            // Asignar ganador
-            ganadorTemp = PersonajeGanador(personajesLeidos, player1, player2, ganador, saludInicial1, saludInicial2);
+            
+            ganadorTemp = PersonajeGanador(personajesLeidos, player1, player2, ganador, saludInicial1, saludInicial2); // Asignar ganador
 
             if (gano)
             {
@@ -163,9 +163,11 @@ public class Programa
 
         if (ganadorTemp != null && personajesLeidos.Count == 1 && gano)
         {
-            PersonajesFn.MostrarGanadorFinal(ganadorTemp);
-            // Guardar ganador en json
-            await HistorialJson.GuardarGanador(ganadorTemp, archivoHistorial);
+            Thread.Sleep(1500);
+            Ascii.Felicidades();
+            Ascii.Ganaste();
+            
+            await HistorialJson.GuardarGanador(ganadorTemp, archivoHistorial); // Guardar ganador en json
             Thread.Sleep(2000);
         }
 
@@ -178,15 +180,15 @@ public class Programa
         if (PersonajesFn.CompararNombres(player1, ganador))
         {
             ganadorTemp = player1;
-            // Aumentar salud ganador
-            PersonajesFn.ModificarSalud(ganadorTemp, Batalla.BonusSalud(saludInicial1));
+            
+            PersonajesFn.ModificarSalud(ganadorTemp, Batalla.BonusSalud(saludInicial1)); // Aumentar salud ganador
             personajesLeidos.Remove(player2);
         }
         else
         {
             ganadorTemp = player2;
-            // Aumentar salud ganador
-            PersonajesFn.ModificarSalud(ganadorTemp, Batalla.BonusSalud(saludInicial2));
+            
+            PersonajesFn.ModificarSalud(ganadorTemp, Batalla.BonusSalud(saludInicial2)); // Aumentar salud ganador
             personajesLeidos.Remove(player1);
         }
 

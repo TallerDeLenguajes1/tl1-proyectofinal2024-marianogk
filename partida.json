@@ -1,271 +1,43 @@
 {
   "Jugador": {
     "Datos": {
-      "Tipo": "Superheroe",
-      "Nombre": "Diana Prince",
-      "Apodo": "Wonder Woman",
-      "FechaDeNacimiento": "1962-05-31T00:00:00",
-      "Edad": 62,
-      "LugarDeNacimiento": "Themyscira",
+      "Tipo": "Villano",
+      "Nombre": "Bruce Wayne",
+      "Apodo": "Batman",
+      "FechaDeNacimiento": "1905-12-19T00:00:00",
+      "Edad": 118,
+      "LugarDeNacimiento": "Crest Hill, Bristol Township; Gotham County",
       "Comic": "DC Comics",
-      "Trabajo": "Adventurer, Emissary to the world of Man, Protector of Paradise Island; former Goddess of Truth",
+      "Trabajo": "Businessman",
       "BaseT": null
     },
     "Caracteristicas": {
       "Velocidad": 7,
-      "Destreza": 5,
-      "Fuerza": 4,
-      "Nivel": 10,
-      "Armadura": 2,
-      "Salud": 120
+      "Destreza": 3,
+      "Fuerza": 10,
+      "Nivel": 9,
+      "Armadura": 10,
+      "Salud": 170
     },
     "Root": {
       "response": "success",
       "Id": null,
-      "name": "Wonder Woman",
+      "name": "Batman",
       "biography": {
-        "full-name": "Diana Prince",
-        "place-of-birth": "Themyscira",
-        "first-appearance": "All-Star Comics #8 (December, 1941)",
+        "full-name": "Bruce Wayne",
+        "place-of-birth": "Crest Hill, Bristol Township; Gotham County",
+        "first-appearance": "Detective Comics #27",
         "publisher": "DC Comics",
         "Alignment": null
       },
       "Appearance": null,
       "work": {
-        "occupation": "Adventurer, Emissary to the world of Man, Protector of Paradise Island; former Goddess of Truth",
+        "occupation": "Businessman",
         "BaseT": null
       }
     }
   },
   "Oponentes": [
-    {
-      "Datos": {
-        "Tipo": "Superheroe",
-        "Nombre": "Bruce Banner",
-        "Apodo": "Hulk",
-        "FechaDeNacimiento": "1925-07-19T00:00:00",
-        "Edad": 99,
-        "LugarDeNacimiento": "Dayton, Ohio",
-        "Comic": "Marvel Comics",
-        "Trabajo": "Nuclear physicist, Agent of S.H.I.E.L.D.",
-        "BaseT": null
-      },
-      "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 2,
-        "Fuerza": 9,
-        "Nivel": 7,
-        "Armadura": 1,
-        "Salud": 100
-      },
-      "Root": {
-        "response": "success",
-        "Id": null,
-        "name": "Hulk",
-        "biography": {
-          "full-name": "Bruce Banner",
-          "place-of-birth": "Dayton, Ohio",
-          "first-appearance": "Incredible Hulk #1 (May, 1962)",
-          "publisher": "Marvel Comics",
-          "Alignment": null
-        },
-        "Appearance": null,
-        "work": {
-          "occupation": "Nuclear physicist, Agent of S.H.I.E.L.D.",
-          "BaseT": null
-        }
-      }
-    },
-    {
-      "Datos": {
-        "Tipo": "Superheroe",
-        "Nombre": "Peter Parker",
-        "Apodo": "Spider-Man",
-        "FechaDeNacimiento": "1991-08-10T00:00:00",
-        "Edad": 32,
-        "LugarDeNacimiento": "New York, New York",
-        "Comic": "Marvel Comics",
-        "Trabajo": "Freelance photographer, teacher",
-        "BaseT": null
-      },
-      "Caracteristicas": {
-        "Velocidad": 7,
-        "Destreza": 2,
-        "Fuerza": 6,
-        "Nivel": 1,
-        "Armadura": 10,
-        "Salud": 100
-      },
-      "Root": {
-        "response": "success",
-        "Id": null,
-        "name": "Spider-Man",
-        "biography": {
-          "full-name": "Peter Parker",
-          "place-of-birth": "New York, New York",
-          "first-appearance": "Amazing Fantasy #15",
-          "publisher": "Marvel Comics",
-          "Alignment": null
-        },
-        "Appearance": null,
-        "work": {
-          "occupation": "Freelance photographer, teacher",
-          "BaseT": null
-        }
-      }
-    },
-    {
-      "Datos": {
-        "Tipo": "Villano",
-        "Nombre": "Bruce Wayne",
-        "Apodo": "Batman",
-        "FechaDeNacimiento": "1905-12-19T00:00:00",
-        "Edad": 118,
-        "LugarDeNacimiento": "Crest Hill, Bristol Township; Gotham County",
-        "Comic": "DC Comics",
-        "Trabajo": "Businessman",
-        "BaseT": null
-      },
-      "Caracteristicas": {
-        "Velocidad": 7,
-        "Destreza": 3,
-        "Fuerza": 10,
-        "Nivel": 9,
-        "Armadura": 10,
-        "Salud": 100
-      },
-      "Root": {
-        "response": "success",
-        "Id": null,
-        "name": "Batman",
-        "biography": {
-          "full-name": "Bruce Wayne",
-          "place-of-birth": "Crest Hill, Bristol Township; Gotham County",
-          "first-appearance": "Detective Comics #27",
-          "publisher": "DC Comics",
-          "Alignment": null
-        },
-        "Appearance": null,
-        "work": {
-          "occupation": "Businessman",
-          "BaseT": null
-        }
-      }
-    },
-    {
-      "Datos": {
-        "Tipo": "Superheroe",
-        "Nombre": "Harley Quinn",
-        "Apodo": "Harley Quinn",
-        "FechaDeNacimiento": "1977-07-01T00:00:00",
-        "Edad": 47,
-        "LugarDeNacimiento": "-",
-        "Comic": "DC Comics",
-        "Trabajo": "Psychiatrist",
-        "BaseT": null
-      },
-      "Caracteristicas": {
-        "Velocidad": 6,
-        "Destreza": 4,
-        "Fuerza": 9,
-        "Nivel": 9,
-        "Armadura": 9,
-        "Salud": 100
-      },
-      "Root": {
-        "response": "success",
-        "Id": null,
-        "name": "Harley Quinn",
-        "biography": {
-          "full-name": "Harley Quinn",
-          "place-of-birth": "-",
-          "first-appearance": "Batman: Harley Quinn (October, 1999)",
-          "publisher": "DC Comics",
-          "Alignment": null
-        },
-        "Appearance": null,
-        "work": {
-          "occupation": "Psychiatrist",
-          "BaseT": null
-        }
-      }
-    },
-    {
-      "Datos": {
-        "Tipo": "Villano",
-        "Nombre": "Jack Napier",
-        "Apodo": "Joker",
-        "FechaDeNacimiento": "1908-07-25T00:00:00",
-        "Edad": 116,
-        "LugarDeNacimiento": "-",
-        "Comic": "DC Comics",
-        "Trabajo": "-",
-        "BaseT": null
-      },
-      "Caracteristicas": {
-        "Velocidad": 1,
-        "Destreza": 1,
-        "Fuerza": 5,
-        "Nivel": 5,
-        "Armadura": 2,
-        "Salud": 100
-      },
-      "Root": {
-        "response": "success",
-        "Id": null,
-        "name": "Joker",
-        "biography": {
-          "full-name": "Jack Napier",
-          "place-of-birth": "-",
-          "first-appearance": "Batman #1 (Spring 1940)",
-          "publisher": "DC Comics",
-          "Alignment": null
-        },
-        "Appearance": null,
-        "work": {
-          "occupation": "-",
-          "BaseT": null
-        }
-      }
-    },
-    {
-      "Datos": {
-        "Tipo": "Villano",
-        "Nombre": "Clark Kent",
-        "Apodo": "Superman",
-        "FechaDeNacimiento": "1980-08-17T00:00:00",
-        "Edad": 43,
-        "LugarDeNacimiento": "Krypton",
-        "Comic": "Superman Prime One-Million",
-        "Trabajo": "Reporter for the Daily Planet and novelist",
-        "BaseT": null
-      },
-      "Caracteristicas": {
-        "Velocidad": 5,
-        "Destreza": 4,
-        "Fuerza": 9,
-        "Nivel": 8,
-        "Armadura": 4,
-        "Salud": 100
-      },
-      "Root": {
-        "response": "success",
-        "Id": null,
-        "name": "Superman",
-        "biography": {
-          "full-name": "Clark Kent",
-          "place-of-birth": "Krypton",
-          "first-appearance": "ACTION COMICS #1",
-          "publisher": "Superman Prime One-Million",
-          "Alignment": null
-        },
-        "Appearance": null,
-        "work": {
-          "occupation": "Reporter for the Daily Planet and novelist",
-          "BaseT": null
-        }
-      }
-    },
     {
       "Datos": {
         "Tipo": "Superheroe",
@@ -300,44 +72,6 @@
         "Appearance": null,
         "work": {
           "occupation": "Adventurer, instructor, former bartender, bouncer, spy, government operative, mercenary, soldier, sailor, miner",
-          "BaseT": null
-        }
-      }
-    },
-    {
-      "Datos": {
-        "Tipo": "Villano",
-        "Nombre": "Wade Wilson",
-        "Apodo": "Deadpool",
-        "FechaDeNacimiento": "1921-12-05T00:00:00",
-        "Edad": 102,
-        "LugarDeNacimiento": "Canada",
-        "Comic": "Evil Deadpool",
-        "Trabajo": "Mercenary; former enforcer, government operative, sumo wrestler, soldier, assassin, anti-hero, others",
-        "BaseT": null
-      },
-      "Caracteristicas": {
-        "Velocidad": 8,
-        "Destreza": 1,
-        "Fuerza": 4,
-        "Nivel": 1,
-        "Armadura": 10,
-        "Salud": 100
-      },
-      "Root": {
-        "response": "success",
-        "Id": null,
-        "name": "Deadpool",
-        "biography": {
-          "full-name": "Wade Wilson",
-          "place-of-birth": "Canada",
-          "first-appearance": "New Mutants #98 (February, 1991)",
-          "publisher": "Evil Deadpool",
-          "Alignment": null
-        },
-        "Appearance": null,
-        "work": {
-          "occupation": "Mercenary; former enforcer, government operative, sumo wrestler, soldier, assassin, anti-hero, others",
           "BaseT": null
         }
       }

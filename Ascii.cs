@@ -45,12 +45,14 @@ public class Ascii
         Console.WriteLine("╚═╝░░░░░╚══════╝╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚══╝╚═╝░░╚═╝░╚════╝░╚══════╝╚═════╝░");
         Console.WriteLine("");
     }
-    public static void GanadorFinal()
+    public static void Ganaste()
     {
         string texto = @"
 
-█▀▀ █░░   █▀▀ ▄▀█ █▄░█ ▄▀█ █▀▄ █▀█ █▀█   █▀▀ █▀ ░ ░ ░
-██▄ █▄▄   █▄█ █▀█ █░▀█ █▀█ █▄▀ █▄█ █▀▄   ██▄ ▄█ ▄ ▄ ▄";
+
+█▀▀▀ █▀▀█ █▀▀▄ █▀▀█ █▀▀ ▀▀█▀▀ █▀▀ █ 
+█░▀█ █▄▄█ █░░█ █▄▄█ ▀▀█ ░░█░░ █▀▀ ▀ 
+▀▀▀▀ ▀░░▀ ▀░░▀ ▀░░▀ ▀▀▀ ░░▀░░ ▀▀▀ ▄";
         ImprimirConDelay(texto, 10);
 
     }
