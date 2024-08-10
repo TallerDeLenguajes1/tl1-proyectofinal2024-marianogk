@@ -126,7 +126,7 @@ public class Programa
             Console.WriteLine("\n*--LUGAR DE LA BATALLA: " + Batalla.LugarBatalla(player1, player2) + " --*\n");
 
             // Batalla
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
             Ascii.Comienzo();
             Thread.Sleep(1000);
 

@@ -12,7 +12,7 @@ public class PersonajesJson
         {
             string jsonString = JsonSerializer.Serialize(personajes, new JsonSerializerOptions { WriteIndented = true });
             await File.WriteAllTextAsync(nombreArchivo, jsonString);
-            Console.WriteLine("\nPersonajes guardados en " + nombreArchivo);
+            Console.WriteLine("\nPersonajes guardados");
         }
         catch (Exception ex)
         {
